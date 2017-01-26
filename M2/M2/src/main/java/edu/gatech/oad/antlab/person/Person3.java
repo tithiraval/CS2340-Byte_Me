@@ -5,7 +5,7 @@ package edu.gatech.oad.antlab.person;
  *  reversed string 
  *  
  *  @author  Bob, Shauryay
- *  @version 1.3
+ *  @version 1.2
  */
 public class Person3 {
    /** Holds the persons real name */  
