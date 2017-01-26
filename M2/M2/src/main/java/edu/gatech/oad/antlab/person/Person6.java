@@ -5,8 +5,8 @@ package edu.gatech.oad.antlab.person;
  *  returns their name and a
  *  modified string
  *
- *  @author Bob
- *  @version 1.1
+ *  @author Tithi Raval
+ *  @version 1.20
  */
 public class Person6 {
   /** Holds the persons real name */
@@ -31,7 +31,14 @@ public class Person6 {
 	 */
 	private String calc(String input) {
 	  //Person 5 put your implementation here
-	  return null;
+		String newString = "";
+		for (int i = 2; i <= input.length() - 1; i++) {
+			newString += input.charAt(i);
+		}
+		newString += input.charAt(0);
+		newString += input.charAt(1);
+		System.out.println(newString);
+	  return newString;
 	}
 
 	/**
