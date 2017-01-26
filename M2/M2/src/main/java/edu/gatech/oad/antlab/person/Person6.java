@@ -6,7 +6,7 @@ package edu.gatech.oad.antlab.person;
  *  modified string
  *
  *  @author Bob, Tithi Raval
- *  @version 1.2
+ *  @version 1.20
  */
 public class Person6 {
   /** Holds the persons real name */
