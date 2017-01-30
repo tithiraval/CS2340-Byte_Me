@@ -1,0 +1,41 @@
+//Set a default task, so if you don't provide any, these will be executed.
+defaultTasks   'task1', 'task2'
+
+apply plugin: 'java'
+
+apply plugin: 'findbugs'
+
+apply plugin: 'checkstyle'
+
+apply plugin: 'pmd'
+
+apply plugin: 'application'
+
+//set up some variables
+sourceCompatibility = 1.8
+version = '1.0'
+
+//Define the contents of the jar file
+jar  {
+    manifest {
+        attributes  'Implementation-Title' : 'M2' ,
+                'Implementation-Version' : version,
+                'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
+    }
+
+    destinationDir = file(".")
+    archiveName = 'hogaya.jar'
+}
+
+dependencies {
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+    compile group: 'edu.gatech.oad.antlab.pkg2.*'
+    compile group: 'edu.gatech.oad.antlab.person.*'
+    compile group: 'edu.cs2335.antlab.pkg3.*'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+//setup a location for repositories of any libraries that need to be downloaded
+repositories {
+    mavenCentral()
+}

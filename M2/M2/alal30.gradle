@@ -1,9 +1,7 @@
+defaultTasks 'jar'
+
 apply plugin: 'java'
 apply plugin: 'application'
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     compile files('lib/resources.jar')
@@ -17,11 +15,6 @@ jar {
         attributes  'Implementation-Title': 'Gradle Trial',
                     'Implementation-Version': version,
                     'Main-Class': mainClassName,
-                    'Class-Path':'lib/resources.jar'
-    }
-    destinationDir = file('build/libs')
-    archiveName = 'AntLabMain.jar'
-    from (zipTree('lib/resources.jar')) {
-        include '**/*.class'
+                    'Class-Path':'../../lib/resources.jar'
     }
 }
