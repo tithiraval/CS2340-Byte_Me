@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile files('lib/resources.jar')
+}
+
+mainClassName='edu.gatech.oad.antlab.pkg1.AntLabMain'
+version = '1.0'
+
+jar {
+    manifest {
+        attributes  'Implementation-Title': 'Gradle Trial',
+                    'Implementation-Version': version,
+                    'Main-Class': mainClassName,
+                    'Class-Path':'lib/resources.jar'
+    }
+    destinationDir = file('build/libs')
+    archiveName = 'AntLabMain.jar'
+    from (zipTree('lib/resources.jar')) {
+        include '**/*.class'
+    }
+}
