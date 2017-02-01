@@ -1,6 +1,7 @@
 defaultTasks 'jar'
 
 apply plugin: 'java'
+
 apply plugin: 'application'
 
 dependencies {
@@ -8,12 +9,11 @@ dependencies {
 }
 
 mainClassName='edu.gatech.oad.antlab.pkg1.AntLabMain'
-version = '1.0'
 
 jar {
     manifest {
         attributes  'Implementation-Title': 'Gradle Trial',
-                'Implementation-Version': version,
+                'Implementation-Version': '1.0',
                 'Main-Class': mainClassName,
                 'Class-Path':'../../lib/resources.jar'
     }
