@@ -20,22 +20,17 @@ jar  {
     manifest {
         attributes  'Implementation-Title' : 'M2' ,
                 'Implementation-Version' : version,
-                'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
+                'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+                'Class-Path':'../../lib/resources.jar'
     }
 
     destinationDir = file(".")
-    archiveName = 'hogaya.jar'
+    archiveName = 'saggarwal_M2.jar'
 }
 
 dependencies {
-    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
-    compile group: 'edu.gatech.oad.antlab.pkg2.*'
-    compile group: 'edu.gatech.oad.antlab.person.*'
-    compile group: 'edu.cs2335.antlab.pkg3.*'
+    compile files('lib/resources.jar')
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
-//setup a location for repositories of any libraries that need to be downloaded
-repositories {
-    mavenCentral()
-}
+
