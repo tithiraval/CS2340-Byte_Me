@@ -1,17 +1,13 @@
-//Set a default task, so if you don't provide any, these will be executed.
 defaultTasks   'compileJava', 'compileTest', 'javadoc', 'clean', 'jar'
 
 apply plugin: 'java'
 
 apply plugin: 'application'
 
-//set up some variables
-sourceCompatibility = 1.8
 version = '1.0'
 
 mainClassName = 'edu.gatech.oad.antlab.pkg1.AntLabMain'
 
-//Define the contents of the jar file
 jar  {
     manifest {
         attributes  'Implementation-Title' : 'M2' ,
