@@ -5,10 +5,6 @@ apply plugin: 'findbugs'
 apply plugin: 'checkstyle'
 apply plugin: 'application'
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     compile files('lib/resources.jar')
 }
@@ -22,30 +18,13 @@ mainClassName='edu.gatech.oad.antlab.pkg1.AntLabMain'
 version = '1.0'
 
 //Define the contents of the jar file
-jar  {
+jar {
     manifest {
-        attributes  'Implementation-Title' : 'Gradle Trail' ,
-                    'Implementation-Version' : version,
-                    'Main-Class' : mainClassName,
-                    'Class-Path' : 'lib/resources.jar'
+        attributes  'Implementation-Title': 'Gradle Trial',
+                'Implementation-Version': version,
+                'Main-Class': mainClassName,
+                'Class-Path':'../../lib/resources.jar'
     }
-
-    destinationDir = file('build/libs')
-    archiveName = 'AntLabMain.jar'
-    from (zipTree('lib/resources.jar')) {
-        include '**/*.class'
-    }
-
-}
-
-dependencies {
-    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
-    testCompile group: 'junit', name: 'junit', version: '4.+'
-}
-
-//setup a location for repositories of any libraries that need to be downloaded
-repositories {
-    mavenCentral()
 }
 
 
