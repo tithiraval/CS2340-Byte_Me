@@ -1,6 +1,6 @@
 defaultTasks 'jar'
 apply plugin: 'java'
-apply plugin: 'application'
+//apply plugin: 'application'
 
 
 dependencies {
