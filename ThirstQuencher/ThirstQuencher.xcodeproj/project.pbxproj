@@ -23,7 +23,7 @@
 		E8E869571E526E490049C764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8E8695A1E526E490049C764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8E8695C1E526E490049C764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8E869661E54DC5C0049C764 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E8E869661E54DC5C0049C764 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,6 @@
 		E8E869441E526E480049C764 = {
 			isa = PBXGroup;
 			children = (
-				E8E869661E54DC5C0049C764 /* SignInViewController.swift */,
 				E8E8694F1E526E490049C764 /* ThirstQuencher */,
 				E8E8694E1E526E490049C764 /* Products */,
 			);
@@ -57,6 +56,7 @@
 		E8E8694F1E526E490049C764 /* ThirstQuencher */ = {
 			isa = PBXGroup;
 			children = (
+				E8E869661E54DC5C0049C764 /* SignInViewController.swift */,
 				E8E869501E526E490049C764 /* AppDelegate.swift */,
 				E8E869521E526E490049C764 /* ViewController.swift */,
 				E8E869541E526E490049C764 /* Main.storyboard */,
