@@ -24,12 +24,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lrb-Kf-k7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-120" y="-658"/>
+            <point key="canvasLocation" x="-119" y="-651"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="6n1-4Y-SdL">
             <objects>
-                <viewController title="Welcome" id="3ki-eV-f0w" sceneMemberID="viewController">
+                <viewController title="Welcome" id="3ki-eV-f0w" customClass="Welcome" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w5N-Ze-Fux"/>
                         <viewControllerLayoutGuide type="bottom" id="vqM-0s-5WC"/>
@@ -66,7 +66,7 @@
         <!--Sign In-->
         <scene sceneID="j41-8V-ab6">
             <objects>
-                <viewController title="Sign In" id="uLg-df-tlB" sceneMemberID="viewController">
+                <viewController title="Sign In" id="uLg-df-tlB" customClass="SignInViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q6F-E8-vus"/>
                         <viewControllerLayoutGuide type="bottom" id="bUH-QR-mRl"/>
@@ -107,7 +107,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <segue destination="RId-K2-Myy" kind="show" identifier="successfulLoginSegue" id="nyQ-Zn-ZTY"/>
+                                            <action selector="attemptLogin:" destination="uLg-df-tlB" eventType="touchUpInside" id="2FG-19-Gty"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,6 +141,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="0Yv-EA-qPV" secondAttribute="trailing" constant="31" id="u72-3g-gu9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="RKR-7l-r3y" id="Iaw-Zc-HYB"/>
+                        <outlet property="passTextField" destination="5PX-gg-eBW" id="CDn-zV-KA5"/>
+                        <outlet property="usernameTextField" destination="XcY-hz-yXf" id="u8C-10-JTT"/>
+                        <segue destination="RId-K2-Myy" kind="show" identifier="toSuccessfulLogin" id="vkf-wt-k64"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYl-4P-bDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
