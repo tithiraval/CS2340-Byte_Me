@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/enterUsername"
+        android:inputType="textPassword"
         android:hint = "Enter Password"/>
     <Button
         android:id="@+id/loginButton"
@@ -26,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/enterPassword"
         android:layout_alignParentStart="true"
-        android:text="LOGIN"/>
+        android:text="LOGIN"
+        android:onClick="loginApp"/>
     <Button
         android:id="@+id/cancelButton"
         android:layout_width="match_parent"
