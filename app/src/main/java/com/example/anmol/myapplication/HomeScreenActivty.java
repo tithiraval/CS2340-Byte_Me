@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.facebook.login.LoginManager;
+
 public class HomeScreenActivty extends AppCompatActivity {
 
     @Override
@@ -14,6 +16,9 @@ public class HomeScreenActivty extends AppCompatActivity {
     }
 
     public void logOut(View view) {
+        if (MainActivity.isLoggedIn()) {
+            LoginManager.getInstance().logOut();
+        }
         Intent intent = new Intent(HomeScreenActivty.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
