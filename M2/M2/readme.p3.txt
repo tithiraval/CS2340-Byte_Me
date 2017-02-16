@@ -1,2 +1,0 @@
-Shaurye Aggarwal
-saggarwal46@gatech.edu
