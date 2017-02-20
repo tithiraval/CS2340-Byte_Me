@@ -36,6 +36,6 @@
         android:layout_toEndOf="@+id/registerButton"
         android:layout_alignBottom="@+id/registerButton"
         android:text="CANCEL"
-        android:onClick="cancel"/>
+        android:onClick="cancelRegistration"/>
 
 </RelativeLayout>

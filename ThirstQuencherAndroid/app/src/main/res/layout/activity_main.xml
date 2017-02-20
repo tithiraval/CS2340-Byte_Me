@@ -38,5 +38,6 @@
         android:layout_height="wrap_content"
         android:text="REGISTER"
         android:layout_toEndOf="@+id/login"
-        android:layout_alignBottom="@+id/login"/>
+        android:layout_alignBottom="@+id/login"
+        android:onClick="startRegistration"/>
 </RelativeLayout>
