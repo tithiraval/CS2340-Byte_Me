@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
 		E8E869511E526E490049C764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E869501E526E490049C764 /* AppDelegate.swift */; };
 		E8E869531E526E490049C764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E869521E526E490049C764 /* ViewController.swift */; };
 		E8E869561E526E490049C764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E869541E526E490049C764 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E8E8694D1E526E490049C764 /* ThirstQuencher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirstQuencher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E869501E526E490049C764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E869521E526E490049C764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				E8E869661E54DC5C0049C764 /* SignInViewController.swift */,
+				AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */,
 				E8E869501E526E490049C764 /* AppDelegate.swift */,
 				E8E869521E526E490049C764 /* ViewController.swift */,
 				E8E869541E526E490049C764 /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				E8E869531E526E490049C764 /* ViewController.swift in Sources */,
 				E8E869511E526E490049C764 /* AppDelegate.swift in Sources */,
+				AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */,
 				E8E869671E54DC5C0049C764 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
