@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E8E8694D1E526E490049C764 /* ThirstQuencherIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirstQuencherIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E8694D1E526E490049C764 /* ThirstQuencher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirstQuencher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E869501E526E490049C764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E869521E526E490049C764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E8E869551E526E490049C764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		E8E8694E1E526E490049C764 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E8E8694D1E526E490049C764 /* ThirstQuencherIOS.app */,
+				E8E8694D1E526E490049C764 /* ThirstQuencher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E8E8694C1E526E480049C764 /* ThirstQuencherIOS */ = {
+		E8E8694C1E526E480049C764 /* ThirstQuencher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8E8695F1E526E490049C764 /* Build configuration list for PBXNativeTarget "ThirstQuencherIOS" */;
+			buildConfigurationList = E8E8695F1E526E490049C764 /* Build configuration list for PBXNativeTarget "ThirstQuencher" */;
 			buildPhases = (
 				E8E869491E526E480049C764 /* Sources */,
 				E8E8694A1E526E480049C764 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = ThirstQuencherIOS;
+			name = ThirstQuencher;
 			productName = ThirstQuencher;
-			productReference = E8E8694D1E526E490049C764 /* ThirstQuencherIOS.app */;
+			productReference = E8E8694D1E526E490049C764 /* ThirstQuencher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E8E869481E526E480049C764 /* Build configuration list for PBXProject "ThirstQuencherIOS" */;
+			buildConfigurationList = E8E869481E526E480049C764 /* Build configuration list for PBXProject "ThirstQuencher" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -117,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E8E8694C1E526E480049C764 /* ThirstQuencherIOS */,
+				E8E8694C1E526E480049C764 /* ThirstQuencher */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +288,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E8E869481E526E480049C764 /* Build configuration list for PBXProject "ThirstQuencherIOS" */ = {
+		E8E869481E526E480049C764 /* Build configuration list for PBXProject "ThirstQuencher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8E8695D1E526E490049C764 /* Debug */,
@@ -297,7 +297,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8E8695F1E526E490049C764 /* Build configuration list for PBXNativeTarget "ThirstQuencherIOS" */ = {
+		E8E8695F1E526E490049C764 /* Build configuration list for PBXNativeTarget "ThirstQuencher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8E869601E526E490049C764 /* Debug */,

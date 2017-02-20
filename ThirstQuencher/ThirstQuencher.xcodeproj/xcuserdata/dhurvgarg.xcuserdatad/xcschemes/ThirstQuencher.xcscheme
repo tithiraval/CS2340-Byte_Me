@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E8E8694C1E526E480049C764"
-               BuildableName = "ThirstQuencherIOS.app"
-               BlueprintName = "ThirstQuencherIOS"
-               ReferencedContainer = "container:ThirstQuencherIOS.xcodeproj">
+               BuildableName = "ThirstQuencher.app"
+               BlueprintName = "ThirstQuencher"
+               ReferencedContainer = "container:ThirstQuencher.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8E8694C1E526E480049C764"
-            BuildableName = "ThirstQuencherIOS.app"
-            BlueprintName = "ThirstQuencherIOS"
-            ReferencedContainer = "container:ThirstQuencherIOS.xcodeproj">
+            BuildableName = "ThirstQuencher.app"
+            BlueprintName = "ThirstQuencher"
+            ReferencedContainer = "container:ThirstQuencher.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8E8694C1E526E480049C764"
-            BuildableName = "ThirstQuencherIOS.app"
-            BlueprintName = "ThirstQuencherIOS"
-            ReferencedContainer = "container:ThirstQuencherIOS.xcodeproj">
+            BuildableName = "ThirstQuencher.app"
+            BlueprintName = "ThirstQuencher"
+            ReferencedContainer = "container:ThirstQuencher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8E8694C1E526E480049C764"
-            BuildableName = "ThirstQuencherIOS.app"
-            BlueprintName = "ThirstQuencherIOS"
-            ReferencedContainer = "container:ThirstQuencherIOS.xcodeproj">
+            BuildableName = "ThirstQuencher.app"
+            BlueprintName = "ThirstQuencher"
+            ReferencedContainer = "container:ThirstQuencher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
