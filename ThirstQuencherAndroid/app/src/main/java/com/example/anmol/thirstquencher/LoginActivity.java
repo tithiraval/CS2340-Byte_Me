@@ -16,14 +16,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void cancel(View view) {
-        this.finish();
+        LoginActivity.this.finish();
     }
 
     public void loginApp(View view) {
-        EditText username = (EditText) findViewById(R.id.enterUsername);
-        EditText password = (EditText) findViewById(R.id.enterPassword);
+        String username = ((EditText) findViewById(R.id.enterUsername)).getText().toString();
+        String password = ((EditText) findViewById(R.id.enterPassword)).getText().toString();
 
-        if (username.getText().toString().equals("user") && password.getText().toString().equals("pass")) {
+        if (MainActivity.userpasswords.containsKey(username) && password.equals(MainActivity.userpasswords.get(username))) {
             Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
