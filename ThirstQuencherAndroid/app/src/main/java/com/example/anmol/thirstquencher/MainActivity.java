@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
 
@@ -59,13 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     public void startRegistration(View view) {
         Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

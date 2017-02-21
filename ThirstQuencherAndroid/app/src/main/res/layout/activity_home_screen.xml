@@ -10,9 +10,18 @@
     tools:context="com.example.anmol.thirstquencher.HomeScreenActivity">
 
     <Button
+        android:id="@+id/viewProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VIEW PROFILE"
+        android:onClick="viewProfile"/>
+
+    <Button
         android:id="@+id/logoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/viewProfileButton"
         android:text="LOG OUT"
         android:onClick="logOut"/>
 

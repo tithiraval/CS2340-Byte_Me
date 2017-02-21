@@ -50,9 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
             CharSequence text = "Account Created";
             Toast accountCreated = Toast.makeText(RegistrationActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             accountCreated.show();
-            Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            RegistrationActivity.this.finish();
         }
     }
 

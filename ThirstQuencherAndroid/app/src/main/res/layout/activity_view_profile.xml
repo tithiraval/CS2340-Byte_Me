@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.anmol.thirstquencher.ViewProfileActivity">
+
+    <TextView
+        android:id="@+id/viewProfileUsernameTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Username:"/>
+    <TextView
+        android:id="@+id/viewProfileUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewProfileUsernameTextField"
+        android:layout_alignBottom="@+id/viewProfileUsernameTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewProfileHomeAddressTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewProfileUsernameTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Home Address:"/>
+    <TextView
+        android:id="@+id/viewProfileHomeAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewProfileHomeAddressTextField"
+        android:layout_alignBottom="@+id/viewProfileHomeAddressTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewProfileEmailAddressTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewProfileHomeAddressTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Email Address:"/>
+    <TextView
+        android:id="@+id/viewProfileEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewProfileEmailAddressTextField"
+        android:layout_alignBottom="@+id/viewProfileEmailAddressTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewProfileTitleTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewProfileEmailAddressTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Title:"/>
+    <TextView
+        android:id="@+id/viewProfileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewProfileTitleTextField"
+        android:layout_alignBottom="@+id/viewProfileTitleTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewProfileAccountTypeTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewProfileTitleTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Account Type:"/>
+    <TextView
+        android:id="@+id/viewProfileAccountType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewProfileAccountTypeTextField"
+        android:layout_alignBottom="@+id/viewProfileAccountTypeTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/viewProfileBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/viewProfileAccountTypeTextField"
+        android:text="Back"
+        android:onClick="back"/>
+
+</RelativeLayout>
