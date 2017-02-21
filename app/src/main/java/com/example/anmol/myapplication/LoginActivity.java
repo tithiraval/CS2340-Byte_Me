@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     @Override
+    int status = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
