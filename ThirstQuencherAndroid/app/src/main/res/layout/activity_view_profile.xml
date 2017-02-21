@@ -93,12 +93,21 @@
         android:textSize="16dp"/>
 
     <Button
-        android:id="@+id/viewProfileBackButton"
+        android:id="@+id/viewProfileChangePasswordButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_below="@+id/viewProfileAccountTypeTextField"
-        android:text="Back"
+        android:text="CHANGE PASSWORD"
+        android:onClick="changePasswordRequest"/>
+
+    <Button
+        android:id="@+id/viewProfileBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/viewProfileChangePasswordButton"
+        android:text="BACK"
         android:onClick="back"/>
 
 </RelativeLayout>

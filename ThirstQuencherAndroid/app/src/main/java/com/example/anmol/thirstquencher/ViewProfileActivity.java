@@ -1,5 +1,6 @@
 package com.example.anmol.thirstquencher;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,5 +38,11 @@ public class ViewProfileActivity extends AppCompatActivity {
 
     public void back(View view) {
         ViewProfileActivity.this.finish();
+    }
+
+    public void changePasswordRequest(View view) {
+        Intent intent = new Intent(ViewProfileActivity.this, ChangePasswordActivity.class);
+        intent.putExtra("USERNAME", user.getUsername());
+        startActivity(intent);
     }
 }
