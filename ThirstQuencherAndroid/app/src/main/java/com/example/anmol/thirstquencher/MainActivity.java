@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
-    public static HashMap<String, String> userpasswords = new HashMap<String, String>();
+    public static HashMap<String, User> userAccounts = new HashMap<String, User>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

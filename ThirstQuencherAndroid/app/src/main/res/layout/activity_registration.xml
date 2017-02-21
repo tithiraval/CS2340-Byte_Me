@@ -21,11 +21,20 @@
         android:layout_below="@+id/registerUsername"
         android:inputType="textPassword"
         android:hint = "Enter Password"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerPassword"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/registerSpinner" />
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/registerPassword"
+        android:layout_below="@+id/registerSpinner"
         android:layout_alignParentStart="true"
         android:text="REGISTER"
         android:onClick="register"/>

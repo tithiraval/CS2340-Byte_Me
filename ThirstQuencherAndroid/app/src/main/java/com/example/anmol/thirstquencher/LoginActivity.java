@@ -9,10 +9,16 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private EditText usernameEditText;
+    private EditText passwordEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        usernameEditText = (EditText) findViewById(R.id.enterUsername);
+        passwordEditText = (EditText) findViewById(R.id.enterPassword);
     }
 
     public void cancel(View view) {
@@ -20,10 +26,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginApp(View view) {
-        String username = ((EditText) findViewById(R.id.enterUsername)).getText().toString();
-        String password = ((EditText) findViewById(R.id.enterPassword)).getText().toString();
+        String username = usernameEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
 
-        if (MainActivity.userpasswords.containsKey(username) && password.equals(MainActivity.userpasswords.get(username))) {
+        if (MainActivity.userAccounts.containsKey(username) && password.equals(MainActivity.userAccounts.get(username).getPassword())) {
             Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
