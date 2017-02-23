@@ -16,6 +16,11 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/**
+ * Main controller for the app
+ * @author Byte_Me (Team 10)
+ * @version 2/20/17
+ */
 public class MainActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
@@ -56,20 +61,36 @@ public class MainActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
+    /**
+     * Method for logging into the app
+     * @param view The view for logging in
+     */
     public void login(View view) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Initiates registration when called
+     * @param view The view for registering
+     */
     public void startRegistration(View view) {
         Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Prompts login screen for facebook when called
+     * @param view The view for logging into facebook
+     */
     public void facebookLogin(View view) {
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
     }
 
+    /**
+     * Checks whether the user is logged in
+     * @return True if the user is logged in; false if the user is not
+     */
     public static boolean isLoggedIn() {
         return AccessToken.getCurrentAccessToken() != null;
     }

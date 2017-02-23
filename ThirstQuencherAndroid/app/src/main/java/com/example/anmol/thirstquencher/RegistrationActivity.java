@@ -9,6 +9,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+/**
+ * Controller for Registration
+ * @author Byte_Me (Team 10)
+ * @version 2/20/17
+ */
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText usernameEditText;
@@ -29,6 +34,10 @@ public class RegistrationActivity extends AppCompatActivity {
         userTypeSpinner.setAdapter(adapter);
     }
 
+    /**
+     * Checks the entered user name and password for restrictions
+     * @param view View for registration screen
+     */
     public void register(View view) {
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
@@ -54,6 +63,12 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Creates the user if the restrictions from register method are met
+     * @param username The user name of the new user
+     * @param password The password of the new user
+     * @param typeOfUser The account type of the new user
+     */
     public void createUser(String username, String password, String typeOfUser) {
         if (typeOfUser.equals("Manager")) {
             MainActivity.userAccounts.put(username, new Manager(username, password));
@@ -66,6 +81,10 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Cancels the registration activity if the user presses cancel
+     * @param view The view of the registration screen
+     */
     public void cancelRegistration(View view) {
         RegistrationActivity.this.finish();
     }

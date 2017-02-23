@@ -10,10 +10,12 @@ public class Worker extends GeneralUser {
         super.setAccountType(UserType.WORKER);
     }
 
+    @Override
     protected void setAccountType(UserType accountType) {
         super.setAccountType(accountType);
     }
 
+    @Override
     public UserType getAccountType() {
         return super.getAccountType();
     }
