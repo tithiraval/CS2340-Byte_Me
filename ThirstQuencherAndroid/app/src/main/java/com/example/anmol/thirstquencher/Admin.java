@@ -2,8 +2,8 @@ package com.example.anmol.thirstquencher;
 
 /**
  * The admin user class
- * @author Byte_Me (Team 10)
- * @version 1.0
+ * @author Anmol
+ * @version 2/20/17
  */
 public class Admin extends User {
 
@@ -17,18 +17,12 @@ public class Admin extends User {
         super.setAccountType(UserType.ADMIN);
     }
 
-    /**
-     * Sets the account type of the user
-     * @param accountType the account type to set the user to
-     */
+    @Override
     protected void setAccountType(UserType accountType) {
         super.setAccountType(accountType);
     }
 
-    /**
-     * Gets the type of the user
-     * @return the account type
-     */
+    @Override
     public UserType getAccountType() {
         return super.getAccountType();
     }
