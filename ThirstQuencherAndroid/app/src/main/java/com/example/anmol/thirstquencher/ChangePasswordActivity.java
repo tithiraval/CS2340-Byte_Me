@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 /**
  * The class for changing a user's password
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public class ChangePasswordActivity extends AppCompatActivity {

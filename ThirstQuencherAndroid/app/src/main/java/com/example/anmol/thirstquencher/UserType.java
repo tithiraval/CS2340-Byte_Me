@@ -2,7 +2,7 @@ package com.example.anmol.thirstquencher;
 
 /**
  * The type that a user can be
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public enum UserType {

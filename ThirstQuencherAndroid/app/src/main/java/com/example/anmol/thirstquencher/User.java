@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Implementation of the user class
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public abstract class User {

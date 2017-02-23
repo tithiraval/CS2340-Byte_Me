@@ -9,7 +9,7 @@ import com.facebook.login.LoginManager;
 
 /**
  * The controller for the Home Screen
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public class HomeScreenActivity extends AppCompatActivity {

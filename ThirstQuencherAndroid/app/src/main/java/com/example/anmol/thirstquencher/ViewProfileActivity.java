@@ -10,7 +10,7 @@ import org.w3c.dom.Text;
 
 /**
  * Controller for viewing profile
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public class ViewProfileActivity extends AppCompatActivity {

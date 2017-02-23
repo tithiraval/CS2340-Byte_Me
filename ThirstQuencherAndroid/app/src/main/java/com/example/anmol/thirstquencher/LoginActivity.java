@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 /**
  * The controller for logging in
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public class LoginActivity extends AppCompatActivity {

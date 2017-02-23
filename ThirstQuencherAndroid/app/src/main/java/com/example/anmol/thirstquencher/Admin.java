@@ -2,7 +2,7 @@ package com.example.anmol.thirstquencher;
 
 /**
  * The admin user class
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public class Admin extends User {

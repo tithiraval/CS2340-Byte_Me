@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 /**
  * Controller for Registration
- * @author Byte_Me (Team 10)
+ * @author Anmol
  * @version 2/20/17
  */
 public class RegistrationActivity extends AppCompatActivity {
