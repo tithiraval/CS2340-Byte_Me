@@ -19,19 +19,19 @@ class User: NSObject {
         self.accountType = accountType
     }
     
-    private func getName() -> String {
+    func getName() -> String {
         return name
     }
     
-    private func getID() -> String {
+    func getID() -> String {
         return id
     }
     
-    private func getPassword() -> String {
+    func getPassword() -> String {
         return password
     }
     
-    private func getAccountType() -> AccountType {
+    func getAccountType() -> AccountType {
         return accountType
     }
     
