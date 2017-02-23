@@ -8,15 +8,24 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var pass: UITextField!
     @IBOutlet weak var confirmPass: UITextField!
+    @IBOutlet weak var accountType: UIPickerView!
+    
+    var accountTypeData: [String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.accountType.delegate = self
+        self.accountType.dataSource = self
+        
+        accountTypeData = ["User", "Worker", "Admin", "Manager"]
     }
 
     override func didReceiveMemoryWarning() {
