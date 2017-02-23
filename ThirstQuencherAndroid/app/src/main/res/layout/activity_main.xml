@@ -19,6 +19,7 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="LOGIN"
         android:layout_below="@+id/text1"
         android:onClick="login"/>
@@ -28,8 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="24dp"
         android:layout_below="@id/login"
         android:onClick="facebookLogin"/>
     <Button
