@@ -29,6 +29,16 @@ public class ViewProfileActivity extends AppCompatActivity {
         titleText = (TextView) findViewById(R.id.viewProfileTitle);
         accountTypeText = (TextView) findViewById(R.id.viewProfileAccountType);
 
+//        usernameText.setText(user.getUsername());
+//        homeAddressText.setText(user.getHomeAddress());
+//        emailAddressText.setText(user.getEmailAddress());
+//        titleText.setText(user.getTitle());
+//        accountTypeText.setText(user.getAccountType().toString());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         usernameText.setText(user.getUsername());
         homeAddressText.setText(user.getHomeAddress());
         emailAddressText.setText(user.getEmailAddress());
@@ -36,13 +46,19 @@ public class ViewProfileActivity extends AppCompatActivity {
         accountTypeText.setText(user.getAccountType().toString());
     }
 
-    public void back(View view) {
-        ViewProfileActivity.this.finish();
+    public void editProfileRequest(View view) {
+        Intent intent = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
+        intent.putExtra("USERNAME", user.getUsername());
+        startActivity(intent);
     }
 
     public void changePasswordRequest(View view) {
         Intent intent = new Intent(ViewProfileActivity.this, ChangePasswordActivity.class);
         intent.putExtra("USERNAME", user.getUsername());
         startActivity(intent);
+    }
+
+    public void back(View view) {
+        ViewProfileActivity.this.finish();
     }
 }
