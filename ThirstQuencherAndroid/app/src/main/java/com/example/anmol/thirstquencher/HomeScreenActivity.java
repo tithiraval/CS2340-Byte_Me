@@ -7,6 +7,11 @@ import android.view.View;
 
 import com.facebook.login.LoginManager;
 
+/**
+ * The controller for the Home Screen
+ * @author Anmol
+ * @version 2/20/17
+ */
 public class HomeScreenActivity extends AppCompatActivity {
 
     private User user;
@@ -19,12 +24,20 @@ public class HomeScreenActivity extends AppCompatActivity {
         user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
     }
 
+    /**
+     * Method for viewing a user's profile information
+     * @param view The view for the view profile screen
+     */
     public void viewProfile(View view) {
         Intent intent = new Intent(HomeScreenActivity.this, ViewProfileActivity.class);
         intent.putExtra("USERNAME", user.getUsername());
         startActivity(intent);
     }
 
+    /**
+     * Method for logging out of the app
+     * @param view The screen view
+     */
     public void logOut(View view) {
         if (MainActivity.isLoggedIn()) {
             LoginManager.getInstance().logOut();

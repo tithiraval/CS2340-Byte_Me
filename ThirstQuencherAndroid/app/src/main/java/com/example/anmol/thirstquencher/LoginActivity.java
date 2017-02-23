@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * The controller for logging in
+ * @author Anmol
+ * @version 2/20/17
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameEditText;
@@ -21,10 +26,18 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = (EditText) findViewById(R.id.enterPassword);
     }
 
+    /**
+     * Retruns to the previous screen if user presses cancel
+     * @param view The view for this method
+     */
     public void cancel(View view) {
         LoginActivity.this.finish();
     }
 
+    /**
+     * Checks whether the entered username and password are in the system
+     * @param view The view for loggin in
+     */
     public void loginApp(View view) {
         String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
