@@ -12,6 +12,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var pass: UITextField!
+    @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var confirmPass: UITextField!
     @IBOutlet weak var accountType: UIPickerView!
     
@@ -23,9 +24,18 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         // Do any additional setup after loading the view.
         
         self.accountType.delegate = self
+        
         self.accountType.dataSource = self
         
         accountTypeData = ["User", "Worker", "Admin", "Manager"]
+    }
+    
+    @IBAction func onRegister(_ sender: UIButton) {
+        let user = username.text
+        let password = pass.text
+        let name = Name.text
+        let confirm = confirmPass.text
+        let accountType = 
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +43,17 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return accountTypeData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return accountTypeData[row]
+    }
 
     /*
     // MARK: - Navigation
