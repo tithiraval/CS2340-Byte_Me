@@ -1,6 +1,8 @@
 package com.example.anmol.thirstquencher;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Source Report class to hold a report
@@ -9,6 +11,10 @@ import java.util.Date;
  */
 
 public class SourceReport {
+    public static List<String> legalWaterTypes = Arrays.asList("Bottled", "Well", "Stream", "Lake",
+            "Spring", "Other");
+    public static List<String> legalWaterConditions = Arrays.asList("Waste", "Treatable-Clear",
+            "Treatable-Muddy", "Portable");
     private static int currentReportNumber = 0;
     private Date dateTime;
     private int reportNumber;
@@ -23,10 +29,10 @@ public class SourceReport {
      * @param type source of water
      * @param condition condition the water is in
      */
-    SourceReport(String username, WaterType type, WaterCondition condition) {
-        dateTime = new Date();
-        this.location = "";
-        reportNumber = SourceReport.currentReportNumber;
+    SourceReport(String username, String location, WaterType type, WaterCondition condition) {
+        this.dateTime = new Date();
+        this.location = location;
+        this.reportNumber = SourceReport.currentReportNumber;
         SourceReport.currentReportNumber++;
         this.username = username;
         this.type = type;

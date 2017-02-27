@@ -1,6 +1,7 @@
 package com.example.anmol.thirstquencher;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
+    }
+
+    public void createReport(View view) {
+        Intent intent = new Intent(HomeScreenActivity.this, CreateReportActivity.class);
+        intent.putExtra("USERNAME", user.getUsername());
+        startActivity(intent);
     }
 
     /**

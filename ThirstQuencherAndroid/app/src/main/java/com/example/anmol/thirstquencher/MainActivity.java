@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Main controller for the app
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
     public static HashMap<String, User> userAccounts = new HashMap<String, User>();
+    public static Set<SourceReport> waterReports = new HashSet<SourceReport>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
