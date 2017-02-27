@@ -76,7 +76,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bUH-QR-mRl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oHS-UJ-RxC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxt-aZ-lAF">
@@ -165,7 +165,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xRY-Tc-PYX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n1n-hD-V9Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.47250562906265259" green="0.8008769154548645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -175,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="3285.5999999999999" y="-638.2308845577212"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Logged in Navigation Controller-->
         <scene sceneID="4dF-ot-AYa">
             <objects>
-                <navigationController id="0iD-Rd-zcw" sceneMemberID="viewController">
+                <navigationController title="Logged in Navigation Controller" id="0iD-Rd-zcw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -324,7 +324,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83J-iR-0hR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-br-pZd">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-br-pZd" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8LH-R8-N0X">
@@ -462,6 +462,9 @@
                                             <constraint firstItem="uUu-5n-KzM" firstAttribute="trailing" secondItem="7yM-BC-EC1" secondAttribute="trailing" id="vOj-FO-tPY"/>
                                             <constraint firstItem="oJ3-tf-iad" firstAttribute="leading" secondItem="NZH-br-pZd" secondAttribute="leading" constant="31" id="vZO-dL-y5f"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="userTappedBackgroundWithSender:" destination="XcR-ww-1HZ" eventType="touchDown" id="kjo-xw-GZj"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -500,7 +503,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="89t-1l-iv8"/>
+        <segue reference="WMn-4A-Owb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -65,14 +65,14 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         confirmAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         let userAlert = UIAlertController(title: "User Error", message: "User already exists.", preferredStyle: UIAlertControllerStyle.alert)
         userAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        if (selectedAccountType == "User") {
-            accountType = AccountType.USER
+        if (selectedAccountType == "Manager") {
+            accountType = AccountType.MANAGER
         } else if (selectedAccountType == "Worker") {
             accountType = AccountType.WORKER
         } else if (selectedAccountType == "Admin") {
             accountType = AccountType.ADMIN
         } else {
-            accountType = AccountType.MANAGER
+            accountType = AccountType.USER
         }
         
         let registerConfirmed = UIAlertController(title: "Registration confirmed!", message: "Person was registered in the system.", preferredStyle: UIAlertControllerStyle.alert)
@@ -91,6 +91,10 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         } else {
             self.present(userAlert, animated: true, completion:nil)
         }
+    }
+    
+    @IBAction func userTappedBackground(sender: AnyObject) {
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
