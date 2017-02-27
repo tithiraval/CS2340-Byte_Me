@@ -9,97 +9,122 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.anmol.thirstquencher.EditProfileActivity">
 
-    <TextView
-        android:id="@+id/editProfileUsernameTextField"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/editProfileRow1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="Username:"/>
-    <TextView
-        android:id="@+id/editProfileUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/editProfileUsernameTextField"
-        android:layout_alignBottom="@+id/editProfileUsernameTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
 
-    <TextView
-        android:id="@+id/editProfileHomeAddressTextField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editProfileUsernameTextField"
-        android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Home Address:"/>
-    <EditText
-        android:id="@+id/editProfileHomeAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/editProfileHomeAddressTextField"
-        android:layout_alignTop="@+id/editProfileHomeAddressTextField"
-        android:layout_alignBottom="@+id/editProfileHomeAddressTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        <TextView
+            android:id="@+id/editProfileUsernameTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Username:"/>
 
-    <TextView
-        android:id="@+id/editProfileEmailAddressTextField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editProfileHomeAddressTextField"
-        android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Email Address:"/>
-    <EditText
-        android:id="@+id/editProfileEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/editProfileEmailAddressTextField"
-        android:layout_alignBottom="@+id/editProfileEmailAddressTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        <TextView
+            android:id="@+id/editProfileUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="16dp"/>
 
-    <TextView
-        android:id="@+id/editProfileTitleTextField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editProfileEmailAddressTextField"
-        android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Title:"/>
-    <EditText
-        android:id="@+id/editProfileTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/editProfileTitleTextField"
-        android:layout_alignTop="@+id/editProfileTitleTextField"
-        android:layout_alignBottom="@+id/editProfileTitleTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/editProfileAccountTypeTextField"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/editProfileRow2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editProfileTitleTextField"
-        android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Account Type:"/>
-    <TextView
-        android:id="@+id/editProfileAccountType"
-        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/editProfileRow1"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/editProfileHomeAddressTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Home Address:"/>
+        <EditText
+            android:id="@+id/editProfileHomeAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editProfileRow3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/editProfileAccountTypeTextField"
-        android:layout_alignBottom="@+id/editProfileAccountTypeTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:orientation="horizontal"
+        android:layout_below="@+id/editProfileRow2"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/editProfileEmailAddressTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Email Address:"/>
+        <EditText
+            android:id="@+id/editProfileEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editProfileRow4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/editProfileRow3"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:id="@+id/editProfileTitleTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Title:"/>
+        <EditText
+            android:id="@+id/editProfileTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editProfileRow5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/editProfileRow4"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:id="@+id/editProfileAccountTypeTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Account Type:"/>
+        <TextView
+            android:id="@+id/editProfileAccountType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="16dp"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/editProfileSaveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_below="@+id/editProfileAccountTypeTextField"
+        android:layout_below="@+id/editProfileRow5"
         android:text="SAVE"
         android:onClick="editProfileSaveRequest"/>
 
