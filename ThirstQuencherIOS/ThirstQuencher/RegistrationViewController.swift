@@ -75,17 +75,32 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             accountType = AccountType.MANAGER
         }
         
+        let registerConfirmed = UIAlertController(title: "Registration confirmed!", message: "Person was registered in the system.", preferredStyle: UIAlertControllerStyle.alert)
+        registerConfirmed.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        registerConfirmed.addAction(UIAlertAction(title: "Sign In", style: UIAlertActionStyle.default, handler: { action in
+            self.performSegue(withIdentifier: "showSignIn", sender: nil)
+        }))
+        
         
         if (user == "" || password == "" || name == "") {
             self.present(nullAlert, animated: true, completion:nil)
         } else if (password != confirm) {
             self.present(confirmAlert, animated: true, completion:nil)
         } else if (Model.sharedInstance.addUser(name: name!, id: user!, password: password!, accountType: accountType)) {
-            self.performSegue(withIdentifier: "showSignIn", sender: nil)
+            self.present(registerConfirmed, animated: true, completion:nil)
         } else {
             self.present(userAlert, animated: true, completion:nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showSignIn") {
+            if let destinationVC = segue.destination as? SignInViewController {
+                destinationVC.navigationItem.setHidesBackButton(true, animated: true)
+            }
+        }
+    }
+
 
     /*
     // MARK: - Navigation

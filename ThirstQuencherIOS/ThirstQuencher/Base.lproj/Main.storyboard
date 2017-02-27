@@ -55,7 +55,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mpO-9E-cOh" kind="show" id="RMr-VB-fgD"/>
+                                    <segue destination="XcR-ww-1HZ" kind="show" id="OC1-oa-l7w"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +76,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bUH-QR-mRl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oHS-UJ-RxC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxt-aZ-lAF">
@@ -149,7 +149,7 @@
                         <outlet property="loginButton" destination="RKR-7l-r3y" id="Iaw-Zc-HYB"/>
                         <outlet property="passTextField" destination="5PX-gg-eBW" id="CDn-zV-KA5"/>
                         <outlet property="usernameTextField" destination="XcY-hz-yXf" id="u8C-10-JTT"/>
-                        <segue destination="RId-K2-Myy" kind="show" identifier="toSuccessfulLogin" id="vkf-wt-k64"/>
+                        <segue destination="0iD-Rd-zcw" kind="show" identifier="toSuccessfulLogin" id="fE7-h5-jhU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYl-4P-bDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,14 +165,36 @@
                         <viewControllerLayoutGuide type="bottom" id="xRY-Tc-PYX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n1n-hD-V9Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.47250562906265259" green="0.8008769154548645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Successful Login" id="TiW-BW-J3U"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z82-Y3-yHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2862" y="-443"/>
+            <point key="canvasLocation" x="3285.5999999999999" y="-638.2308845577212"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4dF-ot-AYa">
+            <objects>
+                <navigationController id="0iD-Rd-zcw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dpA-Su-eQo">
+                        <rect key="frame" x="0.0" y="706" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="RId-K2-Myy" kind="relationship" relationship="rootViewController" id="YXT-qk-Z6S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXP-7n-291" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="-638"/>
         </scene>
         <!--Social Media-->
         <scene sceneID="4j8-2k-xqD">
@@ -222,9 +244,6 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="0.47250562909999999" green="0.80087691549999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="RId-K2-Myy" kind="show" id="xcg-lK-a0W"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -248,9 +267,6 @@
                                         <state key="normal" title="No Thanks">
                                             <color key="titleColor" red="0.47250562909999999" green="0.80087691549999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="XcR-ww-1HZ" kind="show" id="EfQ-MH-bmO"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -291,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4e-1X-An1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="140"/>
+            <point key="canvasLocation" x="-863" y="176"/>
         </scene>
         <!--Register-->
         <scene sceneID="b0w-dX-4IW">
@@ -480,12 +496,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCI-jt-PT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="139"/>
+            <point key="canvasLocation" x="766" y="213"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WMn-4A-Owb"/>
-        <segue reference="vkf-wt-k64"/>
+        <segue reference="89t-1l-iv8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
