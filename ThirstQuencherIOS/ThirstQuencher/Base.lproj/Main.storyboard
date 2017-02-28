@@ -191,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L4-XR-JE6">
-                                <rect key="frame" x="184" y="360" width="46" height="308"/>
+                                <rect key="frame" x="164" y="221" width="46" height="308"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -210,23 +210,249 @@
             </objects>
             <point key="canvasLocation" x="2252" y="-652"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Screen-->
         <scene sceneID="dSu-Uo-eCR">
             <objects>
-                <viewController id="7I8-Jj-k3r" sceneMemberID="viewController">
+                <viewController title="Main Screen" id="7I8-Jj-k3r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="As1-b7-FTU"/>
                         <viewControllerLayoutGuide type="bottom" id="0H3-vt-6jo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="y3k-6O-ZsV">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="y3k-6O-ZsV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-cR-Pm3">
+                                <rect key="frame" x="43" y="169" width="288" height="58"/>
+                                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="UqU-LX-Gdo"/>
+                                    <constraint firstAttribute="height" constant="58" id="fhR-KF-xNF"/>
+                                </constraints>
+                                <state key="normal" title="Submit New Water Report">
+                                    <color key="titleColor" red="0.4931797981262207" green="0.80496084690093994" blue="0.99671119451522827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bx4-Qt-LXB" kind="show" id="NIn-tj-wdU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-uV-zr5">
+                                <rect key="frame" x="43" y="346" width="288" height="58"/>
+                                <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="8Vn-Vg-b9V"/>
+                                    <constraint firstAttribute="height" constant="58" id="Eau-o3-Dx1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="P3o-15-JMx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="Vxx-jb-wdy"/>
+                                </constraints>
+                                <state key="normal" title="View All Water Reports">
+                                    <color key="titleColor" red="0.49317979810000001" green="0.80496084690000003" blue="0.99671119450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47250562906265259" green="0.8008769154548645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TRO-cR-Pm3" firstAttribute="leading" secondItem="y3k-6O-ZsV" secondAttribute="leadingMargin" constant="28" id="11j-zY-hdS"/>
+                            <constraint firstItem="wkf-uV-zr5" firstAttribute="leading" secondItem="y3k-6O-ZsV" secondAttribute="leadingMargin" constant="28" id="4xH-sp-790"/>
+                            <constraint firstItem="TRO-cR-Pm3" firstAttribute="top" secondItem="As1-b7-FTU" secondAttribute="bottom" constant="105" id="dhx-fk-6i6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TRO-cR-Pm3" secondAttribute="trailing" constant="28" id="gou-cX-ZZj"/>
+                            <constraint firstItem="wkf-uV-zr5" firstAttribute="top" secondItem="TRO-cR-Pm3" secondAttribute="bottom" constant="119" id="pQX-Ge-mJw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wkf-uV-zr5" secondAttribute="trailing" constant="28" id="zIi-a9-Omj"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Se-CK-84M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3071" y="-651"/>
+            <point key="canvasLocation" x="3069.5999999999999" y="-651.2743628185907"/>
+        </scene>
+        <!--Submit Report-->
+        <scene sceneID="N2T-6B-rM4">
+            <objects>
+                <viewController title="Submit Report" id="bx4-Qt-LXB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ff9-bY-H58"/>
+                        <viewControllerLayoutGuide type="bottom" id="c5X-PV-Syo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FaY-Qy-FsD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aPL-HX-MUe">
+                                <rect key="frame" x="0.0" y="127" width="320" height="216"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DET-mV-tx8">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="YjE-sn-fjj"/>
+                                            <constraint firstAttribute="width" constant="320" id="snV-Gy-BeJ"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="510013361.886244">
+                                            <!--2017-02-28 22:22:41 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DET-mV-tx8" firstAttribute="top" secondItem="aPL-HX-MUe" secondAttribute="top" constant="15" id="cdW-bi-6wn"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OcC-oy-naA">
+                                <rect key="frame" x="37" y="98" width="85" height="21"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TS2-xY-IBx">
+                                        <rect key="frame" x="0.0" y="0.0" width="84.5" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCE-9F-k9k">
+                                                <rect key="frame" x="0.0" y="0.0" width="84.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Report Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkt-Wf-PqN">
+                                <rect key="frame" x="37" y="371" width="123" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="NO7-Pe-10N"/>
+                                    <constraint firstAttribute="height" constant="21" id="hNX-D2-BEG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="axS-dh-fBa">
+                                <rect key="frame" x="37" y="457" width="313" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Report Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-qd-hpZ">
+                                <rect key="frame" x="37" y="419" width="313" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zia-88-gCg"/>
+                                    <constraint firstAttribute="width" constant="313" id="bfi-0m-Td2"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Report Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSy-HZ-kxo">
+                                <rect key="frame" x="37" y="477" width="106" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="doz-8j-hAh"/>
+                                    <constraint firstAttribute="width" constant="123" id="zdM-Gp-VRa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Report Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="auS-b5-a72">
+                                <rect key="frame" x="37" y="525" width="313" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="L6X-zT-fdK"/>
+                                    <constraint firstAttribute="height" constant="30" id="Viw-fx-83O"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location of Water:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlG-FB-jLb">
+                                <rect key="frame" x="37" y="586" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="4T3-qD-ahs"/>
+                                    <constraint firstAttribute="height" constant="21" id="GRr-uq-yqR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address, City, State, Postal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzi-rR-63n">
+                                <rect key="frame" x="37" y="634" width="313" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="Wj2-Ru-4b9"/>
+                                    <constraint firstAttribute="height" constant="30" id="oPf-Yf-olu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47250562906265259" green="0.8008769154548645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vkt-Wf-PqN" firstAttribute="leading" secondItem="FaY-Qy-FsD" secondAttribute="leadingMargin" constant="31" id="5Hb-qo-FCD"/>
+                            <constraint firstItem="auS-b5-a72" firstAttribute="top" secondItem="wSy-HZ-kxo" secondAttribute="bottom" constant="15" id="C3m-fb-0Ae"/>
+                            <constraint firstItem="OcC-oy-naA" firstAttribute="leading" secondItem="FaY-Qy-FsD" secondAttribute="leadingMargin" constant="31" id="CjI-1g-CyS"/>
+                            <constraint firstItem="OcC-oy-naA" firstAttribute="top" secondItem="Ff9-bY-H58" secondAttribute="bottom" constant="31" id="OsT-PK-rSt"/>
+                            <constraint firstItem="zzi-rR-63n" firstAttribute="top" secondItem="IlG-FB-jLb" secondAttribute="bottom" constant="15" id="RZo-9v-EPw"/>
+                            <constraint firstItem="vkt-Wf-PqN" firstAttribute="top" secondItem="aPL-HX-MUe" secondAttribute="bottom" constant="31" id="fYW-wj-Ny3"/>
+                            <constraint firstItem="rNI-qd-hpZ" firstAttribute="top" secondItem="vkt-Wf-PqN" secondAttribute="bottom" constant="15" id="leZ-Ge-WrM"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="N2O-9G-heX"/>
+                        <barButtonItem title="Next Page &gt;" id="nI8-GO-Jzt">
+                            <connections>
+                                <segue destination="UDP-9w-VPv" kind="show" id="fxE-5M-daG"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGu-rL-MEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3952.8000000000002" y="-652.17391304347836"/>
+        </scene>
+        <!--Submit Report 2-->
+        <scene sceneID="FyF-SC-QYE">
+            <objects>
+                <viewController title="Submit Report 2" id="UDP-9w-VPv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FPA-rU-EDP"/>
+                        <viewControllerLayoutGuide type="bottom" id="z5f-Vv-zkg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="21e-8l-GOm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-kT-Kdp">
+                                <rect key="frame" x="0.0" y="145" width="375" height="216"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ckm-A1-Y6C">
+                                <rect key="frame" x="0.0" y="411" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Water:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9b-eg-7k9">
+                                <rect key="frame" x="47" y="95" width="112" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1e0-VL-zfY"/>
+                                    <constraint firstAttribute="width" constant="112" id="uLF-wy-eU5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Condition of Water:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1x-g5-MHr">
+                                <rect key="frame" x="47" y="382" width="148" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="dwA-mC-gCk"/>
+                                    <constraint firstAttribute="height" constant="21" id="x9t-jW-eYs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47250562906265259" green="0.8008769154548645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q9b-eg-7k9" firstAttribute="leading" secondItem="21e-8l-GOm" secondAttribute="leadingMargin" constant="31" id="5sA-f8-OgN"/>
+                            <constraint firstItem="Q9b-eg-7k9" firstAttribute="top" secondItem="FPA-rU-EDP" secondAttribute="bottom" constant="31" id="J1z-UH-AxG"/>
+                            <constraint firstItem="v1x-g5-MHr" firstAttribute="top" secondItem="Imk-kT-Kdp" secondAttribute="bottom" constant="31" id="e0T-MT-Dyo"/>
+                            <constraint firstItem="v1x-g5-MHr" firstAttribute="leading" secondItem="21e-8l-GOm" secondAttribute="leadingMargin" constant="31" id="hdR-4y-Vic"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zr-iO-Tez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4799" y="-652"/>
         </scene>
         <!--Logged in Navigation Controller-->
         <scene sceneID="4dF-ot-AYa">
