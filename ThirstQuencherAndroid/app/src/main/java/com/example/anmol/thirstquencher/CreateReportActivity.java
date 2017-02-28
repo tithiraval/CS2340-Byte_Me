@@ -8,6 +8,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+/**
+ * The controller for creating a water report
+ * @author Anmol
+ * @version 2/20/17
+ */
 public class CreateReportActivity extends AppCompatActivity {
 
     private User user;
@@ -34,6 +39,10 @@ public class CreateReportActivity extends AppCompatActivity {
         waterConditionSpinner.setAdapter(adapter2);
     }
 
+    /**
+     * Allows the user to submit a report if restrictions are met
+     * @param view The view for this screen
+     */
     public void submitReport(View view) {
         String locationText = location.getText().toString();
         if (locationText.equals("")) {
@@ -51,6 +60,11 @@ public class CreateReportActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Gets the type of the water source
+     * @param waterType The type of the water source
+     * @return
+     */
     private WaterType getWaterType(String waterType) {
         if (waterType.equals("Bottled")) {
             return WaterType.BOTTLED;

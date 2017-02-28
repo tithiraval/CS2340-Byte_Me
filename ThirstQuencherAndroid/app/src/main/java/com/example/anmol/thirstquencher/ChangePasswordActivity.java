@@ -27,6 +27,10 @@ public class ChangePasswordActivity extends AppCompatActivity {
         newPassword = (EditText) findViewById(R.id.changePasswordEnterNew);
     }
 
+    /**
+     * Changes the user's password if matches restrictions
+     * @param view The view for this screen
+     */
     public void confirmChangePassword(View view) {
 
         String currentPasswordText = currentPassword.getText().toString();
