@@ -159,7 +159,7 @@
         <!--Successful Login-->
         <scene sceneID="mwa-Tp-Z4R">
             <objects>
-                <viewController title="Successful Login" id="RId-K2-Myy" sceneMemberID="viewController">
+                <viewController title="Successful Login" id="RId-K2-Myy" customClass="LoggedInViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kgo-vP-uNA"/>
                         <viewControllerLayoutGuide type="bottom" id="xRY-Tc-PYX"/>
@@ -167,13 +167,44 @@
                     <view key="view" contentMode="scaleToFill" id="n1n-hD-V9Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L4-XR-JE6">
+                                <rect key="frame" x="184" y="360" width="46" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="7I8-Jj-k3r" kind="show" id="HW2-PL-gwv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.47250562906265259" green="0.8008769154548645" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Successful Login" id="TiW-BW-J3U"/>
+                    <connections>
+                        <segue destination="R2I-Cz-hN7" kind="show" identifier="logOutFromInitial" animates="NO" id="vaj-YK-V9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z82-Y3-yHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3285.5999999999999" y="-638.2308845577212"/>
+            <point key="canvasLocation" x="2252" y="-652"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dSu-Uo-eCR">
+            <objects>
+                <viewController id="7I8-Jj-k3r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="As1-b7-FTU"/>
+                        <viewControllerLayoutGuide type="bottom" id="0H3-vt-6jo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y3k-6O-ZsV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Se-CK-84M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3071" y="-651"/>
         </scene>
         <!--Logged in Navigation Controller-->
         <scene sceneID="4dF-ot-AYa">
@@ -194,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXP-7n-291" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378" y="-638"/>
+            <point key="canvasLocation" x="2252" y="-1421"/>
         </scene>
         <!--Social Media-->
         <scene sceneID="4j8-2k-xqD">
