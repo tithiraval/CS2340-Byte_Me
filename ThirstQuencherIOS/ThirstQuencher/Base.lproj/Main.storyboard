@@ -108,7 +108,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bUH-QR-mRl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oHS-UJ-RxC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XcY-hz-yXf">
@@ -181,7 +181,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xRY-Tc-PYX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n1n-hD-V9Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L4-XR-JE6">
@@ -213,11 +213,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0H3-vt-6jo"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="y3k-6O-ZsV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-cR-Pm3">
-                                <rect key="frame" x="62" y="278.5" width="250" height="50"/>
+                                <rect key="frame" x="62" y="320" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="AeV-bh-3F8"/>
@@ -231,7 +231,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-uV-zr5">
-                                <rect key="frame" x="62" y="338.5" width="250" height="50"/>
+                                <rect key="frame" x="62" y="380" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="KaQ-kD-DUw"/>
@@ -265,7 +265,7 @@
                         <viewControllerLayoutGuide type="bottom" id="c5X-PV-Syo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FaY-Qy-FsD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aPL-HX-MUe">
@@ -397,7 +397,7 @@
                         <viewControllerLayoutGuide type="bottom" id="z5f-Vv-zkg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="21e-8l-GOm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-kT-Kdp">
@@ -531,7 +531,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RM1-UD-CNC">
-                                                <rect key="frame" x="12.5" y="405" width="350" height="50"/>
+                                                <rect key="frame" x="12.5" y="315" width="350" height="50"/>
                                                 <color key="backgroundColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="BNG-IV-oxH"/>
@@ -546,32 +546,33 @@
                                                     <action selector="onRegister:" destination="XcR-ww-1HZ" eventType="touchUpInside" id="xfM-np-6m1"/>
                                                 </connections>
                                             </button>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUu-5n-KzM">
-                                                <rect key="frame" x="27.5" y="275" width="320" height="100"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7j-Nr-CWP">
+                                                <rect key="frame" x="12.5" y="250" width="350" height="50"/>
+                                                <color key="backgroundColor" red="0.94964378240000002" green="0.94964378240000002" blue="0.94964378240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="KPF-W5-X85"/>
+                                                    <constraint firstAttribute="width" constant="350" id="kcH-oL-rKz"/>
+                                                    <constraint firstAttribute="height" constant="50" id="nZC-7E-KbL"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="NZH-br-pZd" id="N98-N5-i8n"/>
-                                                    <outlet property="delegate" destination="NZH-br-pZd" id="noc-C3-S5V"/>
-                                                </connections>
-                                            </pickerView>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="RM1-UD-CNC" firstAttribute="top" secondItem="uUu-5n-KzM" secondAttribute="bottom" constant="30" id="DY6-tF-8w3"/>
                                             <constraint firstItem="RM1-UD-CNC" firstAttribute="centerX" secondItem="NZH-br-pZd" secondAttribute="centerX" id="OLG-Qb-xk8"/>
                                             <constraint firstItem="IIY-Ta-ss3" firstAttribute="centerX" secondItem="NZH-br-pZd" secondAttribute="centerX" id="OOn-fu-ntA"/>
-                                            <constraint firstItem="uUu-5n-KzM" firstAttribute="centerX" secondItem="NZH-br-pZd" secondAttribute="centerX" id="P5P-JD-7Tt"/>
+                                            <constraint firstItem="RM1-UD-CNC" firstAttribute="top" secondItem="m7j-Nr-CWP" secondAttribute="bottom" constant="15" id="QYP-dt-tGj"/>
+                                            <constraint firstItem="m7j-Nr-CWP" firstAttribute="top" secondItem="IIY-Ta-ss3" secondAttribute="bottom" constant="5" id="RhL-8t-vbb"/>
                                             <constraint firstItem="8LH-R8-N0X" firstAttribute="centerX" secondItem="NZH-br-pZd" secondAttribute="centerX" id="X8k-yM-fH7"/>
                                             <constraint firstItem="VIG-qh-l7d" firstAttribute="centerX" secondItem="NZH-br-pZd" secondAttribute="centerX" id="b36-fI-aWl"/>
-                                            <constraint firstItem="uUu-5n-KzM" firstAttribute="top" secondItem="IIY-Ta-ss3" secondAttribute="bottom" constant="30" id="fwN-0C-L3D"/>
                                             <constraint firstItem="U6A-wd-elg" firstAttribute="centerX" secondItem="NZH-br-pZd" secondAttribute="centerX" id="g3B-BW-59g"/>
                                             <constraint firstAttribute="height" constant="750" id="hA0-GN-CKD"/>
                                             <constraint firstItem="U6A-wd-elg" firstAttribute="top" secondItem="NZH-br-pZd" secondAttribute="top" constant="30" id="iD5-DV-bxM"/>
                                             <constraint firstItem="IIY-Ta-ss3" firstAttribute="top" secondItem="VIG-qh-l7d" secondAttribute="bottom" constant="5" id="nLA-v6-raP"/>
                                             <constraint firstItem="8LH-R8-N0X" firstAttribute="top" secondItem="U6A-wd-elg" secondAttribute="bottom" constant="5" id="ncm-dU-UeL"/>
                                             <constraint firstItem="VIG-qh-l7d" firstAttribute="top" secondItem="8LH-R8-N0X" secondAttribute="bottom" constant="5" id="o8M-C3-OOL"/>
+                                            <constraint firstItem="m7j-Nr-CWP" firstAttribute="centerX" secondItem="NZH-br-pZd" secondAttribute="centerX" id="zM8-b0-fXd"/>
                                         </constraints>
                                         <connections>
                                             <action selector="userTappedBackgroundWithSender:" destination="XcR-ww-1HZ" eventType="touchDown" id="kjo-xw-GZj"/>
@@ -601,7 +602,7 @@
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="Name" destination="U6A-wd-elg" id="cgd-Zi-Slj"/>
-                        <outlet property="accountType" destination="uUu-5n-KzM" id="6hJ-NI-NGh"/>
+                        <outlet property="accountTypeTextField" destination="m7j-Nr-CWP" id="Wsv-Ex-j9E"/>
                         <outlet property="confirmPass" destination="IIY-Ta-ss3" id="SL1-ak-ECe"/>
                         <outlet property="pass" destination="VIG-qh-l7d" id="0eD-aM-xEG"/>
                         <outlet property="username" destination="8LH-R8-N0X" id="tCS-IM-flq"/>
@@ -614,7 +615,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="89t-1l-iv8"/>
+        <segue reference="WMn-4A-Owb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
