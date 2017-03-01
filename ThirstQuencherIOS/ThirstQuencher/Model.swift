@@ -45,4 +45,12 @@ class Model {
         sourceReports.append(newReport)
         return true
     }
+    
+    func getCurrentUserName() -> String {
+        return currentUser!.getName()
+    }
+    
+    func getNewSourceReportNumber() -> Int {
+        return sourceReports.count + 1
+    }
 }

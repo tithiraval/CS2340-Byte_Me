@@ -97,14 +97,6 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBAction func userTappedBackground(sender: AnyObject) {
         view.endEditing(true)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showSignIn") {
-            if let destinationVC = segue.destination as? SignInViewController {
-                destinationVC.navigationItem.setHidesBackButton(true, animated: true)
-            }
-        }
-    }
 
 
     /*

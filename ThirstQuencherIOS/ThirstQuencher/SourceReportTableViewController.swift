@@ -10,6 +10,10 @@ import UIKit
 
 class SourceReportTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var locationTextField: UITextField!
+    
     @IBOutlet weak var waterTypeLabel: UILabel!
     @IBOutlet weak var waterConditionPicker: UIPickerView!
     @IBOutlet weak var waterConditionLabel: UILabel!
@@ -19,8 +23,10 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     
     var waterTypeData: [String] = [String]()
     var waterConditionData: [String] = [String]()
+    
 
     override func viewDidLoad() {
+        let cancelButton: UIBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(SourceReportTableViewController.cancelReport))
         
         super.viewDidLoad()
         datePickerChanged()
@@ -34,11 +40,17 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
         waterTypeData = ["Bottled", "Well", "Stream", "Lake", "Other"]
         waterConditionData = ["Waste", "Treatable-Clear", "Treatable-Muddy", "Potable"]
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        nameLabel.text = "Source Report #" + Model.sharedInstance.getCurrentUserName()
+        numberLabel.text = "Reported by " + String(Model.sharedInstance.getNewSourceReportNumber())
+        
+        self.navigationItem.leftBarButtonItem = cancelButton
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func cancelReport() {
+        self.performSegue(withIdentifier: "cancelNewSourceReport", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
