@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
 		E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */; };
+		E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF6981E668DBB00C29D17 /* SourceReport.swift */; };
+		E8ACF69B1E669E5E00C29D17 /* SourceReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */; };
 		E8D78F531E5F45CC00BF945B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F521E5F45CC00BF945B /* User.swift */; };
 		E8D78F551E5F47D200BF945B /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F541E5F47D200BF945B /* AccountType.swift */; };
 		E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F561E5F4A0F00BF945B /* Model.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
+		E8ACF6981E668DBB00C29D17 /* SourceReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReport.swift; sourceTree = "<group>"; };
+		E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReportTableViewController.swift; sourceTree = "<group>"; };
 		E8D78F521E5F45CC00BF945B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8D78F541E5F47D200BF945B /* AccountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 		E8D78F561E5F4A0F00BF945B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -71,13 +75,15 @@
 				E8D78F561E5F4A0F00BF945B /* Model.swift */,
 				E8E869661E54DC5C0049C764 /* SignInViewController.swift */,
 				AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */,
+				E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */,
 				E8D78F521E5F45CC00BF945B /* User.swift */,
+				E8ACF6981E668DBB00C29D17 /* SourceReport.swift */,
 				E8D78F541E5F47D200BF945B /* AccountType.swift */,
 				E8E869541E526E490049C764 /* Main.storyboard */,
 				E8E869571E526E490049C764 /* Assets.xcassets */,
 				E8E869591E526E490049C764 /* LaunchScreen.storyboard */,
 				E8E8695C1E526E490049C764 /* Info.plist */,
-				E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */,
+				E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */,
 			);
 			path = ThirstQuencher;
 			sourceTree = "<group>";
@@ -155,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8ACF69B1E669E5E00C29D17 /* SourceReportTableViewController.swift in Sources */,
 				E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */,
 				E8E869531E526E490049C764 /* ViewController.swift in Sources */,
+				E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */,
 				E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */,
 				E8D78F551E5F47D200BF945B /* AccountType.swift in Sources */,
 				E8E869511E526E490049C764 /* AppDelegate.swift in Sources */,
