@@ -374,7 +374,7 @@
 				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -388,7 +388,7 @@
 				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
