@@ -120,7 +120,7 @@
 				TargetAttributes = {
 					E8E8694C1E526E480049C764 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Q7KCFQXHAK;
+						DevelopmentTeam = FMK9XYHY3L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -291,10 +291,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Q7KCFQXHAK;
+				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -304,10 +304,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Q7KCFQXHAK;
+				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
