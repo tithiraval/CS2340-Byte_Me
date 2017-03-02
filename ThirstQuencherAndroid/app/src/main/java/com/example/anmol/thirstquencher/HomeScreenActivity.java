@@ -35,6 +35,11 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void viewReports(View view) {
+        Intent intent = new Intent(HomeScreenActivity.this, WaterReportListActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * Method for viewing a user's profile information
      * @param view The view for the view profile screen
@@ -50,9 +55,6 @@ public class HomeScreenActivity extends AppCompatActivity {
      * @param view The screen view
      */
     public void logOut(View view) {
-        if (MainActivity.isLoggedIn()) {
-            LoginManager.getInstance().logOut();
-        }
         Intent intent = new Intent(HomeScreenActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

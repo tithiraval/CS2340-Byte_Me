@@ -47,7 +47,9 @@
         <activity android:name=".ViewProfileActivity" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".EditProfileActivity" />
-        <activity android:name=".CreateReportActivity"></activity>
+        <activity android:name=".CreateReportActivity" />
+        <activity android:name=".WaterReportListActivity" />
+        <activity android:name=".ViewWaterReport"></activity>
     </application>
 
 </manifest>
