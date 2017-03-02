@@ -44,10 +44,15 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
         numberLabel.text = "Reported by " + String(Model.sharedInstance.getNewSourceReportNumber())
         
         self.navigationItem.leftBarButtonItem = cancelButton
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    @IBAction func onCancel(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
+    }
+
     
     func cancelReport() {
         self.performSegue(withIdentifier: "cancelNewSourceReport", sender: nil)
