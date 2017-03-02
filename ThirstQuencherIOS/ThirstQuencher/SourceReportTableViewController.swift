@@ -26,7 +26,6 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     
 
     override func viewDidLoad() {
-        let cancelButton: UIBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(SourceReportTableViewController.cancelReport))
         
         super.viewDidLoad()
         datePickerChanged()
@@ -43,19 +42,14 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
         nameLabel.text = "Source Report #" + Model.sharedInstance.getCurrentUserName()
         numberLabel.text = "Reported by " + String(Model.sharedInstance.getNewSourceReportNumber())
         
-        self.navigationItem.leftBarButtonItem = cancelButton
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
     }
-
     
-    func cancelReport() {
-        self.performSegue(withIdentifier: "cancelNewSourceReport", sender: nil)
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     override func didReceiveMemoryWarning() {
