@@ -39,9 +39,15 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
         waterTypeData = ["Bottled", "Well", "Stream", "Lake", "Other"]
         waterConditionData = ["Waste", "Treatable-Clear", "Treatable-Muddy", "Potable"]
 
-        nameLabel.text = "Source Report #" + Model.sharedInstance.getCurrentUserName()
-        numberLabel.text = "Reported by " + String(Model.sharedInstance.getNewSourceReportNumber())
+        nameLabel.text = "Source Report #" + String(Model.sharedInstance.getNewSourceReportNumber())
+        numberLabel.text = "Reported by " + Model.sharedInstance.getCurrentUserName()
         
+    }
+    
+    @IBAction func onAdd(_ sender: UIBarButtonItem) {
+        if (Model.sharedInstance.addNewReport(date: datePicker.date, location: locationTextField.text!, waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!)) {
+            self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
+        }
     }
     
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
