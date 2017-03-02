@@ -33,12 +33,6 @@ public class ViewProfileActivity extends AppCompatActivity {
         emailAddressText = (TextView) findViewById(R.id.viewProfileEmailAddress);
         titleText = (TextView) findViewById(R.id.viewProfileTitle);
         accountTypeText = (TextView) findViewById(R.id.viewProfileAccountType);
-
-//        usernameText.setText(user.getUsername());
-//        homeAddressText.setText(user.getHomeAddress());
-//        emailAddressText.setText(user.getEmailAddress());
-//        titleText.setText(user.getTitle());
-//        accountTypeText.setText(user.getAccountType().toString());
     }
 
     @Override

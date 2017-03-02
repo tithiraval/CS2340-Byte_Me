@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.anmol.thirstquencher.ViewWaterReport">
+
+    <TextView
+        android:id="@+id/viewWaterReportNumberTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Report ID:"/>
+    <TextView
+        android:id="@+id/viewWaterReportNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewWaterReportNumberTextField"
+        android:layout_alignBottom="@+id/viewWaterReportNumberTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewWaterReportDateTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewWaterReportNumberTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Date Submitted:"/>
+    <TextView
+        android:id="@+id/viewWaterReportDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewWaterReportDateTextField"
+        android:layout_alignBottom="@+id/viewWaterReportDateTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewWaterReportUsernameTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewWaterReportDateTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Email Address:"/>
+    <TextView
+        android:id="@+id/viewWaterReportUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewWaterReportUsernameTextField"
+        android:layout_alignBottom="@+id/viewWaterReportUsernameTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewWaterReportLocationTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewWaterReportUsernameTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Title:"/>
+    <TextView
+        android:id="@+id/viewWaterReportLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewWaterReportLocationTextField"
+        android:layout_alignBottom="@+id/viewWaterReportLocationTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/viewWaterReportTypeTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewWaterReportLocationTextField"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:text="Account Type:"/>
+    <TextView
+        android:id="@+id/viewWaterReportType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewWaterReportTypeTextField"
+        android:layout_alignBottom="@+id/viewWaterReportTypeTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/viewWaterReportBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/viewWaterReportTypeTextField"
+        android:text="BACK"
+        android:onClick="viewWaterReportBack"/>
+
+</RelativeLayout>

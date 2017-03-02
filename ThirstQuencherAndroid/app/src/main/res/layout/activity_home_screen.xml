@@ -17,11 +17,20 @@
         android:onClick="createReport"/>
 
     <Button
-        android:id="@+id/viewProfileButton"
+        android:id="@+id/viewReportsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_below="@+id/createReportButton"
+        android:text="VIEW REPORTS"
+        android:onClick="viewReports"/>
+
+    <Button
+        android:id="@+id/viewProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/viewReportsButton"
         android:text="VIEW PROFILE"
         android:onClick="viewProfile"/>
 

@@ -41,7 +41,7 @@ public class CreateReportActivity extends AppCompatActivity {
             Toast emptyLocation = Toast.makeText(CreateReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyLocation.show();
         } else {
-            MainActivity.waterReports.add(new SourceReport(user.getUsername(), locationText,
+            MainActivity.waterReports.add(0, new SourceReport(user.getUsername(), locationText,
                     getWaterType((String) waterTypeSpinner.getSelectedItem()),
                     getWaterCondition((String) waterConditionSpinner.getSelectedItem())));
             CharSequence text = "Report Submitted";

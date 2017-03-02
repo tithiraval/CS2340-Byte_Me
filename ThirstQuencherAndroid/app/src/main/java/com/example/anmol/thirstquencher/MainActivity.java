@@ -13,9 +13,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
     public static HashMap<String, User> userAccounts = new HashMap<String, User>();
-    public static Set<SourceReport> waterReports = new HashSet<SourceReport>();
+    public static List<SourceReport> waterReports = new ArrayList<SourceReport>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
