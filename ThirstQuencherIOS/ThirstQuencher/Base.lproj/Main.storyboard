@@ -13,7 +13,7 @@
         <scene sceneID="xjq-rR-Rzr">
             <objects>
                 <navigationController id="R2I-Cz-hN7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKK-bE-za2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FKK-bE-za2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -210,6 +210,14 @@
                                     <color key="titleColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg0-sE-lDj">
+                                <rect key="frame" x="165" y="135" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="MjH-Zb-ZLR" kind="show" id="GQn-Ta-Gfz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -228,6 +236,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Se-CK-84M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2252" y="-615"/>
+        </scene>
+        <!--Water Availability View Controller-->
+        <scene sceneID="Ibb-pd-UVO">
+            <objects>
+                <viewController id="MjH-Zb-ZLR" customClass="WaterAvailabilityViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BG1-iY-ngX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ppZ-RC-6se"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kiU-4Z-IC0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYt-4y-zAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3457" y="-610"/>
         </scene>
         <!--New Source Report-->
         <scene sceneID="IlY-PX-igd">
@@ -324,7 +350,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-so-ZCw">
-                                                    <rect key="frame" x="-0.5" y="-38" width="373.5" height="216"/>
+                                                    <rect key="frame" x="-1" y="-38" width="372.5" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="510041320.524077">
                                                         <!--2017-03-01 06:08:40 +0000-->
@@ -394,7 +420,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddm-iC-8gM">
-                                                    <rect key="frame" x="-0.5" y="-36" width="373.5" height="216"/>
+                                                    <rect key="frame" x="-1" y="-36" width="372.5" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
@@ -432,7 +458,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbE-d3-iIL">
-                                                    <rect key="frame" x="-0.5" y="-37" width="373.5" height="216"/>
+                                                    <rect key="frame" x="-1" y="-37" width="372.5" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
@@ -467,13 +493,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPK-95-0Ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xGG-3S-efy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3122" y="325"/>
+            <point key="canvasLocation" x="2252" y="302"/>
         </scene>
         <!--Logged in Navigation Controller-->
         <scene sceneID="4dF-ot-AYa">
             <objects>
                 <navigationController title="Logged in Navigation Controller" id="0iD-Rd-zcw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ubJ-Wg-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
