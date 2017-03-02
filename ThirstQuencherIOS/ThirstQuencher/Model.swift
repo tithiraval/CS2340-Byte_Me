@@ -11,11 +11,13 @@ import UIKit
 
 class Model {
     static let sharedInstance = Model()
-    private init() {}
     
     private var users = [String: User]()
+    private var sourceReports = [SourceReport]()
     
     private var currentUser: User?
+    
+    private init() {addUser(name: "Test User", id: "username", password: "password", accountType: AccountType.USER)}
     
     func addUser(name: String, id: String, password: String, accountType: AccountType) -> Bool {
         let newUser = User(name: name, id: id, password: password, accountType: accountType)
@@ -36,5 +38,19 @@ class Model {
             currentUser = users[id]
             return "Login Succeeded"
         }
+    }
+    
+    func addNewReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {
+        let newReport = SourceReport(date: date, number: (sourceReports.count + 1), name: currentUser!.getName(), location: location, waterType: waterType, waterCondition: waterCondition)
+        sourceReports.append(newReport)
+        return true
+    }
+    
+    func getCurrentUserName() -> String {
+        return currentUser!.getName()
+    }
+    
+    func getNewSourceReportNumber() -> Int {
+        return sourceReports.count + 1
     }
 }

@@ -14,19 +14,20 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var pass: UITextField!
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var confirmPass: UITextField!
-    @IBOutlet weak var accountType: UIPickerView!
+    @IBOutlet weak var accountTypeTextField: UITextField!
     
     var accountTypeData: [String] = [String]()
     var selectedAccountType = ""
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        self.accountType.delegate = self
-        
-        self.accountType.dataSource = self
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        accountTypeTextField.inputView = pickerView
         
         accountTypeData = ["User", "Worker", "Admin", "Manager"]
     }
@@ -50,7 +51,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedAccountType = accountTypeData[row]
+        accountTypeTextField.text = accountTypeData[row]
     }
     
     @IBAction func onRegister(_ sender: UIButton) {
@@ -65,15 +66,21 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         confirmAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         let userAlert = UIAlertController(title: "User Error", message: "User already exists.", preferredStyle: UIAlertControllerStyle.alert)
         userAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        if (selectedAccountType == "User") {
-            accountType = AccountType.USER
-        } else if (selectedAccountType == "Worker") {
+        if (accountTypeTextField.text == "Manager") {
+            accountType = AccountType.MANAGER
+        } else if (accountTypeTextField.text == "Worker") {
             accountType = AccountType.WORKER
-        } else if (selectedAccountType == "Admin") {
+        } else if (accountTypeTextField.text == "Admin") {
             accountType = AccountType.ADMIN
         } else {
-            accountType = AccountType.MANAGER
+            accountType = AccountType.USER
         }
+        
+        let registerConfirmed = UIAlertController(title: "Registration confirmed!", message: "Person was registered in the system.", preferredStyle: UIAlertControllerStyle.alert)
+        registerConfirmed.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        registerConfirmed.addAction(UIAlertAction(title: "Sign In", style: UIAlertActionStyle.default, handler: { action in
+            self.performSegue(withIdentifier: "showSignIn", sender: nil)
+        }))
         
         
         if (user == "" || password == "" || name == "") {
@@ -81,11 +88,16 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         } else if (password != confirm) {
             self.present(confirmAlert, animated: true, completion:nil)
         } else if (Model.sharedInstance.addUser(name: name!, id: user!, password: password!, accountType: accountType)) {
-            self.performSegue(withIdentifier: "showSignIn", sender: nil)
+            self.present(registerConfirmed, animated: true, completion:nil)
         } else {
             self.present(userAlert, animated: true, completion:nil)
         }
     }
+    
+    @IBAction func userTappedBackground(sender: AnyObject) {
+        view.endEditing(true)
+    }
+
 
     /*
     // MARK: - Navigation

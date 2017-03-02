@@ -45,6 +45,10 @@ public class ViewProfileActivity extends AppCompatActivity {
         accountTypeText.setText(user.getAccountType().toString());
     }
 
+    /**
+     * Prompts to edit the user's profile
+     * @param view The view for this screen
+     */
     public void editProfileRequest(View view) {
         Intent intent = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
         intent.putExtra("USERNAME", user.getUsername());

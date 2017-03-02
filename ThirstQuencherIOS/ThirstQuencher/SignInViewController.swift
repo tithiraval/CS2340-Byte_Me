@@ -16,6 +16,10 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let stack = self.navigationController?.viewControllers else { return }
+        let welcome = stack.first!
+        self.navigationController?.viewControllers = [welcome, self]
 
         // Do any additional setup after loading the view.
     

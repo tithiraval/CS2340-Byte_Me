@@ -25,6 +25,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
     }
 
+    /**
+     * Allows the user to create a report
+     * @param view The view for this screen
+     */
     public void createReport(View view) {
         Intent intent = new Intent(HomeScreenActivity.this, CreateReportActivity.class);
         intent.putExtra("USERNAME", user.getUsername());

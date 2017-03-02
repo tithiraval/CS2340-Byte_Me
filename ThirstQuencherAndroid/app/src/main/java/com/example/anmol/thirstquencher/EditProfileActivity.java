@@ -6,7 +6,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+/**
+ * The controller for editing a profile
+ * @author Anmol
+ * @version 2/23/17
+ */
 public class EditProfileActivity extends AppCompatActivity {
 
     private User user;
@@ -35,6 +39,10 @@ public class EditProfileActivity extends AppCompatActivity {
         accountTypeText.setText(user.getAccountType().toString());
     }
 
+    /**
+     * Sets the home address, email address, and the title of the user
+     * @param view The view for editing profile
+     */
     public void editProfileSaveRequest(View view) {
         String homeAddress = homeAddressText.getText().toString();
         String emailAddress = emailAddressText.getText().toString();
@@ -51,6 +59,10 @@ public class EditProfileActivity extends AppCompatActivity {
         EditProfileActivity.this.finish();
     }
 
+    /**
+     * Returns to the user screen if the user presses cancel
+     * @param view The view for edit profile
+     */
     public void cancelEditProfile(View view) {
         EditProfileActivity.this.finish();
     }
