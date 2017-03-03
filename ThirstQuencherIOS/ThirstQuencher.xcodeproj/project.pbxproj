@@ -18,6 +18,7 @@
 		E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F561E5F4A0F00BF945B /* Model.swift */; };
 		E8DFB72B1E68CD7D0035FDD4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DFB7291E68CCD60035FDD4 /* libsqlite3.tbd */; };
 		E8DFB72F1E68CEBB0035FDD4 /* UsersDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DFB72E1E68CEBB0035FDD4 /* UsersDB.swift */; };
+		E8DFB7351E692C7F0035FDD4 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DFB7341E692C7F0035FDD4 /* libsqlite3.0.tbd */; };
 		E8E869511E526E490049C764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E869501E526E490049C764 /* AppDelegate.swift */; };
 		E8E869531E526E490049C764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E869521E526E490049C764 /* ViewController.swift */; };
 		E8E869561E526E490049C764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E869541E526E490049C764 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		E8DFB7291E68CCD60035FDD4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E8DFB72E1E68CEBB0035FDD4 /* UsersDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDB.swift; sourceTree = "<group>"; };
 		E8DFB7301E6924710035FDD4 /* ThirstQuencher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThirstQuencher-Bridging-Header.h"; sourceTree = "<group>"; };
+		E8DFB7341E692C7F0035FDD4 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		E8E8694D1E526E490049C764 /* ThirstQuencher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirstQuencher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E869501E526E490049C764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E869521E526E490049C764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DFB7351E692C7F0035FDD4 /* libsqlite3.0.tbd in Frameworks */,
 				E8DFB72B1E68CD7D0035FDD4 /* libsqlite3.tbd in Frameworks */,
 				EE8BE7BF5A35DB4058790676 /* libPods-ThirstQuencher.a in Frameworks */,
 			);
@@ -78,6 +81,7 @@
 		CF592B34A4E4A7E4BDB9DF7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8DFB7341E692C7F0035FDD4 /* libsqlite3.0.tbd */,
 				E8DFB7291E68CCD60035FDD4 /* libsqlite3.tbd */,
 				AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */,
 			);
@@ -121,8 +125,8 @@
 				E8E8695C1E526E490049C764 /* Info.plist */,
 				E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */,
 				E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */,
-				E8DFB72E1E68CEBB0035FDD4 /* UsersDB.swift */,
 				E8DFB7301E6924710035FDD4 /* ThirstQuencher-Bridging-Header.h */,
+				E8DFB72E1E68CEBB0035FDD4 /* UsersDB.swift */,
 			);
 			path = ThirstQuencher;
 			sourceTree = "<group>";

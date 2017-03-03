@@ -20,6 +20,7 @@ class Model {
     private init() {addUser(name: "Test User", id: "username", password: "password", accountType: AccountType.USER)}
     
     func addUser(name: String, id: String, password: String, accountType: AccountType) -> Bool {
+        
         let newUser = User(name: name, id: id, password: password, accountType: accountType)
         if (users[id] == nil) {
             users[id] = newUser
@@ -27,6 +28,7 @@ class Model {
         } else {
             return false
         }
+ 
     }
     
     func checkUser(id: String, password: String) -> String {
@@ -38,6 +40,7 @@ class Model {
             currentUser = users[id]
             return "Login Succeeded"
         }
+        
     }
     
     func addNewReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {

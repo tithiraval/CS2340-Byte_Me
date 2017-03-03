@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import sqlite3
 
 class UsersDB {
     
