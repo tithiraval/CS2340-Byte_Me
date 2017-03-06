@@ -3,12 +3,9 @@ package com.example.anmol.thirstquencher;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.content.Intent;
 import android.view.View;
 
-import javax.xml.transform.Source;
-
-public class ViewWaterReport extends AppCompatActivity {
+public class ViewWaterReportActivity extends AppCompatActivity {
 
     private SourceReport report;
     private TextView dateTimeText;
@@ -23,18 +20,18 @@ public class ViewWaterReport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_water_report);
         report = MainActivity.waterReports.get(getIntent().getIntExtra("WATER_REPORT_INDEX", 0));
-        reportNumberText = (TextView) findViewById(R.id.viewWaterReportNumberTextField);
-        dateTimeText = (TextView) findViewById(R.id.viewWaterReportDateTextField);
-        reporterText = (TextView) findViewById(R.id.viewWaterReportUsernameTextField);
-        locationText = (TextView) findViewById(R.id.viewWaterReportLocationTextField);
-        waterTypeText = (TextView) findViewById(R.id.viewWaterReportTypeTextField);
-        waterConditionText = (TextView) findViewById(R.id.conditionOfWaterTextView);
+        reportNumberText = (TextView) findViewById(R.id.viewWaterReportNumber);
+        dateTimeText = (TextView) findViewById(R.id.viewWaterReportDate);
+        reporterText = (TextView) findViewById(R.id.viewWaterReportUsername);
+        locationText = (TextView) findViewById(R.id.viewWaterReportLocation);
+        waterTypeText = (TextView) findViewById(R.id.viewWaterReportType);
+        waterConditionText = (TextView) findViewById(R.id.conditionOfWater);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        reportNumberText.setText(report.getReportNumber());
+        reportNumberText.setText(Integer.toString(report.getReportNumber()));
         dateTimeText.setText(report.getDate().toString());
         reporterText.setText(report.getUsername());
         locationText.setText(report.getLocation());
@@ -43,6 +40,6 @@ public class ViewWaterReport extends AppCompatActivity {
     }
 
     public void back(View view) {
-        ViewWaterReport.this.finish();
+        ViewWaterReportActivity.this.finish();
     }
 }

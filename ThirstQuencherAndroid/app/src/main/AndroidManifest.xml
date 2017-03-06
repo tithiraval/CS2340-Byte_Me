@@ -49,7 +49,7 @@
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".CreateReportActivity" />
         <activity android:name=".WaterReportListActivity" />
-        <activity android:name=".ViewWaterReport"></activity>
+        <activity android:name=".ViewWaterReportActivity"></activity>
     </application>
 
 </manifest>
