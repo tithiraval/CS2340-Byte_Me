@@ -4,7 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
-
+/**
+ * The controller for viewing a source report
+ * @author Anmol
+ * @version 2/28/17
+ */
 public class ViewWaterReportActivity extends AppCompatActivity {
 
     private SourceReport report;
@@ -39,6 +43,10 @@ public class ViewWaterReportActivity extends AppCompatActivity {
         waterConditionText.setText(report.getCondition().toString());
     }
 
+    /**
+     * Returns to the previous screen when user presses "Back"
+     * @param view The view for this screen
+     */
     public void back(View view) {
         ViewWaterReportActivity.this.finish();
     }
