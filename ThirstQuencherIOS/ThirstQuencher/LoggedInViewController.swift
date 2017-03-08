@@ -13,9 +13,16 @@ class LoggedInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let logoutButton: UIBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(LoggedInViewController.goToLogin))
         
-        self.navigationItem.rightBarButtonItem = logoutButton;
+        let logoutButton: UIBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(LoggedInViewController.goToLogin))
+        let editUserButton: UIBarButtonItem = UIBarButtonItem(title: "Edit User", style: .plain, target: self, action:
+            #selector(LoggedInViewController.editUser))
+        
+        logoutButton.tintColor = UIColor(red: 121/255, green: 204/255, blue: 255/255, alpha: 1)
+        editUserButton.tintColor = UIColor(red: 121/255, green: 204/255, blue: 255/255, alpha: 1)
+        
+        self.navigationItem.rightBarButtonItem = editUserButton
+        self.navigationItem.leftBarButtonItem = logoutButton
 
         // Do any additional setup after loading the view.
     }
@@ -28,6 +35,10 @@ class LoggedInViewController: UIViewController {
     func goToLogin() {
         Model.sharedInstance.logout()
         self.performSegue(withIdentifier: "logOutFromInitial", sender: nil)
+    }
+    
+    func editUser() {
+        self.performSegue(withIdentifier: "editUser", sender: nil)
     }
     
 
