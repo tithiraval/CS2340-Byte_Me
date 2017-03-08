@@ -26,6 +26,7 @@ class LoggedInViewController: UIViewController {
     }
     
     func goToLogin() {
+        Model.sharedInstance.logout()
         self.performSegue(withIdentifier: "logOutFromInitial", sender: nil)
     }
     

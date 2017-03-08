@@ -33,7 +33,7 @@
 		8BBA780012D8F5F28792EDCA /* Pods-ThirstQuencher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.release.xcconfig"; sourceTree = "<group>"; };
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThirstQuencher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterAvailabilityViewController.swift; sourceTree = "<group>"; };
 		E8ACF6981E668DBB00C29D17 /* SourceReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReport.swift; sourceTree = "<group>"; };
@@ -394,7 +394,7 @@
 				DEVELOPMENT_TEAM = Q7KCFQXHAK;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirstQuencher/ThirstQuencher-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -411,7 +411,7 @@
 				DEVELOPMENT_TEAM = Q7KCFQXHAK;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirstQuencher/ThirstQuencher-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

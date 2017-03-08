@@ -49,6 +49,10 @@ class Model {
         return true
     }
     
+    func logout() {
+        currentUser = nil
+    }
+    
     func getCurrentUserName() -> String {
         return currentUser!.getName()
     }
