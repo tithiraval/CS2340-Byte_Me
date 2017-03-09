@@ -36,13 +36,13 @@ class EditUserTableViewController: UITableViewController {
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (name != nameField.text && nameField.text != nil) {
+        if (name != nameField.text && nameField.text != "") {
             name = nameField.text!
         }
-        if (email != emailField.text && emailField.text != nil) {
+        if (email != emailField.text && emailField.text != "") {
             email = emailField.text!
         }
-        if (address != homeField.text && homeField.text != nil) {
+        if (address != homeField.text && homeField.text != "") {
             address = homeField.text!
         }
         Model.sharedInstance.editUser(name: name, email: email, address: address)
