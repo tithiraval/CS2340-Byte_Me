@@ -220,14 +220,14 @@
                                 <state key="normal" title="View All Water Reports">
                                     <color key="titleColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Uer-9E-1PO" kind="show" id="qJQ-Uu-wWf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg0-sE-lDj">
                                 <rect key="frame" x="165" y="135" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="MjH-Zb-ZLR" kind="show" id="GQn-Ta-Gfz"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -251,23 +251,30 @@
             </objects>
             <point key="canvasLocation" x="2390" y="-610"/>
         </scene>
-        <!--Water Availability View Controller-->
-        <scene sceneID="Ibb-pd-UVO">
+        <!--Water Reports-->
+        <scene sceneID="BIe-wa-kg2">
             <objects>
-                <viewController id="MjH-Zb-ZLR" customClass="WaterAvailabilityViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BG1-iY-ngX"/>
-                        <viewControllerLayoutGuide type="bottom" id="ppZ-RC-6se"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kiU-4Z-IC0">
+                <tableViewController title="Water Reports" id="Uer-9E-1PO" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aLz-qR-va0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UYt-4y-zAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="YwM-zf-rar">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Water Reports" id="cgm-a6-PyQ"/>
+                            </items>
+                        </navigationBar>
+                        <connections>
+                            <outlet property="dataSource" destination="Uer-9E-1PO" id="YQM-ZI-E56"/>
+                            <outlet property="delegate" destination="Uer-9E-1PO" id="mXn-Vu-Mw6"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WD0-mF-u5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3457" y="-610"/>
+            <point key="canvasLocation" x="3406" y="-610"/>
         </scene>
         <!--New Source Report-->
         <scene sceneID="IlY-PX-igd">
@@ -513,7 +520,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPK-95-0Ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xGG-3S-efy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2252" y="302"/>
+            <point key="canvasLocation" x="2390" y="294"/>
         </scene>
         <!--Edit User Table View Controller-->
         <scene sceneID="zeq-b7-ONG">
@@ -683,7 +690,7 @@
         <scene sceneID="4dF-ot-AYa">
             <objects>
                 <navigationController title="Logged in Navigation Controller" id="0iD-Rd-zcw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ubJ-Wg-POa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -853,8 +860,8 @@
         <image name="water" width="216" height="216"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TVp-rn-jFY"/>
         <segue reference="89t-1l-iv8"/>
+        <segue reference="TVp-rn-jFY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
