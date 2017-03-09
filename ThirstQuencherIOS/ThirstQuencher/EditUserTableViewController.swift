@@ -9,15 +9,21 @@
 import UIKit
 
 class EditUserTableViewController: UITableViewController {
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var homeField: UITextField!
+    
+    private var name = Model.sharedInstance.getCurrentUserName()
+    private var email = Model.sharedInstance.getCurrentUserEmail()
+    private var address = Model.sharedInstance.getCurrentUserAddress()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        nameField.text = Model.sharedInstance.getCurrentUserName()
+        emailField.text = Model.sharedInstance.getCurrentUserEmail()
+        homeField.text = Model.sharedInstance.getCurrentUserAddress()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,21 +34,19 @@ class EditUserTableViewController: UITableViewController {
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "unwindToMainFromEdit", sender: nil)
     }
-
-    /*
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
- */
     
-
-
+    @IBAction func onAdd(_ sender: UIBarButtonItem) {
+        if (name != nameField.text && nameField.text != nil) {
+            name = nameField.text!
+        }
+        if (email != emailField.text && emailField.text != nil) {
+            email = emailField.text!
+        }
+        if (address != homeField.text && homeField.text != nil) {
+            address = homeField.text!
+        }
+        Model.sharedInstance.editUser(name: name, email: email, address: address)
+        self.performSegue(withIdentifier: "unwindToMainFromEdit", sender: nil)
+    }
+    
 }

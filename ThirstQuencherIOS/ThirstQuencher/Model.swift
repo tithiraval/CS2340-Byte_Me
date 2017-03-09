@@ -43,6 +43,12 @@ class Model {
         
     }
     
+    func editUser(name: String, email: String, address: String) {
+        currentUser!.setName(name: name)
+        currentUser!.setEmailAddress(email: email)
+        currentUser!.setHomeAddress(address: address)
+    }
+    
     func addNewReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {
         let newReport = SourceReport(date: date, number: (sourceReports.count + 1), name: currentUser!.getName(), location: location, waterType: waterType, waterCondition: waterCondition)
         sourceReports.append(newReport)
@@ -59,5 +65,13 @@ class Model {
     
     func getNewSourceReportNumber() -> Int {
         return sourceReports.count + 1
+    }
+    
+    func getCurrentUserEmail() -> String {
+        return currentUser!.getEmailAddress()
+    }
+    
+    func getCurrentUserAddress() -> String {
+        return currentUser!.getHomeAddress()
     }
 }
