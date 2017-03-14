@@ -35,8 +35,21 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Allows the user to view list of reports
+     * @param view The view for this screen
+     */
     public void viewReports(View view) {
         Intent intent = new Intent(HomeScreenActivity.this, WaterReportListActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Allows the user to view reports on a map
+     * @param view The view for this screen
+     */
+    public void viewMap(View view) {
+        Intent intent = new Intent(HomeScreenActivity.this, MapReportsActivity.class);
         startActivity(intent);
     }
 
