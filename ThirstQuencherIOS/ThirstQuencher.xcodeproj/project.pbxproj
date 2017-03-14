@@ -10,6 +10,7 @@
 		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
 		D8AB43B81E6885340095469F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D8AB43B71E6885340095469F /* Podfile */; };
 		E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */; };
+		E89F46B31E70BE49000E4932 /* EditUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */; };
 		E8A89C6F1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */; };
 		E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF6981E668DBB00C29D17 /* SourceReport.swift */; };
 		E8ACF69B1E669E5E00C29D17 /* SourceReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */; };
@@ -33,8 +34,9 @@
 		8BBA780012D8F5F28792EDCA /* Pods-ThirstQuencher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.release.xcconfig"; sourceTree = "<group>"; };
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThirstQuencher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
+		E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserTableViewController.swift; sourceTree = "<group>"; };
 		E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterAvailabilityViewController.swift; sourceTree = "<group>"; };
 		E8ACF6981E668DBB00C29D17 /* SourceReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReport.swift; sourceTree = "<group>"; };
 		E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReportTableViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */,
 				E8DFB7301E6924710035FDD4 /* ThirstQuencher-Bridging-Header.h */,
 				E8DFB72E1E68CEBB0035FDD4 /* UsersDB.swift */,
+				E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */,
 			);
 			path = ThirstQuencher;
 			sourceTree = "<group>";
@@ -166,7 +169,7 @@
 				TargetAttributes = {
 					E8E8694C1E526E480049C764 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Q7KCFQXHAK;
+						DevelopmentTeam = FMK9XYHY3L;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -262,6 +265,7 @@
 				E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */,
 				E8E869531E526E490049C764 /* ViewController.swift in Sources */,
 				E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */,
+				E89F46B31E70BE49000E4932 /* EditUserTableViewController.swift in Sources */,
 				E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */,
 				E8D78F551E5F47D200BF945B /* AccountType.swift in Sources */,
 				E8E869511E526E490049C764 /* AppDelegate.swift in Sources */,
@@ -391,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = Q7KCFQXHAK;
+				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
@@ -408,7 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = Q7KCFQXHAK;
+				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
