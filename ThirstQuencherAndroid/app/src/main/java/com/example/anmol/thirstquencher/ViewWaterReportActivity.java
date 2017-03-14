@@ -34,7 +34,7 @@ public class ViewWaterReportActivity extends AppCompatActivity {
         reportNumberText.setText(Integer.toString(report.getReportNumber()));
         dateTimeText.setText(report.getDate().toString());
         reporterText.setText(report.getUsername());
-        locationText.setText(report.getLocation());
+        locationText.setText(report.getLocation().toString());
         waterTypeText.setText(report.getType().toString());
         waterConditionText.setText(report.getCondition().toString());
     }

@@ -1,32 +1,37 @@
 package com.example.anmol.thirstquencher;
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-/**
- * The controller for creating a water report
- * @author Anmol
- * @version 2/20/17
- */
-public class CreateReportActivity extends AppCompatActivity {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
+public class SubmitReportActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
     private User user;
-    private EditText location;
+    private LatLng location;
     private Spinner waterTypeSpinner;
     private Spinner waterConditionSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_report);
+        setContentView(R.layout.activity_submit_report);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
         user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
-        location = (EditText) findViewById(R.id.createReportEnterLocation);
         waterTypeSpinner = (Spinner) findViewById(R.id.createReportWaterTypeSpinner);
         waterConditionSpinner = (Spinner) findViewById(R.id.createReportWaterConditionSpinner);
 
@@ -39,24 +44,47 @@ public class CreateReportActivity extends AppCompatActivity {
         waterConditionSpinner.setAdapter(adapter2);
     }
 
+
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                mMap.clear();
+                location = new LatLng(latLng.latitude, latLng.longitude);
+                mMap.addMarker(new MarkerOptions().position(location));
+            }
+        });
+    }
+
     /**
      * Allows the user to submit a report if restrictions are met
      * @param view The view for this screen
      */
     public void submitReport(View view) {
-        String locationText = location.getText().toString();
-        if (locationText.equals("")) {
+        if (location == null) {
             CharSequence text = "Enter Location!";
-            Toast emptyLocation = Toast.makeText(CreateReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
+            Toast emptyLocation = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyLocation.show();
         } else {
-            MainActivity.waterReports.add(0, new SourceReport(user.getUsername(), locationText,
+            MainActivity.waterReports.add(0, new SourceReport(user.getUsername(), location,
                     getWaterType((String) waterTypeSpinner.getSelectedItem()),
                     getWaterCondition((String) waterConditionSpinner.getSelectedItem())));
             CharSequence text = "Report Submitted";
-            Toast reportSubmitted = Toast.makeText(CreateReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
+            Toast reportSubmitted = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             reportSubmitted.show();
-            CreateReportActivity.this.finish();
+            SubmitReportActivity.this.finish();
         }
     }
 
@@ -94,6 +122,6 @@ public class CreateReportActivity extends AppCompatActivity {
     }
 
     public void cancelSubmitReport(View view) {
-        CreateReportActivity.this.finish();
+        SubmitReportActivity.this.finish();
     }
 }

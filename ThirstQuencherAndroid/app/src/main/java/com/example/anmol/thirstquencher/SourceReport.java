@@ -1,5 +1,7 @@
 package com.example.anmol.thirstquencher;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +21,7 @@ public class SourceReport {
     private Date dateTime;
     private int reportNumber;
     private final String username;
-    private String location;
+    private LatLng location;
     private WaterType type;
     private WaterCondition condition;
 
@@ -29,7 +31,7 @@ public class SourceReport {
      * @param type source of water
      * @param condition condition the water is in
      */
-    SourceReport(String username, String location, WaterType type, WaterCondition condition) {
+    SourceReport(String username, LatLng location, WaterType type, WaterCondition condition) {
         this.dateTime = new Date();
         this.location = location;
         this.reportNumber = SourceReport.currentReportNumber;
@@ -67,7 +69,7 @@ public class SourceReport {
      * returns the location of the water source
      * @return location
      */
-    public String getLocation() {return this.location;}
+    public LatLng getLocation() {return this.location;}
 
     /**
      * returns the report number

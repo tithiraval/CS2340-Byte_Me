@@ -30,7 +30,7 @@ public class HomeScreenActivity extends AppCompatActivity {
      * @param view The view for this screen
      */
     public void createReport(View view) {
-        Intent intent = new Intent(HomeScreenActivity.this, CreateReportActivity.class);
+        Intent intent = new Intent(HomeScreenActivity.this, SubmitReportActivity.class);
         intent.putExtra("USERNAME", user.getUsername());
         startActivity(intent);
     }
