@@ -17,7 +17,7 @@ class Model {
     
     private var currentUser: User?
     
-    private init() {addUser(name: "Test User", id: "username", password: "password", accountType: AccountType.USER)}
+    private init() {addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)}
     
     func addUser(name: String, id: String, password: String, accountType: AccountType) -> Bool {
         
@@ -53,6 +53,10 @@ class Model {
         let newReport = SourceReport(date: date, number: (sourceReports.count + 1), name: currentUser!.getName(), location: location, waterType: waterType, waterCondition: waterCondition)
         sourceReports.append(newReport)
         return true
+    }
+    
+    func getAllReports() -> [SourceReport] {
+        return sourceReports
     }
     
     func logout() {
