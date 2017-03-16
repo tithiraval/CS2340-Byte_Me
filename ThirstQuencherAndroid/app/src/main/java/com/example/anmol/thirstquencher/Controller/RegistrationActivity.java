@@ -1,6 +1,5 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +7,12 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.anmol.thirstquencher.Model.Admin;
+import com.example.anmol.thirstquencher.Model.Manager;
+import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.Model.Worker;
+import com.example.anmol.thirstquencher.R;
 
 /**
  * Controller for Registration

@@ -1,9 +1,13 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
+
+import com.example.anmol.thirstquencher.Model.SourceReport;
+import com.example.anmol.thirstquencher.R;
+
 /**
  * The controller for viewing a source report
  * @author Anmol

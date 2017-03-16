@@ -1,4 +1,4 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.anmol.thirstquencher.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

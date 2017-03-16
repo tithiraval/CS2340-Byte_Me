@@ -1,4 +1,4 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Model;
 
 /**
  * Enum to hold the different sources of water

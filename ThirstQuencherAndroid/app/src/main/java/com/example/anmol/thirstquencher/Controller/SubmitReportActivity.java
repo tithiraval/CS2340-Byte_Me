@@ -1,4 +1,4 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -7,7 +7,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
+import com.example.anmol.thirstquencher.Model.SourceReport;
+import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.Model.WaterCondition;
+import com.example.anmol.thirstquencher.Model.WaterType;
+import com.example.anmol.thirstquencher.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;

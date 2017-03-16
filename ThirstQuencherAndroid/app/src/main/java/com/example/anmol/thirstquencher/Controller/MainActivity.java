@@ -1,5 +1,8 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
 
+import com.example.anmol.thirstquencher.Model.SourceReport;
+import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -16,9 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Main controller for the app
