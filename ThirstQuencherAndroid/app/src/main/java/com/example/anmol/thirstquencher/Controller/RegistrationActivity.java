@@ -9,6 +9,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.anmol.thirstquencher.Model.Admin;
+import com.example.anmol.thirstquencher.Model.GeneralUser;
 import com.example.anmol.thirstquencher.Model.Manager;
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.Model.Worker;

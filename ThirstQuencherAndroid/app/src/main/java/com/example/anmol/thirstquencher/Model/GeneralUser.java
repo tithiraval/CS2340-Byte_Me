@@ -1,4 +1,4 @@
-package com.example.anmol.thirstquencher.Controller;
+package com.example.anmol.thirstquencher.Model;
 
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.Model.UserType;
