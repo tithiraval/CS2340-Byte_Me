@@ -254,18 +254,37 @@
         <!--Water Reports-->
         <scene sceneID="BIe-wa-kg2">
             <objects>
-                <tableViewController title="Water Reports" id="Uer-9E-1PO" sceneMemberID="viewController">
+                <tableViewController title="Water Reports" id="Uer-9E-1PO" customClass="WaterReports" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aLz-qR-va0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="YwM-zf-rar">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Water Reports" id="cgm-a6-PyQ"/>
-                            </items>
-                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepNum" textLabel="YB9-29-gC1" detailTextLabel="nfn-tA-cOB" style="IBUITableViewCellStyleValue1" id="ETs-TE-JEE">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ETs-TE-JEE" id="LcQ-hd-ca8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YB9-29-gC1">
+                                            <rect key="frame" x="15" y="11" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfn-tA-cOB">
+                                            <rect key="frame" x="316" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Uer-9E-1PO" id="YQM-ZI-E56"/>
                             <outlet property="delegate" destination="Uer-9E-1PO" id="mXn-Vu-Mw6"/>
@@ -377,7 +396,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-so-ZCw">
-                                                    <rect key="frame" x="-2" y="-38" width="372.5" height="216"/>
+                                                    <rect key="frame" x="-3.5" y="-38" width="372.5" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="510041320.524077">
                                                         <!--2017-03-01 06:08:40 +0000-->
@@ -447,7 +466,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddm-iC-8gM">
-                                                    <rect key="frame" x="-2" y="-36" width="372.5" height="216"/>
+                                                    <rect key="frame" x="-3.5" y="-36" width="372.5" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
@@ -485,7 +504,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbE-d3-iIL">
-                                                    <rect key="frame" x="-2" y="-37" width="372.5" height="216"/>
+                                                    <rect key="frame" x="-3.5" y="-37" width="372.5" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
@@ -690,7 +709,7 @@
         <scene sceneID="4dF-ot-AYa">
             <objects>
                 <navigationController title="Logged in Navigation Controller" id="0iD-Rd-zcw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ubJ-Wg-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -860,8 +879,8 @@
         <image name="water" width="216" height="216"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="89t-1l-iv8"/>
         <segue reference="TVp-rn-jFY"/>
+        <segue reference="89t-1l-iv8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

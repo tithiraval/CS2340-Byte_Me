@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
+		AAEFE8C01E788EE300D48259 /* WaterReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFE8BF1E788EE300D48259 /* WaterReports.swift */; };
 		D8AB43B81E6885340095469F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D8AB43B71E6885340095469F /* Podfile */; };
 		E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */; };
 		E89F46B31E70BE49000E4932 /* EditUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */; };
-		E8A89C6F1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */; };
+		E8A89C6F1E6888FE00C77BF6 /* WaterAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */; };
 		E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF6981E668DBB00C29D17 /* SourceReport.swift */; };
 		E8ACF69B1E669E5E00C29D17 /* SourceReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */; };
 		E8D78F531E5F45CC00BF945B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F521E5F45CC00BF945B /* User.swift */; };
@@ -33,11 +34,12 @@
 		63FE61E4A25F2F63CBA32C10 /* Pods-ThirstQuencher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.debug.xcconfig"; sourceTree = "<group>"; };
 		8BBA780012D8F5F28792EDCA /* Pods-ThirstQuencher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.release.xcconfig"; sourceTree = "<group>"; };
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		AAEFE8BF1E788EE300D48259 /* WaterReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReports.swift; sourceTree = "<group>"; };
 		AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThirstQuencher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserTableViewController.swift; sourceTree = "<group>"; };
-		E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterAvailabilityViewController.swift; sourceTree = "<group>"; };
+		E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterAvailability.swift; sourceTree = "<group>"; };
 		E8ACF6981E668DBB00C29D17 /* SourceReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReport.swift; sourceTree = "<group>"; };
 		E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReportTableViewController.swift; sourceTree = "<group>"; };
 		E8D78F521E5F45CC00BF945B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -126,7 +128,8 @@
 				E8E869591E526E490049C764 /* LaunchScreen.storyboard */,
 				E8E8695C1E526E490049C764 /* Info.plist */,
 				E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */,
-				E8A89C6E1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift */,
+				E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */,
+				AAEFE8BF1E788EE300D48259 /* WaterReports.swift */,
 				E8DFB7301E6924710035FDD4 /* ThirstQuencher-Bridging-Header.h */,
 				E8DFB72E1E68CEBB0035FDD4 /* UsersDB.swift */,
 				E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */,
@@ -260,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8A89C6F1E6888FE00C77BF6 /* WaterAvailabilityViewController.swift in Sources */,
+				E8A89C6F1E6888FE00C77BF6 /* WaterAvailability.swift in Sources */,
 				E8ACF69B1E669E5E00C29D17 /* SourceReportTableViewController.swift in Sources */,
 				E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */,
 				E8E869531E526E490049C764 /* ViewController.swift in Sources */,
@@ -271,6 +274,7 @@
 				E8E869511E526E490049C764 /* AppDelegate.swift in Sources */,
 				E8DFB72F1E68CEBB0035FDD4 /* UsersDB.swift in Sources */,
 				AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */,
+				AAEFE8C01E788EE300D48259 /* WaterReports.swift in Sources */,
 				E8D78F531E5F45CC00BF945B /* User.swift in Sources */,
 				E8E869671E54DC5C0049C764 /* SignInViewController.swift in Sources */,
 			);
