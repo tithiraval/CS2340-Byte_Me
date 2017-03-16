@@ -1,4 +1,7 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
+
+import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.Model.UserType;
 
 /**
  * The class for a general user

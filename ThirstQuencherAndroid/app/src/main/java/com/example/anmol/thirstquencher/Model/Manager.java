@@ -1,4 +1,4 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Model;
 
 /**
  * The implementation of the manager user class

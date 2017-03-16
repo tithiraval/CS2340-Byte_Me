@@ -1,10 +1,13 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.R;
 
 /**
  * The class for changing a user's password

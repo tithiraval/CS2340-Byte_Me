@@ -20,15 +20,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".HomeScreenActivity" />
+        <activity android:name=".Controller.LoginActivity" />
+        <activity android:name=".Controller.HomeScreenActivity" />
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -50,12 +50,12 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".ViewProfileActivity" />
-        <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".EditProfileActivity" />
-        <activity android:name=".WaterReportListActivity" />
-        <activity android:name=".ViewWaterReportActivity" />
+        <activity android:name=".Controller.RegistrationActivity" />
+        <activity android:name=".Controller.ViewProfileActivity" />
+        <activity android:name=".Controller.ChangePasswordActivity" />
+        <activity android:name=".Controller.EditProfileActivity" />
+        <activity android:name=".Controller.WaterReportListActivity" />
+        <activity android:name=".Controller.ViewWaterReportActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -69,10 +69,10 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".SubmitReportActivity"
+            android:name=".Controller.SubmitReportActivity"
             android:label="@string/title_activity_submit_report" />
         <activity
-            android:name=".MapReportsActivity"
+            android:name=".Controller.MapReportsActivity"
             android:label="@string/title_activity_map_reports"></activity>
     </application>
 

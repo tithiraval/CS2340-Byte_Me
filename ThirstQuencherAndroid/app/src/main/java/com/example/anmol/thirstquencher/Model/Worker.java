@@ -1,4 +1,6 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Model;
+
+import com.example.anmol.thirstquencher.Controller.GeneralUser;
 
 /**
  * Created by Anmol on 2/20/17.

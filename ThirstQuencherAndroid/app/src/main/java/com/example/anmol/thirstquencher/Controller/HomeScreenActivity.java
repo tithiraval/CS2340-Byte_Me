@@ -1,12 +1,12 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Controller;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.facebook.login.LoginManager;
+import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.R;
 
 /**
  * The controller for the Home Screen

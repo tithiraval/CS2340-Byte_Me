@@ -1,4 +1,4 @@
-package com.example.anmol.thirstquencher;
+package com.example.anmol.thirstquencher.Model;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -31,7 +31,7 @@ public class SourceReport {
      * @param type source of water
      * @param condition condition the water is in
      */
-    SourceReport(String username, LatLng location, WaterType type, WaterCondition condition) {
+    public SourceReport(String username, LatLng location, WaterType type, WaterCondition condition) {
         this.dateTime = new Date();
         this.location = location;
         this.reportNumber = SourceReport.currentReportNumber;
