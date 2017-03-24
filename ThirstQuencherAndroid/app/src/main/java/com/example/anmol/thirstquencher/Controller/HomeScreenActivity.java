@@ -35,12 +35,23 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void createQualityReport(View view) {
+        Intent intent = new Intent(HomeScreenActivity.this, SubmitQualityReportActivity.class);
+        intent.putExtra("USERNAME", user.getUsername());
+        startActivity(intent);
+    }
+
     /**
      * Allows the user to view list of reports
      * @param view The view for this screen
      */
     public void viewReports(View view) {
         Intent intent = new Intent(HomeScreenActivity.this, WaterReportListActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewQualityReports(View view) {
+        Intent intent = new Intent(HomeScreenActivity.this, ViewQualityReportListActivity.class);
         startActivity(intent);
     }
 

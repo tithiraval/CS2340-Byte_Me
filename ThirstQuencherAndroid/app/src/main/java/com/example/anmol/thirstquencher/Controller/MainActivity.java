@@ -1,5 +1,6 @@
 package com.example.anmol.thirstquencher.Controller;
 
+import com.example.anmol.thirstquencher.Model.QualityReport;
 import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.R;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     public static HashMap<String, User> userAccounts = new HashMap<String, User>();
     public static List<SourceReport> waterReports = new ArrayList<SourceReport>();
+    public static List<QualityReport> qualityReports = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
