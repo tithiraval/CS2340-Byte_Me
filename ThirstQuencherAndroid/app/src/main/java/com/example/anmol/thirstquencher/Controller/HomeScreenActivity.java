@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.Model.UserType;
+import com.example.anmol.thirstquencher.Model.Worker;
 import com.example.anmol.thirstquencher.R;
 
 /**
@@ -21,8 +24,15 @@ public class HomeScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-
         user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
+
+        Button createQRButton = (Button) findViewById(R.id.createQualityReportButton);
+        Button viewQRButton = (Button) findViewById(R.id.viewQualityReportButton);
+
+        if (user instanceof Worker) {
+            createQRButton.setVisibility(View.VISIBLE);
+            viewQRButton.setVisibility(View.VISIBLE);
+        }
     }
 
     /**
