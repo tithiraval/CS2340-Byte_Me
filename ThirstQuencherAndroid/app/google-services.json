@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "209718792271",
+    "firebase_url": "https://thirstquencherandroid-161501.firebaseio.com",
+    "project_id": "thirstquencherandroid-161501",
+    "storage_bucket": "thirstquencherandroid-161501.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209718792271:android:657ff037c47780eb",
+        "android_client_info": {
+          "package_name": "com.example.anmol.thirstquencher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209718792271-5fu33eefj8rdkm7fbh3t126v48nfdm4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcBmpqYc6mt6vtorI61-QUZrA1DsY43wo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
