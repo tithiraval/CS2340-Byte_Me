@@ -39,10 +39,18 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
     }
 
     public void submitQualityReport(View view) {
-        if (location.getText().toString() == null) {
+        if (location.getText().toString().equals("")) {
             CharSequence text = "Enter Location!";
             Toast emptyLocation = Toast.makeText(SubmitQualityReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyLocation.show();
+        } else if (virusPPM.getText().toString().equals("")) {
+            CharSequence text = "Enter Virus PPM!";
+            Toast emptyVirusPPM = Toast.makeText(SubmitQualityReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
+            emptyVirusPPM.show();
+        } else if (contaminantPPM.getText().toString().equals("")) {
+            CharSequence text = "Enter Contaminant PPM!";
+            Toast emptyContaminantPPM = Toast.makeText(SubmitQualityReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
+            emptyContaminantPPM.show();
         } else {
             MainActivity.qualityReports.add(0, new QualityReport(user.getUsername(),
                     location.getText().toString(),
