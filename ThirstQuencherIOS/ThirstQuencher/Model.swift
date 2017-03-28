@@ -58,6 +58,7 @@ class Model {
         return true
     }
     
+    
     func getAllReports() -> [SourceReport] {
         return sourceReports
     }

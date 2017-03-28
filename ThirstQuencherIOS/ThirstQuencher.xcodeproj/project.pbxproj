@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
+		AAC9F9011E8AF5AA0017B446 /* PurityReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */; };
+		AAC9F9031E8AF84C0017B446 /* PurityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9021E8AF84C0017B446 /* PurityReport.swift */; };
 		AAEFE8C01E788EE300D48259 /* WaterReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFE8BF1E788EE300D48259 /* WaterReports.swift */; };
 		D8AB43B81E6885340095469F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D8AB43B71E6885340095469F /* Podfile */; };
 		E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */; };
@@ -34,6 +36,8 @@
 		63FE61E4A25F2F63CBA32C10 /* Pods-ThirstQuencher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.debug.xcconfig"; sourceTree = "<group>"; };
 		8BBA780012D8F5F28792EDCA /* Pods-ThirstQuencher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.release.xcconfig"; sourceTree = "<group>"; };
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReportTableViewController.swift; sourceTree = "<group>"; };
+		AAC9F9021E8AF84C0017B446 /* PurityReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReport.swift; sourceTree = "<group>"; };
 		AAEFE8BF1E788EE300D48259 /* WaterReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReports.swift; sourceTree = "<group>"; };
 		AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThirstQuencher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -122,12 +126,14 @@
 				E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */,
 				E8D78F521E5F45CC00BF945B /* User.swift */,
 				E8ACF6981E668DBB00C29D17 /* SourceReport.swift */,
+				AAC9F9021E8AF84C0017B446 /* PurityReport.swift */,
 				E8D78F541E5F47D200BF945B /* AccountType.swift */,
 				E8E869541E526E490049C764 /* Main.storyboard */,
 				E8E869571E526E490049C764 /* Assets.xcassets */,
 				E8E869591E526E490049C764 /* LaunchScreen.storyboard */,
 				E8E8695C1E526E490049C764 /* Info.plist */,
 				E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */,
+				AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */,
 				E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */,
 				AAEFE8BF1E788EE300D48259 /* WaterReports.swift */,
 				E8DFB7301E6924710035FDD4 /* ThirstQuencher-Bridging-Header.h */,
@@ -268,6 +274,8 @@
 				E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */,
 				E8E869531E526E490049C764 /* ViewController.swift in Sources */,
 				E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */,
+				AAC9F9011E8AF5AA0017B446 /* PurityReportTableViewController.swift in Sources */,
+				AAC9F9031E8AF84C0017B446 /* PurityReport.swift in Sources */,
 				E89F46B31E70BE49000E4932 /* EditUserTableViewController.swift in Sources */,
 				E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */,
 				E8D78F551E5F47D200BF945B /* AccountType.swift in Sources */,
