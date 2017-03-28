@@ -17,7 +17,10 @@ class Model {
     
     private var currentUser: User?
     
-    private init() {addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)}
+    private init() {
+        addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)
+        addUser(name: "Test Worker", id: "w", password: "p", accountType: AccountType.WORKER)
+    }
     
     func addUser(name: String, id: String, password: String, accountType: AccountType) -> Bool {
         
@@ -77,5 +80,9 @@ class Model {
     
     func getCurrentUserAddress() -> String {
         return currentUser!.getHomeAddress()
+    }
+    
+    func getCurrentUserAccountType() -> AccountType {
+        return currentUser!.getAccountType()
     }
 }

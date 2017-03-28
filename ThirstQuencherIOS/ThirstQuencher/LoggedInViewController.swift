@@ -9,6 +9,8 @@
 import UIKit
 
 class LoggedInViewController: UIViewController {
+    
+    @IBOutlet weak var purityReportButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,11 @@ class LoggedInViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = editUserButton
         self.navigationItem.leftBarButtonItem = logoutButton
+        
+        if (Model.sharedInstance.getCurrentUserAccountType() == AccountType.USER) {
+            self.purityReportButton.isHidden = true
+        }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -38,7 +45,7 @@ class LoggedInViewController: UIViewController {
     }
     
     func editUser() {
-        self.performSegue(withIdentifier: "editUser", sender: nil)
+        self.performSegue(withIdentifier: "toEditUser", sender: nil)
     }
     
 
