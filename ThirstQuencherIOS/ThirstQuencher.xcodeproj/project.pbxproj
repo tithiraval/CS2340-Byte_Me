@@ -118,8 +118,8 @@
 		E8E8694F1E526E490049C764 /* ThirstQuencher */ = {
 			isa = PBXGroup;
 			children = (
-				E8E869521E526E490049C764 /* ViewController.swift */,
 				E8E869501E526E490049C764 /* AppDelegate.swift */,
+				E8E869521E526E490049C764 /* ViewController.swift */,
 				E8D78F561E5F4A0F00BF945B /* Model.swift */,
 				E8E869661E54DC5C0049C764 /* SignInViewController.swift */,
 				AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */,
