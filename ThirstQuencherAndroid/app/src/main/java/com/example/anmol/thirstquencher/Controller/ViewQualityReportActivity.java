@@ -36,11 +36,11 @@ public class ViewQualityReportActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         reportNumberText.setText(Integer.toString(report.getReportNumber()));
-        dateTimeText.setText(report.getDate().toString());
+        dateTimeText.setText(report.getDateTime().toString());
         reporterText.setText(report.getEmailAddress());
         locationText.setText(report.getLocation());
         overallConditionText.setText(report.getOverallCondition().toString());
-        virusPPMText.setText(Float.toString(report.getVirusPPM()));
-        contaminantPPMText.setText(Float.toString(report.getContaminantPPM()));
+        virusPPMText.setText(Double.toString(report.getVirusPPM()));
+        contaminantPPMText.setText(Double.toString(report.getContaminantPPM()));
     }
 }

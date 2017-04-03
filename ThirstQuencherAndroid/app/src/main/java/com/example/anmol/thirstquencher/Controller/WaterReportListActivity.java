@@ -31,7 +31,7 @@ public class WaterReportListActivity extends AppCompatActivity {
             temp.put(References.REPORT_ID
                     , Integer.toString(References.getWaterReport(i).getReportNumber()));
             temp.put(References.DATE_SUBMITTED
-                    , References.getWaterReport(i).getDateTime());
+                    , References.getWaterReport(i).getDateTime().toString());
             displayList.add(i, temp);
         }
 

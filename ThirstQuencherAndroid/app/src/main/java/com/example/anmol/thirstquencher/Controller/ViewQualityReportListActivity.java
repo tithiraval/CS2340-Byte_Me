@@ -29,7 +29,7 @@ public class ViewQualityReportListActivity extends AppCompatActivity {
             temp.put(ViewQualityReportListActivity.REPORT_ID,
                     Integer.toString(MainActivity.qualityReports.get(i).getReportNumber()));
             temp.put(ViewQualityReportListActivity.DATE_SUBMITTED,
-                    MainActivity.qualityReports.get(i).getDate().toString());
+                    MainActivity.qualityReports.get(i).getDateTime().toString());
             displayList.add(i, temp);
         }
         ListViewAdapter adapter = new ListViewAdapter(this, displayList);

@@ -56,8 +56,8 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
             MainActivity.qualityReports.add(0, new QualityReport(user.getUsername(),
                     location.getText().toString(),
                     getOverallCondition((String) overallConditionSpinner.getSelectedItem()),
-                    Float.valueOf(virusPPM.getText().toString()),
-                    Float.valueOf(contaminantPPM.getText().toString())));
+                    Double.valueOf(virusPPM.getText().toString()),
+                    Double.valueOf(contaminantPPM.getText().toString())));
             CharSequence text = "Report Submitted";
             Toast reportSubmitted = Toast.makeText(SubmitQualityReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             reportSubmitted.show();

@@ -41,7 +41,7 @@ public class ViewWaterReportActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         reportNumberText.setText(Integer.toString(report.getReportNumber()));
-        dateTimeText.setText(report.getDateTime());
+        dateTimeText.setText(report.getDateTime().toString());
         reporterText.setText(report.getEmailAddress());
         locationText.setText(report.getLocation().getLatLng().toString());
         waterTypeText.setText(report.getType().toString());

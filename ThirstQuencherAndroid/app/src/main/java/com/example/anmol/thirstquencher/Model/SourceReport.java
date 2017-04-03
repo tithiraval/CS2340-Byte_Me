@@ -1,6 +1,7 @@
 package com.example.anmol.thirstquencher.Model;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Exclude;
 
 import java.util.Arrays;
@@ -18,7 +19,7 @@ public class SourceReport {
             "Spring", "Other");
     public static List<String> legalWaterConditions = Arrays.asList("Waste", "Treatable-Clear",
             "Treatable-Muddy", "Portable");
-    private String dateTime;
+    private Date dateTime;
     private int reportNumber;
     private String emailAddress;
     private Location location;
@@ -37,7 +38,7 @@ public class SourceReport {
      */
     public SourceReport(String emailAddress, Location location, int reportNumber, WaterType type, WaterCondition condition) {
         this.emailAddress = emailAddress;
-        this.dateTime = new Date().toString();
+        this.dateTime = new Date();
         this.location = location;
         this.reportNumber = reportNumber;
         this.type = type;
@@ -54,7 +55,7 @@ public class SourceReport {
      * returns the date on which report was filed
      * @return date
      */
-    public String getDateTime() { return this.dateTime;}
+    public Date getDateTime() { return this.dateTime;}
 
     /**
      * returns the location of the water source
@@ -98,7 +99,7 @@ public class SourceReport {
         this.emailAddress = emailAddress;
     }
 
-    public void setDateTime(String dateTime) {
+    public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 

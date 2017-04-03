@@ -40,7 +40,7 @@ public class MapReportsActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
 
         for(SourceReport sr: References.getWaterReports()) {
-            String disp = sr.getType().toString() + ", " + sr.getCondition().toString();
+            String disp = sr.getTypeVal().toString() + ", " + sr.getConditionVal().toString();
             mMap.addMarker(new MarkerOptions().position(sr.getLocation().getLatLng()).title(disp));
         }
     }
