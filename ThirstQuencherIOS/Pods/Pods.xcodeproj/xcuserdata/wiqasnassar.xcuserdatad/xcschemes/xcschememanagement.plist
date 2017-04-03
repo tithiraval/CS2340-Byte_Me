@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ThirstQuencher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2ACAD30A2AAEF498DF7B46C28CCF8345</key>
+		<key>58E7450DB13C5ECCE92D3C0DF7CF0903</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7A5FF9A45362BE77DE14BB85F5AB932</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE868725B18AE240E550C5515AE66BC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

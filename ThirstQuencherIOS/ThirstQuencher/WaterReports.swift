@@ -37,23 +37,23 @@ class WaterReports: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Model.sharedInstance.getAllReports().count
+        return Model.sharedInstance.getAllSourceReports().count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepNum", for: indexPath)
 
-        cell.textLabel?.text = String(Model.sharedInstance.getAllReports()[indexPath.row].getNum())
+        cell.textLabel?.text = String(Model.sharedInstance.getAllSourceReports()[indexPath.row].getNum())
 
-        let date = (describing: Model.sharedInstance.getAllReports()[indexPath.row].getDate())
+        let date = (describing: Model.sharedInstance.getAllSourceReports()[indexPath.row].getDate())
         cell.detailTextLabel?.text = (DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short));
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reportSelected = Model.sharedInstance.getAllReports()[indexPath.row]
+        let reportSelected = Model.sharedInstance.getAllSourceReports()[indexPath.row]
         let reportAlert = UIAlertController(title: "Report " + String(reportSelected.getNum()), message: reportSelected.getName() + "\n" + reportSelected.getLocation() + "\n" + reportSelected.getWaterType() + "\n" + reportSelected.getWaterCondition(), preferredStyle: UIAlertControllerStyle.alert)
         reportAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(reportAlert, animated: true, completion: nil)

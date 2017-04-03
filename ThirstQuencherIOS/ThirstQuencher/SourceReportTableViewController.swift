@@ -45,7 +45,7 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewReport(date: datePicker.date, location: locationTextField.text!, waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!)) {
+        if (Model.sharedInstance.addNewSourceReport(date: datePicker.date, location: locationTextField.text!, waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!)) {
             self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
         }
     }

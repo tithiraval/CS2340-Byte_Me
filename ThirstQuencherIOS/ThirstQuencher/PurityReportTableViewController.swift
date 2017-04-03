@@ -19,6 +19,10 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var virusLabel: UILabel!
+    @IBOutlet weak var contamLabel: UILabel!
+    
+    
     var waterConditionData: [String] = [String]()
     
     
@@ -38,7 +42,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewReport(date: datePicker.date, location: locationTextField.text!, waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!)) {
+        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: locationTextField.text!, waterCondition: waterConditionLabel.text!, virusPPM: virusLabel.text!, contaminantPPM: contamLabel.text!)) {
             self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
         }
     }
@@ -118,7 +122,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
         if (pickerView == waterConditionPicker) {
             return waterConditionData.count
         } else {
-            return waterTypeData.count
+            return 1
         }
     }
     
@@ -126,7 +130,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
         if (pickerView == waterConditionPicker) {
             return waterConditionData[row]
         } else {
-            return waterTypeData[row]
+            return "null"
         }
     }
     
@@ -134,7 +138,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
         if (pickerView == waterConditionPicker) {
             waterConditionLabel.text = waterConditionData[row]
         } else {
-            waterTypeLabel.text = waterTypeData[row]
+            
         }
     }
     

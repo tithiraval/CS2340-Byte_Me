@@ -125,14 +125,14 @@
 				AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */,
 				E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */,
 				E8D78F521E5F45CC00BF945B /* User.swift */,
-				E8ACF6981E668DBB00C29D17 /* SourceReport.swift */,
-				AAC9F9021E8AF84C0017B446 /* PurityReport.swift */,
 				E8D78F541E5F47D200BF945B /* AccountType.swift */,
 				E8E869541E526E490049C764 /* Main.storyboard */,
 				E8E869571E526E490049C764 /* Assets.xcassets */,
 				E8E869591E526E490049C764 /* LaunchScreen.storyboard */,
 				E8E8695C1E526E490049C764 /* Info.plist */,
+				E8ACF6981E668DBB00C29D17 /* SourceReport.swift */,
 				E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */,
+				AAC9F9021E8AF84C0017B446 /* PurityReport.swift */,
 				AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */,
 				E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */,
 				AAEFE8BF1E788EE300D48259 /* WaterReports.swift */,
@@ -407,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -424,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

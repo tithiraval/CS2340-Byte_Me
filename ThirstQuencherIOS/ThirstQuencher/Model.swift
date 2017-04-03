@@ -14,6 +14,7 @@ class Model {
     
     private var users = [String: User]()
     private var sourceReports = [SourceReport]()
+    private var purityReports = [PurityReport]()
     
     private var currentUser: User?
     
@@ -52,15 +53,25 @@ class Model {
         currentUser!.setHomeAddress(address: address)
     }
     
-    func addNewReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {
+    func addNewSourceReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {
         let newReport = SourceReport(date: date, number: (sourceReports.count + 1), name: currentUser!.getName(), location: location, waterType: waterType, waterCondition: waterCondition)
         sourceReports.append(newReport)
         return true
     }
     
+    func addNewPurityReport(date: Date, location: String, waterCondition: String, virusPPM: String, contaminantPPM: String) -> Bool {
+        let newReport = PurityReport(date: date, number: (purityReports.count + 1), name: currentUser!.getName(), location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
+        purityReports.append(newReport)
+        return true
+    }
     
-    func getAllReports() -> [SourceReport] {
+    
+    func getAllSourceReports() -> [SourceReport] {
         return sourceReports
+    }
+    
+    func getAllPurityReports() -> [PurityReport] {
+        return purityReports
     }
     
     func logout() {
@@ -73,6 +84,10 @@ class Model {
     
     func getNewSourceReportNumber() -> Int {
         return sourceReports.count + 1
+    }
+    
+    func getNewPurityReportNumber() -> Int {
+        return purityReports.count + 1
     }
     
     func getCurrentUserEmail() -> String {
