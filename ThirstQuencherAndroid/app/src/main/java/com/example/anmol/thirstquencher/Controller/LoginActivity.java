@@ -75,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this,
                                         "Please verify your Email Address!",
                                         Toast.LENGTH_SHORT).show();
+                                mAuth.getCurrentUser().sendEmailVerification();
                             } else {
                                 FirebaseDatabase.getInstance().getReference(References.USER_TABLE)
                                         .child(mAuth.getCurrentUser().getUid())

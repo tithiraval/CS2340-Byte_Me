@@ -44,9 +44,6 @@ public class ViewQualityReportListActivity extends AppCompatActivity {
                 Intent intent = new Intent(ViewQualityReportListActivity.this, ViewQualityReportActivity.class);
                 intent.putExtra("QUALITY_REPORT_INDEX", position);
                 startActivity(intent);
-//                int pos=position+1;
-//                Toast.makeText(WaterReportListActivity.this, Integer.toString(pos) + " Clicked"
-//                        , Toast.LENGTH_SHORT).show();
             }
 
         });

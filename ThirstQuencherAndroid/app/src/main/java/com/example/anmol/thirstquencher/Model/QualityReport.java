@@ -1,6 +1,7 @@
 package com.example.anmol.thirstquencher.Model;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.Exclude;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -64,10 +65,17 @@ public class QualityReport {
     public int getReportNumber() {return this.reportNumber;}
 
     /**
+     * returns the raw string representation of the overall condition
+     * @return the raw string representation of the overall condition
+     */
+    public String getCondition() {return this.condition.name();}
+
+    /**
      * returns the overall condition
      * @return overall condition
      */
-    public OverallCondition getOverallCondition() {return this.condition;}
+    @Exclude
+    public OverallCondition getConditionVal() {return this.condition;}
 
     /**
      * returns the virus ppm
@@ -80,4 +88,34 @@ public class QualityReport {
      * @return contaminant ppm
      */
     public double getContaminantPPM() {return this.contaminantPPM;}
+
+
+    public void setDateTime(Date dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = OverallCondition.valueOf(condition);
+    }
+
+    @Exclude
+    public void setCondition(OverallCondition condition) {
+        this.condition = condition;
+    }
+
+    public void setVirusPPM(double virusPPM) {
+        this.virusPPM = virusPPM;
+    }
+
+    public void setContaminantPPM(double contaminantPPM) {
+        this.contaminantPPM = contaminantPPM;
+    }
 }
