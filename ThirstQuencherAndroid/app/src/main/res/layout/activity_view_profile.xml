@@ -10,9 +10,26 @@
     tools:context=".Controller.ViewProfileActivity">
 
     <TextView
+        android:id="@+id/viewProfileEmailAddressTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Email Address:"/>
+    <TextView
+        android:id="@+id/viewProfileEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/viewProfileEmailAddressTextField"
+        android:layout_alignBottom="@+id/viewProfileEmailAddressTextField"
+        android:layout_marginLeft="16dp"
+        android:textSize="16dp"/>
+
+    <TextView
         android:id="@+id/viewProfileUsernameTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/viewProfileEmailAddressTextField"
+        android:layout_marginTop="16dp"
         android:textSize="16dp"
         android:text="Username:"/>
     <TextView
@@ -42,27 +59,10 @@
         android:textSize="16dp"/>
 
     <TextView
-        android:id="@+id/viewProfileEmailAddressTextField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viewProfileHomeAddressTextField"
-        android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Email Address:"/>
-    <TextView
-        android:id="@+id/viewProfileEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/viewProfileEmailAddressTextField"
-        android:layout_alignBottom="@+id/viewProfileEmailAddressTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
-
-    <TextView
         android:id="@+id/viewProfileTitleTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewProfileEmailAddressTextField"
+        android:layout_below="@+id/viewProfileHomeAddressTextField"
         android:layout_marginTop="16dp"
         android:textSize="16dp"
         android:text="Title:"/>

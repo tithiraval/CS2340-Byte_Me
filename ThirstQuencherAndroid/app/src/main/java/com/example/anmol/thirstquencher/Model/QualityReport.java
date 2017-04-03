@@ -16,7 +16,7 @@ public class QualityReport {
     private static int currentReportNumber = 0;
     private Date dateTime;
     private int reportNumber;
-    private final String username;
+    private String emailAddress;
     private String location;
     //private WaterType type;
     private OverallCondition condition;
@@ -25,17 +25,17 @@ public class QualityReport {
 
     /**
      * Creates a new purity report and auto-sets the report Number.
-     * @param username username of the worker submitting the report
+     * @param emailAddress username of the worker submitting the report
      * @param location location of water source
      * @param condition condition the water is in
      */
-    public QualityReport(String username, String location, OverallCondition condition,
+    public QualityReport(String emailAddress, String location, OverallCondition condition,
                          float virusPPM, float contaminantPPM) {
         this.dateTime = new Date();
         this.location = location;
         this.reportNumber = QualityReport.currentReportNumber;
         QualityReport.currentReportNumber++;
-        this.username = username;
+        this.emailAddress = emailAddress;
         //this.type = type;
         this.condition = condition;
         this.virusPPM = virusPPM;
@@ -51,7 +51,7 @@ public class QualityReport {
      * returns the username of the user that submitted the report
      * @return username
      */
-    public String getUsername() { return this.username;}
+    public String getEmailAddress() { return this.emailAddress;}
 
     /**
      * returns the location of the water source

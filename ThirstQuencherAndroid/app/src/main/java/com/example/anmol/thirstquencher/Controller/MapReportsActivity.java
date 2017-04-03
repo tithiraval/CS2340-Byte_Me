@@ -3,6 +3,7 @@ package com.example.anmol.thirstquencher.Controller;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.R;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,9 +39,9 @@ public class MapReportsActivity extends FragmentActivity implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        for(SourceReport sr: MainActivity.waterReports) {
+        for(SourceReport sr: References.getWaterReports()) {
             String disp = sr.getType().toString() + ", " + sr.getCondition().toString();
-            mMap.addMarker(new MarkerOptions().position(sr.getLocation()).title(disp));
+            mMap.addMarker(new MarkerOptions().position(sr.getLocation().getLatLng()).title(disp));
         }
     }
 }

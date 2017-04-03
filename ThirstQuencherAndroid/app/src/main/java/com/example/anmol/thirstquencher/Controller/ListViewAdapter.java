@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.R;
 
 import java.util.ArrayList;
@@ -64,8 +65,8 @@ public class ListViewAdapter extends BaseAdapter {
         }
 
         HashMap<String, String> map = list.get(position);
-        txtFirst.setText(map.get(WaterReportListActivity.REPORT_ID));
-        txtSecond.setText(map.get(WaterReportListActivity.DATE_SUBMITTED));
+        txtFirst.setText(map.get(References.REPORT_ID));
+        txtSecond.setText(map.get(References.DATE_SUBMITTED));
         return convertView;
     }
 }

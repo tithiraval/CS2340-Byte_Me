@@ -1,12 +1,16 @@
 package com.example.anmol.thirstquencher.Controller;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.anmol.thirstquencher.Model.Location;
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.Model.WaterCondition;
@@ -17,12 +21,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SubmitReportActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private User user;
-    private LatLng location;
+    private Location location;
     private Spinner waterTypeSpinner;
     private Spinner waterConditionSpinner;
 
@@ -35,7 +42,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
+        user = References.getCurrentUser();
         waterTypeSpinner = (Spinner) findViewById(R.id.createReportWaterTypeSpinner);
         waterConditionSpinner = (Spinner) findViewById(R.id.createReportWaterConditionSpinner);
 
@@ -66,8 +73,8 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
             @Override
             public void onMapClick(LatLng latLng) {
                 mMap.clear();
-                location = new LatLng(latLng.latitude, latLng.longitude);
-                mMap.addMarker(new MarkerOptions().position(location));
+                location = new Location(new LatLng(latLng.latitude, latLng.longitude));
+                mMap.addMarker(new MarkerOptions().position(latLng));
             }
         });
     }
@@ -82,46 +89,28 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
             Toast emptyLocation = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyLocation.show();
         } else {
-            MainActivity.waterReports.add(0, new SourceReport(user.getUsername(), location,
-                    getWaterType((String) waterTypeSpinner.getSelectedItem()),
-                    getWaterCondition((String) waterConditionSpinner.getSelectedItem())));
-            CharSequence text = "Report Submitted";
-            Toast reportSubmitted = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            reportSubmitted.show();
-            SubmitReportActivity.this.finish();
-        }
-    }
-
-    /**
-     * Gets the type of the water source
-     * @param waterType The type of the water source
-     * @return
-     */
-    private WaterType getWaterType(String waterType) {
-        if (waterType.equals("Bottled")) {
-            return WaterType.BOTTLED;
-        } else if (waterType.equals("Well")) {
-            return WaterType.WELL;
-        } else if (waterType.equals("Stream")) {
-            return WaterType.STREAM;
-        } else if (waterType.equals("Lake")) {
-            return WaterType.LAKE;
-        } else if (waterType.equals("Spring")) {
-            return WaterType.SPRING;
-        } else {
-            return WaterType.OTHER;
-        }
-    }
-
-    private WaterCondition getWaterCondition(String waterCondition) {
-        if (waterCondition.equals("Waste")) {
-            return WaterCondition.WASTE;
-        } else if (waterCondition.equals("Treatable-Clear")) {
-            return WaterCondition.TREATABLE_CLEAR;
-        } else if (waterCondition.equals("Treatable-Muddy")) {
-            return WaterCondition.TREATABLE_MUDDY;
-        } else {
-            return WaterCondition.PORTABLE;
+            final SourceReport report = new SourceReport(user.getEmailAddress(), this.location,
+                    References.numReports + 1,
+                    References.getWaterType((String) waterTypeSpinner.getSelectedItem()),
+                    References.getWaterCondition((String) waterConditionSpinner.getSelectedItem()));
+            FirebaseDatabase.getInstance()
+                    .getReference(References.SOURCE_REPORT_TABLE)
+                    .child(Integer.toString(References.numReports + 1)).setValue(report)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        References.addWaterReport(report);
+                        Toast.makeText(SubmitReportActivity.this, "Report Submitted",
+                                Toast.LENGTH_SHORT).show();
+                        SubmitReportActivity.this.finish();
+                    } else {
+                        Log.e("AddingSourceReport", task.getException().getMessage());
+                        Toast.makeText(SubmitReportActivity.this,
+                                "An error occured. Please try again!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
     }
 

@@ -1,7 +1,11 @@
 package com.example.anmol.thirstquencher.Model;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Implementation of the user class
@@ -11,24 +15,36 @@ import java.util.List;
 public abstract class User {
 
     public static List<String> legalUserTypes = Arrays.asList("User", "Worker", "Manager", "Admin");
-    private final String username;
+    private String username;
     private String password;
     private String emailAddress;
     private String homeAddress;
     private String title;
     private UserType accountType;
 
+    public User() {
+
+    }
+
     /**
      * Creates a new user
-     * @param username The user name of the user
+     * @param email The email address of the user
      * @param password The password of the user
      */
-    public User(String username, String password) {
-        this.username = username;
+    public User(String email, String password) {
+        this.emailAddress = email;
         this.password = password;
-        this.emailAddress = "";
+        this.username = "";
         this.homeAddress = "";
         this.title = "";
+    }
+
+    /**
+     * Sets the username of the user
+     * @param username What the password that should be set to
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -65,10 +81,19 @@ public abstract class User {
 
     /**
      * Sets the account type of the user
-     * @param accountType What the account type should be set to
+     * @param accountType value of the account type
      */
-    protected void setAccountType(UserType accountType) {
+    @Exclude
+    public void setAccountType(UserType accountType) {
         this.accountType = accountType;
+    }
+
+    /**
+     * Sets the account type of the user
+     * @param accountType string value of the account type
+     */
+    public void setAccountType(String accountType) {
+        this.accountType = UserType.valueOf(accountType);
     }
 
     /**
@@ -113,9 +138,29 @@ public abstract class User {
 
     /**
      * Gets the account type of the user
-     * @return The user's account type
+     * @return The value representation of the user's account type
      */
-    public UserType getAccountType() {
+    @Exclude
+    public UserType getAccountTypeVal() {
         return this.accountType;
+    }
+
+    /**
+     * Gets the account type of the user
+     * @return The raw string representation of the user's account type
+     */
+    public String getAccountType() {
+        return this.accountType.name();
+    }
+
+    @Exclude
+    public Map<String, Object> updateProfile(String username, String homeAddress, String title) {
+        Map<String, Object> result = new HashMap<String, Object>();
+
+        result.put("username", username);
+        result.put("homeAddress", homeAddress);
+        result.put("title", title);
+
+        return result;
     }
 }

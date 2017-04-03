@@ -3,13 +3,24 @@ package com.example.anmol.thirstquencher.Controller;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.anmol.thirstquencher.Model.Admin;
+import com.example.anmol.thirstquencher.Model.References;
+import com.example.anmol.thirstquencher.Model.GeneralUser;
+import com.example.anmol.thirstquencher.Model.Manager;
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.Model.UserType;
 import com.example.anmol.thirstquencher.Model.Worker;
 import com.example.anmol.thirstquencher.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * The controller for the Home Screen
@@ -18,16 +29,24 @@ import com.example.anmol.thirstquencher.R;
  */
 public class HomeScreenActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private User user;
+
+    private Button createQRButton;
+    private Button viewQRButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
 
-        Button createQRButton = (Button) findViewById(R.id.createQualityReportButton);
-        Button viewQRButton = (Button) findViewById(R.id.viewQualityReportButton);
+        mAuth = FirebaseAuth.getInstance();
+        user = References.getCurrentUser();
+
+        Log.i("User", user.getAccountType());
+
+        createQRButton = (Button) findViewById(R.id.createQualityReportButton);
+        viewQRButton = (Button) findViewById(R.id.viewQualityReportButton);
 
         if (user instanceof Worker) {
             createQRButton.setVisibility(View.VISIBLE);
@@ -89,6 +108,8 @@ public class HomeScreenActivity extends AppCompatActivity {
      * @param view The screen view
      */
     public void logOut(View view) {
+        mAuth.signOut();
+        References.setCurrentUser((User) null);
         Intent intent = new Intent(HomeScreenActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

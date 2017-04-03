@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.R;
 
@@ -17,9 +18,10 @@ import com.example.anmol.thirstquencher.R;
 public class ViewProfileActivity extends AppCompatActivity {
 
     private User user;
+
+    private TextView emailAddressText;
     private TextView usernameText;
     private TextView homeAddressText;
-    private TextView emailAddressText;
     private TextView titleText;
     private TextView accountTypeText;
 
@@ -28,10 +30,10 @@ public class ViewProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_profile);
 
-        user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
+        user = References.getCurrentUser();
+        emailAddressText = (TextView) findViewById(R.id.viewProfileEmailAddress);
         usernameText = (TextView) findViewById(R.id.viewProfileUsername);
         homeAddressText = (TextView) findViewById(R.id.viewProfileHomeAddress);
-        emailAddressText = (TextView) findViewById(R.id.viewProfileEmailAddress);
         titleText = (TextView) findViewById(R.id.viewProfileTitle);
         accountTypeText = (TextView) findViewById(R.id.viewProfileAccountType);
     }
@@ -43,7 +45,7 @@ public class ViewProfileActivity extends AppCompatActivity {
         homeAddressText.setText(user.getHomeAddress());
         emailAddressText.setText(user.getEmailAddress());
         titleText.setText(user.getTitle());
-        accountTypeText.setText(user.getAccountType().toString());
+        accountTypeText.setText(user.getAccountTypeVal().toString());
     }
 
     /**
@@ -52,7 +54,6 @@ public class ViewProfileActivity extends AppCompatActivity {
      */
     public void editProfileRequest(View view) {
         Intent intent = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
-        intent.putExtra("USERNAME", user.getUsername());
         startActivity(intent);
     }
 
@@ -62,7 +63,6 @@ public class ViewProfileActivity extends AppCompatActivity {
      */
     public void changePasswordRequest(View view) {
         Intent intent = new Intent(ViewProfileActivity.this, ChangePasswordActivity.class);
-        intent.putExtra("USERNAME", user.getUsername());
         startActivity(intent);
     }
 
