@@ -10,15 +10,15 @@
     tools:context=".Controller.RegistrationActivity">
 
     <EditText
-        android:id="@+id/registerUsername"
+        android:id="@+id/registerEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint = "Enter Username"/>
+        android:hint = "Enter Email"/>
     <EditText
         android:id="@+id/registerPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/registerUsername"
+        android:layout_below="@+id/registerEmail"
         android:inputType="textPassword"
         android:hint = "Enter Password"/>
 

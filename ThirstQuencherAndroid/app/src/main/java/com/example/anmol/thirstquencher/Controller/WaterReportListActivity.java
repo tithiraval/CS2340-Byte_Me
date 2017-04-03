@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.R;
 
 import java.util.ArrayList;
@@ -15,8 +16,6 @@ import java.util.HashMap;
 public class WaterReportListActivity extends AppCompatActivity {
 
     private ArrayList<HashMap<String, String>> displayList;
-    public final static String REPORT_ID = "Report ID";
-    public final static String DATE_SUBMITTED = "Date Submitted";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +26,12 @@ public class WaterReportListActivity extends AppCompatActivity {
 
         displayList = new ArrayList<HashMap<String,String>>();
 
-        for (int i = 0; i < MainActivity.waterReports.size(); i++) {
+        for (int i = 0; i < References.getWaterReports().size(); i++) {
             HashMap<String, String> temp = new HashMap<String, String>();
-            temp.put(WaterReportListActivity.REPORT_ID
-                    , Integer.toString(MainActivity.waterReports.get(i).getReportNumber()));
-            temp.put(WaterReportListActivity.DATE_SUBMITTED
-                    , MainActivity.waterReports.get(i).getDate().toString());
+            temp.put(References.REPORT_ID
+                    , Integer.toString(References.getWaterReport(i).getReportNumber()));
+            temp.put(References.DATE_SUBMITTED
+                    , References.getWaterReport(i).getDateTime());
             displayList.add(i, temp);
         }
 
@@ -48,9 +47,6 @@ public class WaterReportListActivity extends AppCompatActivity {
                 Intent intent = new Intent(WaterReportListActivity.this, ViewWaterReportActivity.class);
                 intent.putExtra("WATER_REPORT_INDEX", position);
                 startActivity(intent);
-//                int pos=position+1;
-//                Toast.makeText(WaterReportListActivity.this, Integer.toString(pos) + " Clicked"
-//                        , Toast.LENGTH_SHORT).show();
             }
 
         });

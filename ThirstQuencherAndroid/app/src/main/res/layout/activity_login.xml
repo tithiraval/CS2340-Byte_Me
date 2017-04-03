@@ -10,15 +10,15 @@
     tools:context=".Controller.LoginActivity">
 
     <EditText
-        android:id="@+id/enterUsername"
+        android:id="@+id/enterEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint = "Enter Username"/>
+        android:hint = "Enter Email"/>
     <EditText
         android:id="@+id/enterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/enterUsername"
+        android:layout_below="@+id/enterEmail"
         android:inputType="textPassword"
         android:hint = "Enter Password"/>
     <Button

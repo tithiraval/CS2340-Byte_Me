@@ -1,22 +1,18 @@
 package com.example.anmol.thirstquencher.Model;
 
+import com.google.firebase.database.Exclude;
+
 /**
  * Created by Anmol on 2/20/17.
  */
 public class Worker extends GeneralUser {
 
-    public Worker(String username, String password) {
-        super(username, password);
+    public Worker() {
+        super();
+    }
+
+    public Worker(String email, String password) {
+        super(email, password);
         super.setAccountType(UserType.WORKER);
-    }
-
-    @Override
-    protected void setAccountType(UserType accountType) {
-        super.setAccountType(accountType);
-    }
-
-    @Override
-    public UserType getAccountType() {
-        return super.getAccountType();
     }
 }

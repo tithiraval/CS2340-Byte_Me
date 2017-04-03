@@ -1,5 +1,7 @@
 package com.example.anmol.thirstquencher.Model;
 
+import com.google.firebase.database.Exclude;
+
 /**
  * The admin user class
  * @author Anmol
@@ -7,23 +9,17 @@ package com.example.anmol.thirstquencher.Model;
  */
 public class Admin extends User {
 
+    public Admin() {
+        super();
+    }
+
     /**
      * Creates the Admin user
-     * @param username the username of the admin user
+     * @param email the email address of the admin user
      * @param password the password of the admin user
      */
-    public Admin(String username, String password) {
-        super(username, password);
+    public Admin(String email, String password) {
+        super(email, password);
         super.setAccountType(UserType.ADMIN);
-    }
-
-    @Override
-    protected void setAccountType(UserType accountType) {
-        super.setAccountType(accountType);
-    }
-
-    @Override
-    public UserType getAccountType() {
-        return super.getAccountType();
     }
 }

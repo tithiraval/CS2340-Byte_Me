@@ -1,7 +1,9 @@
 package com.example.anmol.thirstquencher.Controller;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -9,11 +11,18 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.anmol.thirstquencher.Model.Admin;
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.GeneralUser;
 import com.example.anmol.thirstquencher.Model.Manager;
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.Model.Worker;
 import com.example.anmol.thirstquencher.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Controller for Registration
@@ -22,7 +31,9 @@ import com.example.anmol.thirstquencher.R;
  */
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText usernameEditText;
+    private FirebaseAuth mAuth;
+
+    private EditText emailEditText;
     private EditText passwordEditText;
     private Spinner userTypeSpinner;
 
@@ -31,7 +42,9 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        usernameEditText = (EditText) findViewById(R.id.registerUsername);
+        mAuth = FirebaseAuth.getInstance();
+
+        emailEditText = (EditText) findViewById(R.id.registerEmail);
         passwordEditText = (EditText) findViewById(R.id.registerPassword);
         userTypeSpinner = (Spinner) findViewById(R.id.registerSpinner);
 
@@ -41,49 +54,49 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     /**
-     * Checks the entered user name and password for restrictions
-     * @param view View for registration screen
+     * Checks the entered email address and password for restrictions
+     * It then creates and account for the user and send an email for verification
+     * @param view View of the registration screen
      */
     public void register(View view) {
-        String username = usernameEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
+        final String email = emailEditText.getText().toString();
+        final String password = passwordEditText.getText().toString();
 
-        if (username.equals("")) {
-            CharSequence text = "Enter Username!";
-            Toast emptyUsername = Toast.makeText(RegistrationActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            emptyUsername.show();
-        } else if (MainActivity.userAccounts.containsKey(username)) {
-            CharSequence text = "Username Already Taken!";
-            Toast alreadyTaken = Toast.makeText(RegistrationActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            alreadyTaken.show();
-        } else if (password.equals("")) {
-            CharSequence text = "Enter Password!";
-            Toast emptyPassword = Toast.makeText(RegistrationActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            emptyPassword.show();
+        if (email.equals("")) {
+            Toast.makeText(RegistrationActivity.this, "Enter Email Address!",
+                    Toast.LENGTH_SHORT).show();
+        } else if (password.length() < 6) {
+            Toast.makeText(RegistrationActivity.this,
+                    "Password should be at least 6 characters long",
+                    Toast.LENGTH_SHORT).show();
         } else {
-            this.createUser(username, password, (String) userTypeSpinner.getSelectedItem());
-            CharSequence text = "Account Created";
-            Toast accountCreated = Toast.makeText(RegistrationActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            accountCreated.show();
-            RegistrationActivity.this.finish();
-        }
-    }
-
-    /**
-     * Creates the user if the restrictions from register method are met
-     * @param username The user name of the new user
-     * @param password The password of the new user
-     * @param typeOfUser The account type of the new user
-     */
-    public void createUser(String username, String password, String typeOfUser) {
-        if (typeOfUser.equals("Manager")) {
-            MainActivity.userAccounts.put(username, new Manager(username, password));
-        } else if (typeOfUser.equals("Worker")) {
-            MainActivity.userAccounts.put(username, new Worker(username, password));
-        } else if (typeOfUser.equals("Admin")) {
-            MainActivity.userAccounts.put(username, new Admin(username, password));
-        } else {
-            MainActivity.userAccounts.put(username, new GeneralUser(username, password));
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (!task.isSuccessful()) {
+                                Log.d("Regstr", task.getException().getMessage());
+                                Toast.makeText(RegistrationActivity.this, "Authentication failed",
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                User user = References.createUser(email, password,
+                                        (String) userTypeSpinner.getSelectedItem());
+                                if (user == null) {
+                                    Toast.makeText(RegistrationActivity.this,
+                                            "An error occurred. Please try again!",
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
+                                    mAuth.getCurrentUser().sendEmailVerification();
+                                    FirebaseDatabase.getInstance()
+                                            .getReference(References.USER_TABLE)
+                                            .child(mAuth.getCurrentUser().getUid()).setValue(user);
+                                    Toast.makeText(RegistrationActivity.this, "Account Created!",
+                                            Toast.LENGTH_SHORT).show();
+                                    RegistrationActivity.this.finish();
+                                }
+                            }
+                        }
+                    });
         }
     }
 

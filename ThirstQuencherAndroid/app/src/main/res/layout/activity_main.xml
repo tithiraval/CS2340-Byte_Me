@@ -24,14 +24,6 @@
         android:layout_below="@+id/text1"
         android:onClick="login"/>
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp"
-        android:layout_below="@id/login"
-        android:onClick="facebookLogin"/>
     <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"

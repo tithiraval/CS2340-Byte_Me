@@ -17,14 +17,13 @@
         android:layout_marginTop="16dp">
 
         <TextView
-            android:id="@+id/editProfileUsernameTextField"
+            android:id="@+id/editProfileEmailAddressTextField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16dp"
-            android:text="Username:"/>
-
+            android:text="Email Address:"/>
         <TextView
-            android:id="@+id/editProfileUsername"
+            android:id="@+id/editProfileEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -38,6 +37,30 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/editProfileRow1"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/editProfileUsernameTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Username:"/>
+
+        <EditText
+            android:id="@+id/editProfileUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editProfileRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/editProfileRow2"
         android:layout_marginTop="16dp">
 
         <TextView
@@ -56,34 +79,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/editProfileRow3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/editProfileRow2"
-        android:layout_marginTop="16dp">
-
-        <TextView
-            android:id="@+id/editProfileEmailAddressTextField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:text="Email Address:"/>
-        <EditText
-            android:id="@+id/editProfileEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:textSize="16dp"/>
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/editProfileRow4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/editProfileRow3"
         android:layout_marginTop="16dp">
+
         <TextView
             android:id="@+id/editProfileTitleTextField"
             android:layout_width="wrap_content"
@@ -96,6 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:textSize="16dp"/>
+
     </LinearLayout>
 
     <LinearLayout

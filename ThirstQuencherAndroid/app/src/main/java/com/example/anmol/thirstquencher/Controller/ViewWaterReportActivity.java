@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
 
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.R;
 
@@ -27,7 +28,7 @@ public class ViewWaterReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_water_report);
-        report = MainActivity.waterReports.get(getIntent().getIntExtra("WATER_REPORT_INDEX", 0));
+        report = References.getWaterReport(getIntent().getIntExtra("WATER_REPORT_INDEX", 0));
         reportNumberText = (TextView) findViewById(R.id.viewWaterReportNumber);
         dateTimeText = (TextView) findViewById(R.id.viewWaterReportDate);
         reporterText = (TextView) findViewById(R.id.viewWaterReportUsername);
@@ -40,9 +41,9 @@ public class ViewWaterReportActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         reportNumberText.setText(Integer.toString(report.getReportNumber()));
-        dateTimeText.setText(report.getDate().toString());
-        reporterText.setText(report.getUsername());
-        locationText.setText(report.getLocation().toString());
+        dateTimeText.setText(report.getDateTime());
+        reporterText.setText(report.getEmailAddress());
+        locationText.setText(report.getLocation().getLatLng().toString());
         waterTypeText.setText(report.getType().toString());
         waterConditionText.setText(report.getCondition().toString());
     }

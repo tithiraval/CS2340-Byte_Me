@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.anmol.thirstquencher.Model.OverallCondition;
 import com.example.anmol.thirstquencher.Model.QualityReport;
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.R;
 import com.google.android.gms.maps.model.LatLng;
@@ -26,7 +27,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_quality_report);
-        user = MainActivity.userAccounts.get(getIntent().getStringExtra("USERNAME"));
+        user = References.getCurrentUser();
         overallConditionSpinner = (Spinner) findViewById(R.id.submitQualityReportOverallConditionSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,
                 QualityReport.legalOverallConditions);
