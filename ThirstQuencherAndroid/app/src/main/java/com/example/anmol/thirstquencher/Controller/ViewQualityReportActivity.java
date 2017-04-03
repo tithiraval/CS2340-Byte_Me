@@ -39,7 +39,7 @@ public class ViewQualityReportActivity extends AppCompatActivity {
         dateTimeText.setText(report.getDateTime().toString());
         reporterText.setText(report.getEmailAddress());
         locationText.setText(report.getLocation());
-        overallConditionText.setText(report.getOverallCondition().toString());
+        overallConditionText.setText(report.getConditionVal().toString());
         virusPPMText.setText(Double.toString(report.getVirusPPM()));
         contaminantPPMText.setText(Double.toString(report.getContaminantPPM()));
     }

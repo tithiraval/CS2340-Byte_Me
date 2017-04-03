@@ -56,7 +56,8 @@
         <activity android:name=".Controller.ViewQualityReportActivity" />
         <activity android:name=".Controller.SubmitQualityReportActivity" />
         <activity android:name=".Controller.ViewQualityReportListActivity" />
-        <activity android:name=".Controller.LoadSourceReportActivity"></activity>
+        <activity android:name=".Controller.LoadSourceReportActivity" />
+        <activity android:name=".Controller.GraphSearchActivity"></activity>
     </application>
 
 </manifest>

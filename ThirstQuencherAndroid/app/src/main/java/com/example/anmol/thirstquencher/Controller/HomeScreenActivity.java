@@ -79,8 +79,21 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Alows user to view list of quality reports
+     * @param view The view for this screen
+     */
     public void viewQualityReports(View view) {
         Intent intent = new Intent(HomeScreenActivity.this, ViewQualityReportListActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Alows user to view list of quality reports
+     * @param view The view for this screen
+     */
+    public void graphSearch(View view) {
+        Intent intent = new Intent(HomeScreenActivity.this, GraphSearchActivity.class);
         startActivity(intent);
     }
 
