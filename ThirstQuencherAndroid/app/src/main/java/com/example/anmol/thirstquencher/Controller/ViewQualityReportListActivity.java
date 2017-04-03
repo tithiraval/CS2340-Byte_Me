@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.anmol.thirstquencher.Model.QualityReport;
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.R;
 
 import java.util.ArrayList;
@@ -15,8 +17,6 @@ import java.util.HashMap;
 public class ViewQualityReportListActivity extends AppCompatActivity {
 
     private ArrayList<HashMap<String, String>> displayList;
-    public final static String REPORT_ID = "Report ID";
-    public final static String DATE_SUBMITTED = "Date Submitted";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +24,11 @@ public class ViewQualityReportListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_quality_report_list);
         ListView listView = (ListView) findViewById(R.id.qualityReportListView);
         displayList = new ArrayList<HashMap<String, String>>();
-        for (int i = 0; i < MainActivity.qualityReports.size(); i++) {
+        for (int i = 0; i < References.getQualityReports().size(); i++) {
             HashMap<String, String> temp = new HashMap<>();
-            temp.put(ViewQualityReportListActivity.REPORT_ID,
-                    Integer.toString(MainActivity.qualityReports.get(i).getReportNumber()));
-            temp.put(ViewQualityReportListActivity.DATE_SUBMITTED,
-                    MainActivity.qualityReports.get(i).getDateTime().toString());
+            QualityReport qualityReport = References.getQualityReport(i);
+            temp.put(References.REPORT_ID, Integer.toString(qualityReport.getReportNumber()));
+            temp.put(References.DATE_SUBMITTED, qualityReport.getDateTime().toString());
             displayList.add(i, temp);
         }
         ListViewAdapter adapter = new ListViewAdapter(this, displayList);

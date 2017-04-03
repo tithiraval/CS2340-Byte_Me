@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.anmol.thirstquencher.Model.QualityReport;
+import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.R;
 
 public class ViewQualityReportActivity extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class ViewQualityReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_quality_report);
-        report = MainActivity.qualityReports.get(getIntent().getIntExtra("QUALITY_REPORT_INDEX", 0));
+        report = References.getQualityReport(getIntent().getIntExtra("QUALITY_REPORT_INDEX", 0));
         reportNumberText = (TextView) findViewById(R.id.viewQualityReportIDTextField);
         dateTimeText = (TextView) findViewById(R.id.viewQualityReportDateTextField);
         reporterText = (TextView) findViewById(R.id.viewQualityReportUserTextField);

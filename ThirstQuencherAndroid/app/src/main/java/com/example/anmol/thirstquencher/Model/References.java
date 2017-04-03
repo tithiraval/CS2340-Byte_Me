@@ -1,16 +1,5 @@
 package com.example.anmol.thirstquencher.Model;
 
-import android.util.Log;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,8 +21,10 @@ public class References {
     // Other References User
     private static User currentUser = null;
     private static List<SourceReport> waterReports;
+    private static List<QualityReport> qualityReports;
 
-    public static int numReports;
+    public static int numSourceReports;
+    public static int numQualityReports;
 
     public static User getCurrentUser() {
         return currentUser;
@@ -42,6 +33,8 @@ public class References {
     public static void setCurrentUser(User user) {
         currentUser = user;
     }
+
+
 
     public static List<SourceReport> getWaterReports() {
         return waterReports;
@@ -52,11 +45,29 @@ public class References {
     }
 
     public static void addWaterReport(SourceReport waterReport) {
-        waterReports.add(numReports++, waterReport);
+        waterReports.add(numSourceReports++, waterReport);
     }
 
     public static SourceReport getWaterReport(int index) {
         return waterReports.get(index);
+    }
+
+
+
+    public static List<QualityReport> getQualityReports() {
+        return qualityReports;
+    }
+
+    public static void setQualityReports(List<QualityReport> qualityReports) {
+        References.qualityReports = qualityReports;
+    }
+
+    public static void addQualityReport(QualityReport qualityReport) {
+        qualityReports.add(numQualityReports++, qualityReport);
+    }
+
+    public static QualityReport getQualityReport(int index) {
+        return qualityReports.get(index);
     }
 
 
@@ -105,6 +116,16 @@ public class References {
             return WaterCondition.TREATABLE_MUDDY;
         } else {
             return WaterCondition.PORTABLE;
+        }
+    }
+
+    public static OverallCondition getCondition(String condition) {
+        if (condition.equals("Safe")) {
+            return OverallCondition.SAFE;
+        } else if (condition.equals("Treatable")) {
+            return OverallCondition.UNSAFE;
+        } else {
+            return OverallCondition.Treatable;
         }
     }
 

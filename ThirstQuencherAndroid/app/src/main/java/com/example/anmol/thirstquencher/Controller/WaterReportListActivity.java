@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.anmol.thirstquencher.Model.References;
+import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.R;
 
 import java.util.ArrayList;
@@ -21,20 +22,15 @@ public class WaterReportListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_report_list);
-
         ListView listView = (ListView) findViewById(R.id.listView1);
-
         displayList = new ArrayList<HashMap<String,String>>();
-
         for (int i = 0; i < References.getWaterReports().size(); i++) {
             HashMap<String, String> temp = new HashMap<String, String>();
-            temp.put(References.REPORT_ID
-                    , Integer.toString(References.getWaterReport(i).getReportNumber()));
-            temp.put(References.DATE_SUBMITTED
-                    , References.getWaterReport(i).getDateTime().toString());
+            SourceReport sourceReport = References.getWaterReport(i);
+            temp.put(References.REPORT_ID, Integer.toString(sourceReport.getReportNumber()));
+            temp.put(References.DATE_SUBMITTED, sourceReport.getDateTime().toString());
             displayList.add(i, temp);
         }
-
         ListViewAdapter adapter = new ListViewAdapter(this, displayList);
         listView.setAdapter(adapter);
 

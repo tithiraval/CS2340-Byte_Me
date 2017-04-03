@@ -70,28 +70,28 @@ public class ChangePasswordActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         mAuth.getCurrentUser().updatePassword(newPassword)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    if (!mAuth.getCurrentUser().isEmailVerified()){
-                                        mAuth.getCurrentUser().sendEmailVerification();
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            if (!mAuth.getCurrentUser().isEmailVerified()){
+                                                mAuth.getCurrentUser().sendEmailVerification();
+                                            }
+                                            FirebaseDatabase.getInstance()
+                                                    .getReference(References.USER_TABLE)
+                                                    .child(mAuth.getCurrentUser().getUid())
+                                                    .child("password").setValue(newPassword);
+                                            user.setPassword(newPassword);
+                                            Toast.makeText(ChangePasswordActivity.this,
+                                                    "Password Successfully Changed",
+                                                    Toast.LENGTH_SHORT).show();
+                                            ChangePasswordActivity.this.finish();
+                                        } else {
+                                            Toast.makeText(ChangePasswordActivity.this,
+                                                    "An error occurred. Please try again!",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
                                     }
-                                    FirebaseDatabase.getInstance()
-                                            .getReference(References.USER_TABLE)
-                                            .child(mAuth.getCurrentUser().getUid())
-                                            .child("password").setValue(newPassword);
-                                    user.setPassword(newPassword);
-                                    Toast.makeText(ChangePasswordActivity.this,
-                                            "Password Successfully Changed",
-                                            Toast.LENGTH_SHORT).show();
-                                    ChangePasswordActivity.this.finish();
-                                } else {
-                                    Toast.makeText(ChangePasswordActivity.this,
-                                            "An error occurred. Please try again!",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                                });
                     } else {
                         Toast.makeText(ChangePasswordActivity.this,
                                 "An error occurred. Please try again!",

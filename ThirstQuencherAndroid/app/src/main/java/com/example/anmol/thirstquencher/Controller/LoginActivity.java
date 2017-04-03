@@ -13,6 +13,7 @@ import com.example.anmol.thirstquencher.Model.Admin;
 import com.example.anmol.thirstquencher.Model.GeneralUser;
 import com.example.anmol.thirstquencher.Model.Manager;
 import com.example.anmol.thirstquencher.Model.References;
+import com.example.anmol.thirstquencher.Model.User;
 import com.example.anmol.thirstquencher.Model.UserType;
 import com.example.anmol.thirstquencher.Model.Worker;
 import com.example.anmol.thirstquencher.R;
@@ -128,6 +129,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void cancel(View view) {
         LoginActivity.this.finish();
+        mAuth.signOut();
+        References.setCurrentUser((User) null);
     }
-
 }

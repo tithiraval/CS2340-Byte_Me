@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.anmol.thirstquencher.Model.QualityReport;
 import com.example.anmol.thirstquencher.Model.References;
-import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,26 +17,26 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoadSourceReportActivity extends AppCompatActivity {
+public class LoadQualityReportActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_load_source_report);
+        setContentView(R.layout.activity_load_quality_report);
 
-        FirebaseDatabase.getInstance().getReference(References.SOURCE_REPORT_TABLE)
+        FirebaseDatabase.getInstance().getReference(References.QUALITY_REPORT_TABLE)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        References.numSourceReports = (int) dataSnapshot.getChildrenCount();
-                        List<SourceReport> sourceReports = new ArrayList<SourceReport>();
-                        for (int i = 0; i < References.numSourceReports; i++) {
-                            sourceReports.add(i, dataSnapshot.child(Integer.toString(i + 1))
-                                    .getValue(SourceReport.class));
+                        References.numQualityReports = (int) dataSnapshot.getChildrenCount();
+                        List<QualityReport> qualityReports = new ArrayList<QualityReport>();
+                        for (int i = 0; i < References.numQualityReports; i++) {
+                            qualityReports.add(i, dataSnapshot.child(Integer.toString(i + 1))
+                                    .getValue(QualityReport.class));
                         }
-                        References.setWaterReports(sourceReports);
-                        Intent intent = new Intent(LoadSourceReportActivity.this,
-                                LoadQualityReportActivity.class);
+                        References.setQualityReports(qualityReports);
+                        Intent intent = new Intent(LoadQualityReportActivity.this,
+                                HomeScreenActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                                 | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
@@ -44,11 +44,11 @@ public class LoadSourceReportActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        Log.d("LoadingSourceReports", databaseError.getMessage());
-                        Toast.makeText(LoadSourceReportActivity.this,
+                        Log.d("LoadingQualityReports", databaseError.getMessage());
+                        Toast.makeText(LoadQualityReportActivity.this,
                                 "An error occured. Please try again!",
                                 Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoadSourceReportActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoadQualityReportActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }

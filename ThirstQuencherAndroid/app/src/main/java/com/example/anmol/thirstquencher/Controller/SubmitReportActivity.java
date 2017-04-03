@@ -13,8 +13,6 @@ import com.example.anmol.thirstquencher.Model.Location;
 import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.Model.User;
-import com.example.anmol.thirstquencher.Model.WaterCondition;
-import com.example.anmol.thirstquencher.Model.WaterType;
 import com.example.anmol.thirstquencher.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -90,12 +88,12 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
             emptyLocation.show();
         } else {
             final SourceReport report = new SourceReport(user.getEmailAddress(), this.location,
-                    References.numReports + 1,
+                    References.numSourceReports + 1,
                     References.getWaterType((String) waterTypeSpinner.getSelectedItem()),
                     References.getWaterCondition((String) waterConditionSpinner.getSelectedItem()));
             FirebaseDatabase.getInstance()
                     .getReference(References.SOURCE_REPORT_TABLE)
-                    .child(Integer.toString(References.numReports + 1)).setValue(report)
+                    .child(Integer.toString(References.numSourceReports + 1)).setValue(report)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -107,7 +105,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
                     } else {
                         Log.e("AddingSourceReport", task.getException().getMessage());
                         Toast.makeText(SubmitReportActivity.this,
-                                "An error occured. Please try again!", Toast.LENGTH_SHORT).show();
+                                "An error occurred. Please try again!", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

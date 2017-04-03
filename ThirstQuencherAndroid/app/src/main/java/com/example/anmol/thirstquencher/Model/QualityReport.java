@@ -14,7 +14,6 @@ import java.util.List;
 public class QualityReport {
     public static List<String> legalOverallConditions = Arrays.asList("Waste", "Treatable",
             "Untreatable");
-    private static int currentReportNumber = 0;
     private Date dateTime;
     private int reportNumber;
     private String emailAddress;
@@ -23,18 +22,19 @@ public class QualityReport {
     private double virusPPM;
     private double contaminantPPM;
 
+    public QualityReport() {}
+
     /**
      * Creates a new purity report and auto-sets the report Number.
      * @param emailAddress username of the worker submitting the report
      * @param location location of water source
      * @param condition condition the water is in
      */
-    public QualityReport(String emailAddress, String location, OverallCondition condition,
+    public QualityReport(String emailAddress, String location, int reportNumber,OverallCondition condition,
                          double virusPPM, double contaminantPPM) {
         this.dateTime = new Date();
         this.location = location;
-        this.reportNumber = QualityReport.currentReportNumber;
-        QualityReport.currentReportNumber++;
+        this.reportNumber = reportNumber;
         this.emailAddress = emailAddress;
         this.condition = condition;
         this.virusPPM = virusPPM;
@@ -100,6 +100,10 @@ public class QualityReport {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void setReportNumber(int reportNumber) {
+        this.reportNumber = reportNumber;
     }
 
     public void setCondition(String condition) {
