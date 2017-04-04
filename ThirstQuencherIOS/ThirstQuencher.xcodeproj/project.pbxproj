@@ -12,6 +12,7 @@
 		AAC9F9031E8AF84C0017B446 /* PurityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9021E8AF84C0017B446 /* PurityReport.swift */; };
 		AAEFE8C01E788EE300D48259 /* WaterReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFE8BF1E788EE300D48259 /* WaterReports.swift */; };
 		D8AB43B81E6885340095469F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D8AB43B71E6885340095469F /* Podfile */; };
+		E85E8D9F1E94125D00ACF4A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E85E8D9E1E94125D00ACF4A2 /* GoogleService-Info.plist */; };
 		E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */; };
 		E89F46B31E70BE49000E4932 /* EditUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */; };
 		E8A89C6F1E6888FE00C77BF6 /* WaterAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */; };
@@ -41,6 +42,7 @@
 		AAEFE8BF1E788EE300D48259 /* WaterReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReports.swift; sourceTree = "<group>"; };
 		AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThirstQuencher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E85E8D9E1E94125D00ACF4A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserTableViewController.swift; sourceTree = "<group>"; };
 		E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterAvailability.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		E8E8694F1E526E490049C764 /* ThirstQuencher */ = {
 			isa = PBXGroup;
 			children = (
+				E85E8D9E1E94125D00ACF4A2 /* GoogleService-Info.plist */,
 				E8E869501E526E490049C764 /* AppDelegate.swift */,
 				E8E869521E526E490049C764 /* ViewController.swift */,
 				E8D78F561E5F4A0F00BF945B /* Model.swift */,
@@ -178,7 +181,7 @@
 				TargetAttributes = {
 					E8E8694C1E526E480049C764 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FMK9XYHY3L;
+						DevelopmentTeam = Q7KCFQXHAK;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -209,6 +212,7 @@
 			files = (
 				E8E8695B1E526E490049C764 /* LaunchScreen.storyboard in Resources */,
 				E8E869581E526E490049C764 /* Assets.xcassets in Resources */,
+				E85E8D9F1E94125D00ACF4A2 /* GoogleService-Info.plist in Resources */,
 				D8AB43B81E6885340095469F /* Podfile in Resources */,
 				E8E869561E526E490049C764 /* Main.storyboard in Resources */,
 			);
@@ -408,10 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FMK9XYHY3L;
+				DEVELOPMENT_TEAM = Q7KCFQXHAK;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirstQuencher/ThirstQuencher-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -426,10 +430,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FMK9XYHY3L;
+				DEVELOPMENT_TEAM = Q7KCFQXHAK;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirstQuencher/ThirstQuencher-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

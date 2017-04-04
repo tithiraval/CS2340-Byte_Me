@@ -46,7 +46,8 @@ class WaterReports: UITableViewController {
 
         cell.textLabel?.text = String(Model.sharedInstance.getAllSourceReports()[indexPath.row].getNum())
 
-        let date = (describing: Model.sharedInstance.getAllSourceReports()[indexPath.row].getDate())
+        let source = Model.sharedInstance.getAllSourceReports()[indexPath.row]
+        let date = source.getDate()
         cell.detailTextLabel?.text = (DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short));
 
         return cell
