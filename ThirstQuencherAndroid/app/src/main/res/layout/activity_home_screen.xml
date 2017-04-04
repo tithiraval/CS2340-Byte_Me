@@ -14,34 +14,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CREATE REPORT"
-        android:onClick="createReport"/>
+        android:onClick="createReport"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/viewReportsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/createReportButton"
         android:text="VIEW REPORTS"
-        android:onClick="viewReports"/>
+        android:onClick="viewReports"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/createReportButton"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/viewReportsMapButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="VIEW MAP"
+        android:onClick="viewMap"
         android:layout_marginTop="16dp"
         android:layout_below="@+id/viewReportsButton"
-        android:text="VIEW MAP"
-        android:onClick="viewMap"/>
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/viewProfileButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/viewReportsMapButton"
         android:text="VIEW PROFILE"
-        android:onClick="viewProfile"/>
+        android:onClick="viewProfile"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/viewReportsMapButton"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/logoutButton"
@@ -57,35 +62,32 @@
         android:id="@+id/createQualityReportButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
         android:onClick="createQualityReport"
         android:text="Create Quality Report"
         android:layout_below="@+id/viewProfileButton"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentEnd="true"
-        android:visibility="gone" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/viewQualityReportButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/createQualityReportButton"
         android:onClick="viewQualityReports"
         android:text="View Quality Reports"
-        android:visibility="gone" />
+        android:layout_below="@+id/viewQualityReportGraph"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/viewQualityReportGraph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/viewProfileButton"
-        android:layout_marginTop="28dp"
         android:onClick="graphSearch"
-        android:text="View Quality Report Graph" />
+        android:text="View Quality Report Graph"
+        android:layout_below="@+id/createQualityReportButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
