@@ -55,8 +55,8 @@ public class GraphSearchActivity extends AppCompatActivity {
             emptyLocation.show();
         } else if (year.getText().toString().equals("")) {
             CharSequence text = "Enter Year!";
-            Toast emptyVirusPPM = Toast.makeText(GraphSearchActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            emptyVirusPPM.show();
+            Toast emptyYear = Toast.makeText(GraphSearchActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
+            emptyYear.show();
         }
         setContentView(R.layout.activity_view_graph);
         GraphView graph = (GraphView) findViewById(R.id.qualityReportGraph);
@@ -87,6 +87,10 @@ public class GraphSearchActivity extends AppCompatActivity {
                     monthValues.put(month, valuesList);
                 }
             }
+        }
+        if (monthValues.size() == 0) {
+            Toast.makeText(GraphSearchActivity.this,
+                    "Invalid Location", Toast.LENGTH_SHORT).show();
         }
         List<DataPoint> data = new LinkedList<>();
         for (int key : monthValues.keySet()) {
