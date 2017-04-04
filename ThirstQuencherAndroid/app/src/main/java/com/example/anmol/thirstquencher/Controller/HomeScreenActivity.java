@@ -48,10 +48,16 @@ public class HomeScreenActivity extends AppCompatActivity {
         createQRButton = (Button) findViewById(R.id.createQualityReportButton);
         viewQRButton = (Button) findViewById(R.id.viewQualityReportButton);
 
+
         if (user instanceof Worker) {
             createQRButton.setVisibility(View.VISIBLE);
             viewQRButton.setVisibility(View.VISIBLE);
         }
+
+        if (user instanceof Manager) {
+            findViewById(R.id.viewQualityReportGraph).setVisibility(View.VISIBLE);
+        }
+
     }
 
     /**

@@ -67,7 +67,8 @@
         android:text="Create Quality Report"
         android:layout_below="@+id/viewProfileButton"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/viewQualityReportButton"
@@ -77,7 +78,8 @@
         android:text="View Quality Reports"
         android:layout_below="@+id/viewQualityReportGraph"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/viewQualityReportGraph"
@@ -88,6 +90,7 @@
         android:layout_below="@+id/createQualityReportButton"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:visibility="gone" />
 
 </RelativeLayout>
