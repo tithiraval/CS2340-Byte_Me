@@ -19,8 +19,13 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBOutlet weak var virusLabel: UILabel!
-    @IBOutlet weak var contamLabel: UILabel!
+    //@IBOutlet weak var virusLabel: UILabel!
+    @IBOutlet weak var virusDetail: UILabel!
+    //@IBOutlet weak var contamLabel: UILabel!
+    @IBOutlet weak var contamDetail: UILabel!
+    
+    
+    
     
     
     var waterConditionData: [String] = [String]()
@@ -42,7 +47,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: locationTextField.text!, waterCondition: waterConditionLabel.text!, virusPPM: virusLabel.text!, contaminantPPM: contamLabel.text!)) {
+        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: locationTextField.text!, waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!)) {
             self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
         }
     }
@@ -71,22 +76,51 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
             togglePickers(whichPicker: 1)
         } else if indexPath.section == 2 && indexPath.row == 0 {
             togglePickers(whichPicker: 2)
-        } else if indexPath.section == 2 && indexPath.row == 2 {
-            togglePickers(whichPicker: 3)
+        } else if indexPath.section == 3 && indexPath.row == 0 { //virus
+            let virusAlert = UIAlertController(title: "Virus PPM", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                (action) -> Void in
+                let virusPPMTextField = virusAlert.textFields![0] as UITextField
+                if (virusPPMTextField.text != "") {
+                    self.virusDetail.text = virusPPMTextField.text! + " PPM"
+                }
+            })
+            
+            virusAlert.addTextField(configurationHandler: {(textField) -> Void in
+                    textField.placeholder = "Virus PPM"
+                    textField.keyboardType = UIKeyboardType.numberPad
+            })
+            
+            virusAlert.addAction(okAction)
+            virusAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            self.present(virusAlert, animated: true, completion: nil)
+        } else if indexPath.section == 3 && indexPath.row == 1 { //contaminant
+            let contamAlert = UIAlertController(title: "Contaminant PPM", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                (action) -> Void in
+                let contamPPMTextField = contamAlert.textFields![0] as UITextField
+                if (contamPPMTextField.text != "") {
+                    self.contamDetail.text = contamPPMTextField.text! + " PPM"
+                }
+            })
+            contamAlert.addTextField(configurationHandler: {(textField) -> Void in
+                textField.placeholder = "Contaminant PPM"
+                textField.keyboardType = UIKeyboardType.numberPad
+            })
+            contamAlert.addAction(okAction)
+            contamAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            self.present(contamAlert, animated: true, completion: nil)
         }
     }
     
     var datePickerHidden = false
-    var waterTypePickerHidden = false
     var waterCondPickerHidden = false
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if datePickerHidden && indexPath.section == 1 && indexPath.row == 1 {
             return 0
-        } else if waterTypePickerHidden && indexPath.section == 2 && indexPath.row == 1 {
-            return 0
-        } else if waterCondPickerHidden && indexPath.section == 2 && indexPath.row == 3 {
+        } else if waterCondPickerHidden && indexPath.section == 2 && indexPath.row == 1 {
             return 0
         } else {
             return super.tableView(tableView, heightForRowAt: indexPath)
@@ -101,7 +135,6 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
             waterCondPickerHidden = !waterCondPickerHidden
         } else {
             datePickerHidden = !datePickerHidden
-            waterTypePickerHidden = !waterTypePickerHidden
             waterCondPickerHidden = !waterCondPickerHidden
         }
         
