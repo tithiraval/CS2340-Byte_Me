@@ -24,6 +24,10 @@ class Model {
     private init() {
         addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)
         addUser(name: "Test Worker", id: "w", password: "p", accountType: AccountType.WORKER)
+        ref = FIRDatabase.database().reference(withPath: "users")
+        FIRAuth.auth()?.createUser(withEmail: "TestUser@whatever.com", password: "p") {(user, error) in
+            //print(error)
+        }
         /*
         FIRAuth.auth()?.signIn(withEmail: "dhurvgarg@gmail.com", password: "password") { (user, error) in
             // ...
@@ -37,6 +41,8 @@ class Model {
     func addUser(name: String, id: String, password: String, accountType: AccountType) -> Bool {
         
         let newUser = User(name: name, id: id, password: password, accountType: accountType)
+        
+        //ref.child(name).setValue(newUser.toDict())
         if (users[id] == nil) {
             users[id] = newUser
             return true
