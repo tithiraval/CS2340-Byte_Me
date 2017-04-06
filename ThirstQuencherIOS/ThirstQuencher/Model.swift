@@ -65,14 +65,14 @@ class Model {
     }
     
     func addNewSourceReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {
-        let newReport = SourceReport(date: date, number: (sourceReports.count + 1), name: currentUser!.getName(), location: location, waterType: waterType, waterCondition: waterCondition)
-        sourceReports.append(newReport)
+        let newSourceReport = SourceReport(date: date, number: (sourceReports.count + 1), name: currentUser!.getName(), location: location, waterType: waterType, waterCondition: waterCondition)
+        sourceReports.append(newSourceReport)
         return true
     }
     
     func addNewPurityReport(date: Date, location: String, waterCondition: String, virusPPM: String, contaminantPPM: String) -> Bool {
-        let newReport = PurityReport(date: date, number: (purityReports.count + 1), name: currentUser!.getName(), location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
-        purityReports.append(newReport)
+        let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: currentUser!.getName(), location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
+        purityReports.append(newPurityReport)
         return true
     }
     
