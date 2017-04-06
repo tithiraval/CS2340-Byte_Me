@@ -236,6 +236,9 @@
                                 <state key="normal" title="Submit New Water Purity Report">
                                     <color key="titleColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ZPM-mb-LMA" kind="presentation" id="piF-TK-aaM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -903,7 +906,7 @@
         <!--New Water Purity Report-->
         <scene sceneID="nKe-R8-QlX">
             <objects>
-                <tableViewController title="New Water Purity Report" id="ZPM-mb-LMA" customClass="SourceReportTableViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="New Water Purity Report" id="ZPM-mb-LMA" customClass="PurityReportTableViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="YlH-DJ-yOb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1074,7 +1077,7 @@
                             </tableViewSection>
                             <tableViewSection id="5lK-Pi-kVZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7bq-oJ-bbN" style="IBUITableViewCellStyleDefault" id="Mrj-tr-7qe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7bq-oJ-bbN" detailTextLabel="ooU-6U-WPK" style="IBUITableViewCellStyleValue1" id="Mrj-tr-7qe">
                                         <rect key="frame" x="0.0" y="657" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrj-tr-7qe" id="UpU-6e-MMN">
@@ -1084,23 +1087,37 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Virus PPM:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7bq-oJ-bbN">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ooU-6U-WPK">
+                                                    <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="KeE-Sd-qVq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="t6g-Q4-PY3" detailTextLabel="W6L-yV-f5n" rowHeight="48" style="IBUITableViewCellStyleValue1" id="KeE-Sd-qVq">
                                         <rect key="frame" x="0.0" y="701" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeE-Sd-qVq" id="hgk-uS-b50">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contaminant PPM:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-fr-CO2">
-                                                    <rect key="frame" x="16" y="15" width="169" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Contaminant PPM:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t6g-Q4-PY3">
+                                                    <rect key="frame" x="15" y="14" width="142.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6L-yV-f5n">
+                                                    <rect key="frame" x="316" y="14" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1123,10 +1140,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="contamDetail" destination="W6L-yV-f5n" id="Kk6-D6-7ri"/>
                         <outlet property="dateLabel" destination="x3z-kx-Dwr" id="ybV-vm-f6f"/>
                         <outlet property="datePicker" destination="5dI-Z6-XiZ" id="4mn-VP-xjj"/>
                         <outlet property="nameLabel" destination="Ud0-Wb-PaF" id="siA-nu-e9Q"/>
                         <outlet property="numberLabel" destination="OA0-eu-Sw6" id="DTl-6T-42b"/>
+                        <outlet property="virusDetail" destination="ooU-6U-WPK" id="o4X-Ic-vGP"/>
                         <outlet property="waterConditionLabel" destination="bGU-xX-kSK" id="tic-2m-9AW"/>
                         <outlet property="waterConditionPicker" destination="Qi4-SD-1qB" id="rjS-Q3-oDw"/>
                         <segue destination="utf-dL-wJv" kind="unwind" identifier="unwindToMainFromSource" unwindAction="unwindToMainWithSegue:" id="jgS-QF-rkZ"/>
