@@ -23,6 +23,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.KeyStore;
+
 public class SubmitReportActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -82,7 +84,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
      * @param view The view for this screen
      */
     public void submitReport(View view) {
-        if (location == null) {
+        if (this.isNull(location)) {
             CharSequence text = "Enter Location!";
             Toast emptyLocation = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyLocation.show();
@@ -110,6 +112,13 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
                 }
             });
         }
+    }
+
+    private static boolean isNull (Object someObject) {
+        if (someObject == null) {
+            return true;
+        }
+        return false;
     }
 
     public void cancelSubmitReport(View view) {

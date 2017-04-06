@@ -50,88 +50,86 @@ public class GraphSearchActivity extends AppCompatActivity {
      */
     public void createGraph(View view) {
         if (location.getText().toString().equals("")) {
-            CharSequence text = "Enter Location!";
-            Toast emptyLocation = Toast.makeText(GraphSearchActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            emptyLocation.show();
+            Toast.makeText(GraphSearchActivity.this, "Enter Location!", Toast.LENGTH_SHORT).show();
         } else if (year.getText().toString().equals("")) {
             CharSequence text = "Enter Year!";
-            Toast emptyYear = Toast.makeText(GraphSearchActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
-            emptyYear.show();
-        }
-        setContentView(R.layout.activity_view_graph);
-        GraphView graph = (GraphView) findViewById(R.id.qualityReportGraph);
-        //hashmap of month and the list of all values reported for that month
-        HashMap<Integer, List<Double>> monthValues= new HashMap<>();
-        Calendar calendar1 = Calendar.getInstance();
-        Calendar calendar2 = Calendar.getInstance();
-        String chosenVal = (String) virusOrPPM.getSelectedItem();
-        for (QualityReport report : References.getQualityReports()) {
-            calendar1.setTime(report.getDateTime());
-            calendar2.set(Calendar.YEAR, Integer.parseInt(year.getText().toString()));
-            int c1Year = calendar1.get(Calendar.YEAR);
-            int c2Year = calendar2.get(Calendar.YEAR);
-            if (report.getLocation().equals(location.getText().toString())
-                    && (c1Year == c2Year)) {
-                int month = calendar1.get(Calendar.MONTH) + 1;
-                double dataPoint;
-                if (chosenVal.equals("Virus PPM")) {
-                    dataPoint = report.getVirusPPM();
+            Toast.makeText(GraphSearchActivity.this, "Enter Year!", Toast.LENGTH_SHORT).show();
+        } else {
+            setContentView(R.layout.activity_view_graph);
+            GraphView graph = (GraphView) findViewById(R.id.qualityReportGraph);
+            //hashmap of month and the list of all values reported for that month
+            HashMap<Integer, List<Double>> monthValues= new HashMap<>();
+            Calendar calendar1 = Calendar.getInstance();
+            Calendar calendar2 = Calendar.getInstance();
+            String chosenVal = (String) virusOrPPM.getSelectedItem();
+            for (QualityReport report : References.getQualityReports()) {
+                calendar1.setTime(report.getDateTime());
+                calendar2.set(Calendar.YEAR, Integer.parseInt(year.getText().toString()));
+                int c1Year = calendar1.get(Calendar.YEAR);
+                int c2Year = calendar2.get(Calendar.YEAR);
+                if (report.getLocation().equals(location.getText().toString())
+                        && (c1Year == c2Year)) {
+                    int month = calendar1.get(Calendar.MONTH) + 1;
+                    double dataPoint;
+                    if (chosenVal.equals("Virus PPM")) {
+                        dataPoint = report.getVirusPPM();
+                    } else {
+                        dataPoint = report.getContaminantPPM();
+                    }
+                    if (monthValues.containsKey(month)) {
+                        monthValues.get(month).add(dataPoint);
+                    } else {
+                        List<Double> valuesList = new LinkedList<>();
+                        valuesList.add(dataPoint);
+                        monthValues.put(month, valuesList);
+                    }
+                }
+            }
+            if (monthValues.size() == 0) {
+                Toast.makeText(GraphSearchActivity.this,
+                        "Invalid Location", Toast.LENGTH_SHORT).show();
+            }
+            List<DataPoint> data = new LinkedList<>();
+            for (int key : monthValues.keySet()) {
+                if (monthValues.get(key).size() > 1) {
+                    double sum = 0;
+                    for (double value : monthValues.get(key)) {
+                        sum = sum + value;
+                    }
+                    double average = sum / monthValues.get(key).size();
+                    System.out.println(average);
+                    data.add(new DataPoint(key, average));
                 } else {
-                    dataPoint = report.getContaminantPPM();
-                }
-                if (monthValues.containsKey(month)) {
-                    monthValues.get(month).add(dataPoint);
-                } else {
-                    List<Double> valuesList = new LinkedList<>();
-                    valuesList.add(dataPoint);
-                    monthValues.put(month, valuesList);
+                    data.add(new DataPoint(key, monthValues.get(key).get(0)));
                 }
             }
-        }
-        if (monthValues.size() == 0) {
-            Toast.makeText(GraphSearchActivity.this,
-                    "Invalid Location", Toast.LENGTH_SHORT).show();
-        }
-        List<DataPoint> data = new LinkedList<>();
-        for (int key : monthValues.keySet()) {
-            if (monthValues.get(key).size() > 1) {
-                double sum = 0;
-                for (double value : monthValues.get(key)) {
-                    sum = sum + value;
+            DataPoint[] array = data.toArray(new DataPoint[data.size()]);
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(array);
+            double maxValue = array[0].getY();
+            for (DataPoint d : array) {
+                if (d.getY() > maxValue) {
+                    maxValue = d.getY();
                 }
-                double average = sum / monthValues.get(key).size();
-                System.out.println(average);
-                data.add(new DataPoint(key, average));
-            } else {
-                data.add(new DataPoint(key, monthValues.get(key).get(0)));
             }
+            graph.addSeries(series);
+            graph.setTitle(chosenVal + " for " + location.getText().toString()
+                    + " in year " + year.getText().toString());
+            //graph.setTitleTextSize(50);
+            GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
+            gridLabel.setHorizontalAxisTitle("Month");
+            gridLabel.setVerticalAxisTitle(chosenVal);
+            series.setDrawDataPoints(true);
+            graph.getViewport().setMinX(0);
+            graph.getViewport().setMinY(0);
+            graph.getViewport().setMaxX(12);
+            graph.getViewport().setMaxY(maxValue + 100);
+            graph.getViewport().setYAxisBoundsManual(true);
+            graph.getViewport().setXAxisBoundsManual(true);
+            graph.getViewport().setScrollable(true);
+            graph.getViewport().setScrollableY(true);
+            graph.getViewport().setScalable(true);
+            graph.getViewport().setScrollableY(true);
         }
-        DataPoint[] array = data.toArray(new DataPoint[data.size()]);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(array);
-        double maxValue = array[0].getY();
-        for (DataPoint d : array) {
-            if (d.getY() > maxValue) {
-                maxValue = d.getY();
-            }
-        }
-        graph.addSeries(series);
-        graph.setTitle(chosenVal + " for " + location.getText().toString()
-                + " in year " + year.getText().toString());
-        //graph.setTitleTextSize(50);
-        GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
-        gridLabel.setHorizontalAxisTitle("Month");
-        gridLabel.setVerticalAxisTitle(chosenVal);
-        series.setDrawDataPoints(true);
-        graph.getViewport().setMinX(0);
-        graph.getViewport().setMinY(0);
-        graph.getViewport().setMaxX(12);
-        graph.getViewport().setMaxY(maxValue + 100);
-        graph.getViewport().setYAxisBoundsManual(true);
-        graph.getViewport().setXAxisBoundsManual(true);
-        graph.getViewport().setScrollable(true);
-        graph.getViewport().setScrollableY(true);
-        graph.getViewport().setScalable(true);
-        graph.getViewport().setScrollableY(true);
     }
 
     /**
