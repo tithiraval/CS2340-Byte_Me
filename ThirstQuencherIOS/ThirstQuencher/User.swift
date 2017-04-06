@@ -64,4 +64,25 @@ class User: NSObject {
         self.name = name
     }
     
+    func toDict() -> Any {
+        let strAccountType: String
+        if (accountType == AccountType.MANAGER) {
+            strAccountType = "Manager"
+        } else if (accountType == AccountType.WORKER) {
+            strAccountType = "Worker"
+        } else if (accountType == AccountType.ADMIN) {
+            strAccountType = "Admin"
+        } else {
+            strAccountType = "User"
+        }
+        return [
+            "Name": name,
+            "ID": id,
+            "Password": password,
+            "Account Type": strAccountType,
+            "Email Address": emailAddress,
+            "Home Address": homeAddress
+        ]
+    }
+    
 }

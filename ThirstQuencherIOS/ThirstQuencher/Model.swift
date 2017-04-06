@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class Model {
     static let sharedInstance = Model()
@@ -18,9 +19,19 @@ class Model {
     
     private var currentUser: User?
     
+    var ref: FIRDatabaseReference!
+    
     private init() {
         addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)
         addUser(name: "Test Worker", id: "w", password: "p", accountType: AccountType.WORKER)
+        /*
+        FIRAuth.auth()?.signIn(withEmail: "dhurvgarg@gmail.com", password: "password") { (user, error) in
+            // ...
+        }
+        ref = FIRDatabase.database().reference(withPath: "users")
+        let user = User(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)
+        ref.child("Test User 1").setValue(user.toDict())
+        */
     }
     
     func addUser(name: String, id: String, password: String, accountType: AccountType) -> Bool {
