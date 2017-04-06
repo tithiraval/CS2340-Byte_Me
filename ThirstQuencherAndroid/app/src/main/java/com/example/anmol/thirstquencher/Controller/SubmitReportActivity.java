@@ -84,7 +84,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
      * @param view The view for this screen
      */
     public void submitReport(View view) {
-        if (this.isLocationNull(location)) {
+        if (this.isNull(location)) {
             CharSequence text = "Enter Location!";
             Toast emptyLocation = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyLocation.show();
@@ -114,8 +114,8 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
         }
     }
 
-    private boolean isLocationNull (Location someLocation) {
-        if (someLocation == null) {
+    private static boolean isNull (Object someObject) {
+        if (someObject == null) {
             return true;
         }
         return false;
