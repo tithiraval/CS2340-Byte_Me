@@ -57,7 +57,7 @@ public class GraphSearchActivity extends AppCompatActivity {
         } else {
             setContentView(R.layout.activity_view_graph);
             GraphView graph = (GraphView) findViewById(R.id.qualityReportGraph);
-            //hashmap of month and the list of all values reported for that month
+            //hash map of month and the list of all values reported for that month
             HashMap<Integer, List<Double>> monthValues= new HashMap<>();
             Calendar calendar1 = Calendar.getInstance();
             Calendar calendar2 = Calendar.getInstance();
