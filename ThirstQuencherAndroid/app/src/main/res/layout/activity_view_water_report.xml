@@ -7,13 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Controller.ViewWaterReportActivity">
+    tools:context=".controller.ViewWaterReportActivity">
 
     <TextView
         android:id="@+id/viewWaterReportNumberTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Report ID:"/>
     <TextView
         android:id="@+id/viewWaterReportNumber"
@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewWaterReportNumberTextField"
         android:layout_alignBottom="@+id/viewWaterReportNumberTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewWaterReportDateTextField"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewWaterReportNumberTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Date Submitted:"/>
     <TextView
         android:id="@+id/viewWaterReportDate"
@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewWaterReportDateTextField"
         android:layout_alignBottom="@+id/viewWaterReportDateTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewWaterReportUsernameTextField"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewWaterReportDateTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Reported By: "/>
     <TextView
         android:id="@+id/viewWaterReportUsername"
@@ -55,8 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewWaterReportUsernameTextField"
         android:layout_alignBottom="@+id/viewWaterReportUsernameTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewWaterReportLocationTextField"
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewWaterReportUsernameTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Location:"/>
     <TextView
         android:id="@+id/viewWaterReportLocation"
@@ -72,8 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewWaterReportLocationTextField"
         android:layout_alignBottom="@+id/viewWaterReportLocationTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewWaterReportTypeTextField"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewWaterReportLocationTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Water Type: "/>
     <TextView
         android:id="@+id/viewWaterReportType"
@@ -89,8 +89,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewWaterReportTypeTextField"
         android:layout_alignBottom="@+id/viewWaterReportTypeTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:text="Water Condition:"
@@ -106,11 +106,10 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/conditionOfWaterTextView"
         android:layout_alignBottom="@+id/conditionOfWaterTextView"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <Button
-        android:id="@+id/viewWaterReportBackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="BACK"

@@ -7,13 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Controller.ViewProfileActivity">
+    tools:context=".controller.ViewProfileActivity">
 
     <TextView
         android:id="@+id/viewProfileEmailAddressTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Email Address:"/>
     <TextView
         android:id="@+id/viewProfileEmailAddress"
@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewProfileEmailAddressTextField"
         android:layout_alignBottom="@+id/viewProfileEmailAddressTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewProfileUsernameTextField"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileEmailAddressTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Username:"/>
     <TextView
         android:id="@+id/viewProfileUsername"
@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewProfileUsernameTextField"
         android:layout_alignBottom="@+id/viewProfileUsernameTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewProfileHomeAddressTextField"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileUsernameTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Home Address:"/>
     <TextView
         android:id="@+id/viewProfileHomeAddress"
@@ -55,8 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewProfileHomeAddressTextField"
         android:layout_alignBottom="@+id/viewProfileHomeAddressTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewProfileTitleTextField"
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileHomeAddressTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Title:"/>
     <TextView
         android:id="@+id/viewProfileTitle"
@@ -72,8 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewProfileTitleTextField"
         android:layout_alignBottom="@+id/viewProfileTitleTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewProfileAccountTypeTextField"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileTitleTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="Account Type:"/>
     <TextView
         android:id="@+id/viewProfileAccountType"
@@ -89,8 +89,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/viewProfileAccountTypeTextField"
         android:layout_alignBottom="@+id/viewProfileAccountTypeTextField"
-        android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"/>
 
     <Button
         android:id="@+id/viewProfileEditButton"
@@ -111,7 +111,6 @@
         android:onClick="changePasswordRequest"/>
 
     <Button
-        android:id="@+id/viewProfileBackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
