@@ -7,13 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".controller.LoginActivity">
+    tools:context=".Controller.LoginActivity">
 
     <EditText
         android:id="@+id/enterEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
         android:hint = "Enter Email"/>
     <EditText
         android:id="@+id/enterPassword"
@@ -32,6 +31,7 @@
         android:text="LOGIN"
         android:onClick="loginApp"/>
     <Button
+        android:id="@+id/cancelButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/loginButton"

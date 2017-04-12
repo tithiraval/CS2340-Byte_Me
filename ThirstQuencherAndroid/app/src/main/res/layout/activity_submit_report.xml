@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context=".controller.SubmitReportActivity">
+    tools:context=".Controller.SubmitReportActivity">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -17,9 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8"
-        tools:context=".controller.SubmitReportActivity" />
+        tools:context=".Controller.SubmitReportActivity" />
 
     <LinearLayout
+        android:id="@+id/createReportRow1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -27,9 +28,10 @@
         android:layout_marginTop="16dp">
 
         <TextView
+            android:id="@+id/createReportWaterType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="16dp"
             android:text="Water Type:"/>
 
         <Spinner
@@ -39,6 +41,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/createReportRow2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -46,9 +49,10 @@
         android:layout_marginTop="16dp">
 
         <TextView
+            android:id="@+id/createReportWaterCondition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="16dp"
             android:text="Water Type:"/>
 
         <Spinner
@@ -64,14 +68,14 @@
         android:orientation="horizontal"
         android:layout_marginTop="24dp">
         <Button
-            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/submitReportButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="SUBMIT REPORT"
             android:onClick="submitReport"/>
         <Button
-            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/cancelSubmitReportButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

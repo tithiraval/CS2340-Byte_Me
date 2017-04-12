@@ -1,23 +1,27 @@
 package com.example.anmol.thirstquencher;
 
-import com.example.anmol.thirstquencher.model.References;
-import com.example.anmol.thirstquencher.model.WaterCondition;
+import com.example.anmol.thirstquencher.Model.References;
+import com.example.anmol.thirstquencher.Model.WaterCondition;
 
+import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 
+import java.lang.ref.Reference;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNull;
 
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 /**
  * Created by Shaurye Aggarwal on 4/5/17.
  * Tests the getWaterCondition method in the References class.
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class WaterConditionTests {
 
     private static final int TIMEOUT = 200;

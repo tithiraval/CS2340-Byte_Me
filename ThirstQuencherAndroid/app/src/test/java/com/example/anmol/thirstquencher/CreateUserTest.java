@@ -1,8 +1,8 @@
 package com.example.anmol.thirstquencher;
 
-import com.example.anmol.thirstquencher.model.References;
-import com.example.anmol.thirstquencher.model.User;
-import com.example.anmol.thirstquencher.model.UserType;
+import com.example.anmol.thirstquencher.Model.References;
+import com.example.anmol.thirstquencher.Model.User;
+import com.example.anmol.thirstquencher.Model.UserType;
 
 import org.junit.Before;
 import org.junit.Test;
