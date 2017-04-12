@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThirstQuencher/Model.swift"
-            timestampString = "513190578.946509"
+            timestampString = "513703370.704879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "165"
+            endingLineNumber = "165">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThirstQuencher/Model.swift"
-            timestampString = "513190578.946509"
+            timestampString = "513703370.704879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162">
+            startingLineNumber = "167"
+            endingLineNumber = "167">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,6 +120,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThirstQuencher/RegistrationViewController.swift"
+            timestampString = "513703370.704879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "onRegister(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

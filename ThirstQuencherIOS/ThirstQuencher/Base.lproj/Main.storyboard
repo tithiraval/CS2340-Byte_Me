@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="R2I-Cz-hN7" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKK-bE-za2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FKK-bE-za2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -738,7 +738,7 @@
         <scene sceneID="4dF-ot-AYa">
             <objects>
                 <navigationController title="Logged in Navigation Controller" id="0iD-Rd-zcw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ubJ-Wg-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -910,6 +910,7 @@
                         <outlet property="Name" destination="U6A-wd-elg" id="cgd-Zi-Slj"/>
                         <outlet property="accountTypeTextField" destination="m7j-Nr-CWP" id="Wsv-Ex-j9E"/>
                         <outlet property="confirmPass" destination="IIY-Ta-ss3" id="SL1-ak-ECe"/>
+                        <outlet property="emailTextField" destination="hde-Yi-mPj" id="nDR-RK-dVD"/>
                         <outlet property="pass" destination="VIG-qh-l7d" id="0eD-aM-xEG"/>
                         <outlet property="username" destination="8LH-R8-N0X" id="tCS-IM-flq"/>
                         <segue destination="uLg-df-tlB" kind="show" identifier="showSignIn" id="WMn-4A-Owb"/>

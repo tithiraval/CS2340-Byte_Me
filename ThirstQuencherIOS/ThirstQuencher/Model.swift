@@ -19,15 +19,13 @@ class Model {
     
     private var currentUser: User?
     
-    var ref: FIRDatabaseReference!
+    var error1: String?
     
     private init() {
-        addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)
-        addUser(name: "Test Worker", id: "w", password: "p", accountType: AccountType.WORKER)
-        ref = FIRDatabase.database().reference(withPath: "users")
-        FIRAuth.auth()?.createUser(withEmail: "TestUser@whatever.com", password: "p") {(user, error) in
-            //print(error)
-        }
+        addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER, emailAddress: "TestUser@whatever.com")
+        addUser(name: "Test Worker", id: "w", password: "p", accountType: AccountType.WORKER, emailAddress:
+            "TestWorker@whatever.com")
+        
         /*
         FIRAuth.auth()?.signIn(withEmail: "dhurvgarg@gmail.com", password: "password") { (user, error) in
             // ...
@@ -38,9 +36,11 @@ class Model {
         */
     }
     
-    func addUser(name: String, id: String, password: String, accountType: AccountType) -> Bool {
+    func addUser(name: String, id: String, password: String, accountType: AccountType, emailAddress: String) -> Bool {
         
-        let newUser = User(name: name, id: id, password: password, accountType: accountType)
+        let newUser = User(name: name, id: id, password: password, accountType: accountType, emailAddress: emailAddress)
+
+        
         
         //ref.child(name).setValue(newUser.toDict())
         if (users[id] == nil) {
@@ -50,6 +50,11 @@ class Model {
             return false
         }
  
+    }
+    
+    func setError(error: Error) {
+        self.error1 = String(error.localizedDescription)
+        print(error.localizedDescription)
     }
     
     func checkUser(id: String, password: String) -> String {

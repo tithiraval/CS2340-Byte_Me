@@ -12,14 +12,15 @@ class User: NSObject {
     private var name: String
     private let id, password: String
     private let accountType: AccountType
-    private var emailAddress: String?
+    private var emailAddress: String
     private var homeAddress: String?
     
-    init(name: String, id: String, password: String, accountType: AccountType) {
+    init(name: String, id: String, password: String, accountType: AccountType, emailAddress: String) {
         self.name = name
         self.id = id
         self.password = password
         self.accountType = accountType
+        self.emailAddress = emailAddress
     }
     
     func getName() -> String {
@@ -39,10 +40,7 @@ class User: NSObject {
     }
     
     func getEmailAddress() -> String {
-        if (emailAddress == nil) {
-            return ""
-        }
-        return emailAddress!
+        return emailAddress
     }
     
     func getHomeAddress() -> String {

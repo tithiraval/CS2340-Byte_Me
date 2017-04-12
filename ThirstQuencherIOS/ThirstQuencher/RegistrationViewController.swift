@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -15,6 +16,9 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var confirmPass: UITextField!
     @IBOutlet weak var accountTypeTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    var ref: FIRDatabaseReference!
     
     var accountTypeData: [String] = [String]()
     var selectedAccountType = ""
@@ -22,6 +26,8 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        ref = FIRDatabase.database().reference(withPath: "USERS")
 
         // Do any additional setup after loading the view.
         
@@ -59,6 +65,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         let password = pass.text
         let name = Name.text
         let confirm = confirmPass.text
+        let email = emailTextField.text
         let accountType: AccountType
         let nullAlert = UIAlertController(title: "Error", message: "One of the fields is empty.", preferredStyle: UIAlertControllerStyle.alert)
         nullAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -82,16 +89,41 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             self.performSegue(withIdentifier: "showSignIn", sender: nil)
         }))
         
+        let error: Error
         
-        if (user == "" || password == "" || name == "") {
+        
+        if (user == "" || password == "" || name == "" || email == "") {
             self.present(nullAlert, animated: true, completion:nil)
         } else if (password != confirm) {
             self.present(confirmAlert, animated: true, completion:nil)
-        } else if (Model.sharedInstance.addUser(name: name!, id: user!, password: password!, accountType: accountType)) {
-            self.present(registerConfirmed, animated: true, completion:nil)
-        } else {
-            self.present(userAlert, animated: true, completion:nil)
         }
+        let newUser = User(name: name!, id: user!, password: password!, accountType: accountType, emailAddress: email!)
+
+        FIRAuth.auth()?.createUser(withEmail: email!, password: password!) {(user, error) in
+            if error != nil {
+                var message = ""
+                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        message = "The email inputted is invalid"
+                    case .errorCodeEmailAlreadyInUse:
+                        message = "The email inputted is already in use"
+                    case .errorCodeWeakPassword:
+                        message = "The password is too weak (shorter than 6 char)"
+                    default:
+                        print("Create User Error: \(error)")
+                    }    
+                }
+                let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.present(registerConfirmed, animated: true, completion:nil)
+            }
+        }
+       
+        
     }
     
     @IBAction func userTappedBackground(sender: AnyObject) {
