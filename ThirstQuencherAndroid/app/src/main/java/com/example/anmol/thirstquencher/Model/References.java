@@ -123,9 +123,9 @@ public class References {
         if (condition.equals("Safe")) {
             return OverallCondition.SAFE;
         } else if (condition.equals("Treatable")) {
-            return OverallCondition.UNSAFE;
-        } else {
             return OverallCondition.Treatable;
+        } else {
+            return OverallCondition.UNSAFE;
         }
     }
 
