@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThirstQuencher/SignInViewController.swift"
-            timestampString = "510048006.808304"
+            timestampString = "514158315.310661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "attemptLogin(_:)"
             landmarkType = "7">
          </BreakpointContent>

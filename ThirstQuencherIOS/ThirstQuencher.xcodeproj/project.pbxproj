@@ -127,6 +127,7 @@
 				E8E869661E54DC5C0049C764 /* SignInViewController.swift */,
 				AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */,
 				E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */,
+				E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */,
 				E8D78F521E5F45CC00BF945B /* User.swift */,
 				E8D78F541E5F47D200BF945B /* AccountType.swift */,
 				E8E869541E526E490049C764 /* Main.storyboard */,
@@ -141,7 +142,6 @@
 				AAEFE8BF1E788EE300D48259 /* WaterReports.swift */,
 				E8DFB7301E6924710035FDD4 /* ThirstQuencher-Bridging-Header.h */,
 				E8DFB72E1E68CEBB0035FDD4 /* UsersDB.swift */,
-				E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */,
 			);
 			path = ThirstQuencher;
 			sourceTree = "<group>";

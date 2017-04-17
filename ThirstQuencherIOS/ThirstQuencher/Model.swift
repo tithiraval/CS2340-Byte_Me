@@ -17,57 +17,132 @@ class Model {
     private var sourceReports = [SourceReport]()
     private var purityReports = [PurityReport]()
     
-    private var currentUser: User?
+    private var currentUser: FIRUser?
     
-    var error1: String?
+    private var ref: FIRDatabaseReference!
+    
     
     private init() {
-        addUser(name: "Test User", id: "u", password: "p", accountType: AccountType.USER, emailAddress: "TestUser@whatever.com")
-        addUser(name: "Test Worker", id: "w", password: "p", accountType: AccountType.WORKER, emailAddress:
-            "TestWorker@whatever.com")
-        
-        /*
-        FIRAuth.auth()?.signIn(withEmail: "dhurvgarg@gmail.com", password: "password") { (user, error) in
-            // ...
-        }
-        ref = FIRDatabase.database().reference(withPath: "users")
-        let user = User(name: "Test User", id: "u", password: "p", accountType: AccountType.USER)
-        ref.child("Test User 1").setValue(user.toDict())
-        */
+        ref = FIRDatabase.database().reference(withPath: "USERS")
     }
     
-    func addUser(name: String, id: String, password: String, accountType: AccountType, emailAddress: String) -> Bool {
+    func setCurrentUser() {
+        currentUser = FIRAuth.auth()?.currentUser
+    }
+    
+    func addUser(fromViewController: UIViewController, name: String, id: String, password: String, accountType: AccountType, emailAddress: String) {
         
         let newUser = User(name: name, id: id, password: password, accountType: accountType, emailAddress: emailAddress)
+        
+        let registerConfirmed = UIAlertController(title: "Registration confirmed!", message: "Person was registered in the system.", preferredStyle: UIAlertControllerStyle.alert)
+        registerConfirmed.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        registerConfirmed.addAction(UIAlertAction(title: "Sign In", style: UIAlertActionStyle.default, handler: { action in
+            fromViewController.performSegue(withIdentifier: "showSignIn", sender: nil)
+        }))
+        
+        FIRAuth.auth()?.createUser(withEmail: emailAddress, password: password) {(user, error) in
+            if error != nil {
+                var message = ""
+                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        message = "The email inputted is invalid"
+                    case .errorCodeEmailAlreadyInUse:
+                        message = "The email inputted is already in use"
+                    case .errorCodeWeakPassword:
+                        message = "The password is too weak (shorter than 6 char)"
+                    default:
+                        print("Create User Error: \(error)")
+                    }
+                }
+                let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                fromViewController.present(alert, animated: true, completion: nil)
+            } else {
+                FIRAuth.auth()?.signIn(withEmail: emailAddress, password: password) {(user, error) in
+                    // ...
+                }
+                let userID = FIRAuth.auth()?.currentUser?.uid
+                let userDict = newUser.toDict()
+                self.ref.child(userID!).setValue(userDict)
+                fromViewController.present(registerConfirmed, animated: true, completion:nil)
+            }
+        }
+    }
+    
+    func logIn(fromViewController: UIViewController, email: String, password: String) {
+        FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                var message = ""
+                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    
+                    switch errCode {
+                    case .errorCodeInvalidEmail:
+                        message = "The email inputted is invalid"
+                    case .errorCodeUserDisabled:
+                        message = "The user's account is disabled"
+                    case .errorCodeWrongPassword:
+                        message = "The password is invalid"
+                    case .errorCodeOperationNotAllowed:
+                        message = "Email and password accounts are not enabled"
+                    default:
+                        print("Create User Error: \(error)")
+                    }
+                }
+                let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                fromViewController.present(alert, animated: true, completion: nil)
+            } else {
+                self.setCurrentUser()
+                fromViewController.performSegue(withIdentifier: "toSuccessfulLogin", sender: nil)
+            }
+        }
+    }
+    
+    func logout() {
+        try! FIRAuth.auth()!.signOut()
+        setCurrentUser()
+        currentUser = nil
+    }
+    
+    func checkIfUSER(fromViewController: LoggedInViewController) {
+        ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let accountType = value?["accountType"] as? String ?? ""
+            if (accountType == "USER") {
+                fromViewController.purityReportButton.isHidden = true
+            }
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-        
-        
-        //ref.child(name).setValue(newUser.toDict())
-        if (users[id] == nil) {
-            users[id] = newUser
-            return true
-        } else {
-            return false
-        }
- 
-    }
-    
-    func setError(error: Error) {
-        self.error1 = String(error.localizedDescription)
-        print(error.localizedDescription)
-    }
-    
-    func checkUser(id: String, password: String) -> String {
-        if (users[id] == nil) {
-            return "Username does not exist"
-        } else if (users[id]!.getPassword() != password) {
-            return "Password does not exist"
-        } else {
-            currentUser = users[id]
-            return "Login Succeeded"
-        }
-        
-    }
     
     func editUser(name: String, email: String, address: String) {
         currentUser!.setName(name: name)
@@ -96,9 +171,7 @@ class Model {
         return purityReports
     }
     
-    func logout() {
-        currentUser = nil
-    }
+    
     
     func getCurrentUserName() -> String {
         return currentUser!.getName()

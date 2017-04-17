@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="R2I-Cz-hN7" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FKK-bE-za2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKK-bE-za2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -121,7 +121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XcY-hz-yXf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XcY-hz-yXf">
                                 <rect key="frame" x="13" y="74" width="350" height="50"/>
                                 <color key="backgroundColor" red="0.94964378238341973" green="0.94964378238341973" blue="0.94964378238341973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -191,11 +191,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0H3-vt-6jo"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="y3k-6O-ZsV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-cR-Pm3">
-                                <rect key="frame" x="63" y="235" width="250" height="50"/>
+                                <rect key="frame" x="63" y="279" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="AeV-bh-3F8"/>
@@ -211,7 +211,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-uV-zr5">
-                                <rect key="frame" x="63" y="339" width="250" height="50"/>
+                                <rect key="frame" x="63" y="380" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="KaQ-kD-DUw"/>
@@ -225,7 +225,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWw-I1-jvg">
-                                <rect key="frame" x="62" y="176" width="250" height="50"/>
+                                <rect key="frame" x="62" y="220" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="5NV-Wf-L3u"/>
@@ -270,7 +270,7 @@
             <objects>
                 <tableViewController title="Water Reports" id="Uer-9E-1PO" customClass="WaterReports" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aLz-qR-va0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -561,7 +561,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gnT-zS-YqG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LUQ-WQ-qgo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -738,7 +738,7 @@
         <scene sceneID="4dF-ot-AYa">
             <objects>
                 <navigationController title="Logged in Navigation Controller" id="0iD-Rd-zcw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ubJ-Wg-POa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1178,7 +1178,7 @@
         <image name="water" width="216" height="216"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TVp-rn-jFY"/>
+        <segue reference="fE7-h5-jhU"/>
         <segue reference="WMn-4A-Owb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

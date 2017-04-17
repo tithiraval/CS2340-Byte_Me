@@ -15,7 +15,6 @@ class LoggedInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let logoutButton: UIBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(LoggedInViewController.goToLogin))
         let editUserButton: UIBarButtonItem = UIBarButtonItem(title: "Edit User", style: .plain, target: self, action:
             #selector(LoggedInViewController.editUser))
@@ -26,10 +25,7 @@ class LoggedInViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = editUserButton
         self.navigationItem.leftBarButtonItem = logoutButton
         
-        if (Model.sharedInstance.getCurrentUserAccountType() == AccountType.USER) {
-            self.purityReportButton.isHidden = true
-        }
-        
+        Model.sharedInstance.checkIfUSER(fromViewController: self)
 
         // Do any additional setup after loading the view.
     }

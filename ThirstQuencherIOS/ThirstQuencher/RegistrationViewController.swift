@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -18,7 +17,6 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var accountTypeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    var ref: FIRDatabaseReference!
     
     var accountTypeData: [String] = [String]()
     var selectedAccountType = ""
@@ -27,7 +25,6 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         super.viewDidLoad()
         
-        ref = FIRDatabase.database().reference(withPath: "USERS")
 
         // Do any additional setup after loading the view.
         
@@ -83,46 +80,22 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             accountType = AccountType.USER
         }
         
-        let registerConfirmed = UIAlertController(title: "Registration confirmed!", message: "Person was registered in the system.", preferredStyle: UIAlertControllerStyle.alert)
-        registerConfirmed.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        registerConfirmed.addAction(UIAlertAction(title: "Sign In", style: UIAlertActionStyle.default, handler: { action in
-            self.performSegue(withIdentifier: "showSignIn", sender: nil)
-        }))
         
-        let error: Error
+        var wasAlertPresented = false
         
         
         if (user == "" || password == "" || name == "" || email == "") {
+            wasAlertPresented = true
             self.present(nullAlert, animated: true, completion:nil)
         } else if (password != confirm) {
+            wasAlertPresented = true
             self.present(confirmAlert, animated: true, completion:nil)
         }
-        let newUser = User(name: name!, id: user!, password: password!, accountType: accountType, emailAddress: email!)
-
-        FIRAuth.auth()?.createUser(withEmail: email!, password: password!) {(user, error) in
-            if error != nil {
-                var message = ""
-                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
-                    
-                    switch errCode {
-                    case .errorCodeInvalidEmail:
-                        message = "The email inputted is invalid"
-                    case .errorCodeEmailAlreadyInUse:
-                        message = "The email inputted is already in use"
-                    case .errorCodeWeakPassword:
-                        message = "The password is too weak (shorter than 6 char)"
-                    default:
-                        print("Create User Error: \(error)")
-                    }    
-                }
-                let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                self.present(registerConfirmed, animated: true, completion:nil)
-            }
+        if (!wasAlertPresented) {
+            
+            Model.sharedInstance.addUser(fromViewController: self, name: name!, id: user!, password: password!, accountType: accountType, emailAddress: email!)
+            
         }
-       
         
     }
     
