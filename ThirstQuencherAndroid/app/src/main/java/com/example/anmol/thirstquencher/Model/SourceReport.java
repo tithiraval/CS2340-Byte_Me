@@ -26,6 +26,9 @@ public class SourceReport {
     private WaterType type;
     private WaterCondition condition;
 
+    /**
+     * empty constructor for source report
+     */
     public SourceReport() {}
 
     /**
@@ -95,26 +98,50 @@ public class SourceReport {
     @Exclude
     public WaterCondition getConditionVal() {return this.condition;}
 
+    /**
+     * updates the email address
+     * @param emailAddress the new email address
+     */
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
 
+    /**
+     * updates the date and time
+     * @param dateTime the new date and time
+     */
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 
+    /**
+     * updates the location
+     * @param location the new date and time
+     */
     public void setLocation(Location location) {
         this.location = location;
     }
 
+    /**
+     * updates the report number
+     * @param reportNumber the new report number
+     */
     public void setReportNumber(int reportNumber) {
         this.reportNumber = reportNumber;
     }
 
+    /**
+     * updates the water type
+     * @param type the new type of the water
+     */
     public void setType(String type) {
         this.type = WaterType.valueOf(type);
     }
 
+    /**
+     * updates the water condition
+     * @param condition the new condition
+     */
     public void setCondition(String condition) {
         this.condition = WaterCondition.valueOf(condition);
     }

@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Anmol on 3/2/17.
+ * Adapter for the list view
+ * @author Anmol
+ * @version 2/20/17
  */
 public class ListViewAdapter extends BaseAdapter {
 
@@ -45,8 +47,6 @@ public class ListViewAdapter extends BaseAdapter {
         // TODO Auto-generated method stub
         return 0;
     }
-
-
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

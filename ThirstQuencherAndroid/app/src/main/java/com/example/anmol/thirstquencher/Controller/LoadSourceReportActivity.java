@@ -17,6 +17,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Loads a the info of a selected source report
+ * @author Anmol
+ */
 public class LoadSourceReportActivity extends AppCompatActivity {
 
     @Override

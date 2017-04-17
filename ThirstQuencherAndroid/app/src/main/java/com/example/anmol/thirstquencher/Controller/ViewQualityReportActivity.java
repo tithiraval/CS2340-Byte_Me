@@ -8,6 +8,10 @@ import com.example.anmol.thirstquencher.Model.QualityReport;
 import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.R;
 
+/**
+ * Shows a detailed highlight of a quality report
+ * @author Anmol
+ */
 public class ViewQualityReportActivity extends AppCompatActivity {
 
     private QualityReport report;

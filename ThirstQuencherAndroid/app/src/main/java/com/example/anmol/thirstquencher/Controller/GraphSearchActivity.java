@@ -23,6 +23,11 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Generates the graphs for the graph screen
+ * @author Tithi
+ * @version 3/28/17
+ */
 public class GraphSearchActivity extends AppCompatActivity {
 
     private EditText location;

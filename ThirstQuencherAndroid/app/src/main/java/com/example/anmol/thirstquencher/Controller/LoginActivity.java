@@ -29,7 +29,6 @@ import com.google.firebase.database.ValueEventListener;
 /**
  * The controller for logging in
  * @author Anmol
- * @version 2/20/17
  */
 public class LoginActivity extends AppCompatActivity {
 
@@ -124,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /**
-     * Retruns to the previous screen if user presses cancel
+     * Returns to the previous screen if user presses cancel
      * @param view The view for this method
      */
     public void cancel(View view) {

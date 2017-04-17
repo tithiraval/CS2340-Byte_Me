@@ -25,6 +25,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.security.KeyStore;
 
+/**
+ * The submit report screen
+ * @author Anmol
+ */
 public class SubmitReportActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -55,16 +59,6 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
         waterConditionSpinner.setAdapter(adapter2);
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -114,6 +108,10 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
         }
     }
 
+    /**
+     * checks if the object is null
+     * @param someObject the object in question
+     */
     private static boolean isNull (Object someObject) {
         if (someObject == null) {
             return true;
@@ -121,6 +119,10 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
         return false;
     }
 
+    /**
+     * cancels the report submission and goes back to the previous screen
+     * @param view the current view
+     */
     public void cancelSubmitReport(View view) {
         SubmitReportActivity.this.finish();
     }

@@ -8,7 +8,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Tithi on 3/16/17.
+ * The quality report object
+ * @author Tithi
+ * @version 3/16/17
  */
 
 public class QualityReport {
@@ -22,6 +24,9 @@ public class QualityReport {
     private double virusPPM;
     private double contaminantPPM;
 
+    /**
+     * empty constructor for quality report
+     */
     public QualityReport() {}
 
     /**
@@ -89,36 +94,67 @@ public class QualityReport {
      */
     public double getContaminantPPM() {return this.contaminantPPM;}
 
-
+    /**
+     * updates the time and date for the report
+     * @param dateTime the new date and time
+     */
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 
+    /**
+     * updates email adress
+     * @param emailAddress the new email address
+     */
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
 
+    /**
+     * updates the location atribute of the report
+     * @param location the new location
+     */
     public void setLocation(String location) {
         this.location = location;
     }
 
+    /**
+     * updates the report number
+     * @param reportNumber the ID number for the report
+     */
     public void setReportNumber(int reportNumber) {
         this.reportNumber = reportNumber;
     }
 
+    /**
+     * updates the condition of the water
+     * @param condition the new condition of the water
+     */
     public void setCondition(String condition) {
         this.condition = OverallCondition.valueOf(condition);
     }
 
+    /**
+     * updates the condition of the water
+     * @param condition the new condition of the water
+     */
     @Exclude
     public void setCondition(OverallCondition condition) {
         this.condition = condition;
     }
 
+    /**
+     * updates virus PPM
+     * @param virusPPM the virus parts per million concentration
+     */
     public void setVirusPPM(double virusPPM) {
         this.virusPPM = virusPPM;
     }
 
+    /**
+     * updates contaminant PPM
+     * @param contaminantPPM the contaminant parts per million concentration
+     */
     public void setContaminantPPM(double contaminantPPM) {
         this.contaminantPPM = contaminantPPM;
     }

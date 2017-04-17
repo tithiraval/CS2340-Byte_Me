@@ -20,6 +20,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * The submit quality report screen
+ * @author Anmol
+ */
 public class SubmitQualityReportActivity extends AppCompatActivity {
 
     private User user;
@@ -44,6 +48,10 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Allows the worker / manager to submit a quality report
+     * @param view the current view
+     */
     public void submitQualityReport(View view) {
         if (location.getText().toString().equals("")) {
             CharSequence text = "Enter Location!";
@@ -84,6 +92,10 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Cancels the submissions of a new report and goes back to the previous screen
+     * @param view the current view
+     */
     public void cancelSubmitQualityReport(View view) {
         SubmitQualityReportActivity.this.finish();
     }

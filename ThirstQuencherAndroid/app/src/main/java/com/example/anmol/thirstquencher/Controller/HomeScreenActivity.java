@@ -70,6 +70,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Allows either a worker or a manager to create a quality report
+     * @param view The view for this screen
+     */
     public void createQualityReport(View view) {
         Intent intent = new Intent(HomeScreenActivity.this, SubmitQualityReportActivity.class);
         intent.putExtra("USERNAME", user.getUsername());

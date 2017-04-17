@@ -1,7 +1,9 @@
 package com.example.anmol.thirstquencher.Model;
 
 /**
- * Created by Tithi on 3/16/17.
+ * Enum of the different conditions of water
+ * @author Tithi
+ * @version 3/16/17
  */
 
 public enum OverallCondition {
@@ -14,6 +16,10 @@ public enum OverallCondition {
      */
     OverallCondition(String cond) {this.cond = cond;}
 
+    /**
+     * retuns a string of the water condition
+     * @return water condition
+     */
     @Override
     public String toString() {
         return cond;

@@ -22,9 +22,10 @@ public abstract class User {
     private String title;
     private UserType accountType;
 
-    public User() {
-
-    }
+    /**
+     * empty constructor for user
+     */
+    public User() {}
 
     /**
      * Creates a new user
@@ -153,6 +154,12 @@ public abstract class User {
         return this.accountType.name();
     }
 
+    /**
+     * creates a map of size 3 with the username, home adress and title of the user
+     * @param username the username of the user
+     * @param homeAddress the address of the user
+     * @param title the title of the user
+     */
     @Exclude
     public Map<String, Object> updateProfile(String username, String homeAddress, String title) {
         Map<String, Object> result = new HashMap<String, Object>();

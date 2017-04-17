@@ -17,6 +17,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Loads a the info of a selected quality report
+ * @author Anmol
+ * @version 2/20/17
+ */
 public class LoadQualityReportActivity extends AppCompatActivity {
 
     @Override

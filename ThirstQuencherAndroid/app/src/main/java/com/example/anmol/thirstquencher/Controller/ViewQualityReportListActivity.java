@@ -14,6 +14,10 @@ import com.example.anmol.thirstquencher.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Shows a list of all the quality reports
+ * @author Anmol
+ */
 public class ViewQualityReportListActivity extends AppCompatActivity {
 
     private ArrayList<HashMap<String, String>> displayList;

@@ -14,6 +14,10 @@ import com.example.anmol.thirstquencher.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Shows a list of all water reports
+ * @author Anmol
+ */
 public class WaterReportListActivity extends AppCompatActivity {
 
     private ArrayList<HashMap<String, String>> displayList;
