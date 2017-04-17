@@ -42,7 +42,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
         waterConditionData = ["Safe", "Treatable", "Unsafe"]
         
         nameLabel.text = "Purity Report #" + String(Model.sharedInstance.getNewSourceReportNumber())
-        numberLabel.text = "Reported by " + Model.sharedInstance.getCurrentUserName()
+        Model.sharedInstance.getCurrentUserName(from: self)
         
     }
     

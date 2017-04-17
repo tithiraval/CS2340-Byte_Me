@@ -40,7 +40,7 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
         waterConditionData = ["Waste", "Treatable-Clear", "Treatable-Muddy", "Potable"]
 
         nameLabel.text = "Source Report #" + String(Model.sharedInstance.getNewSourceReportNumber())
-        numberLabel.text = "Reported by " + Model.sharedInstance.getCurrentUserName()
+        Model.sharedInstance.getCurrentUserName(from: self)
         
     }
     

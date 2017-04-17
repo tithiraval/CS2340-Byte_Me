@@ -116,6 +116,68 @@ class Model {
         })
     }
     
+    func editUser(name: String, email: String, address: String) {
+        let userID = currentUser!.uid
+        ref.child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let accountType = value?["accountType"] as? String ?? ""
+            let password = value?["password"] as? String ?? ""
+            let title = value?["title"] as? String ?? ""
+            let username = value?["username"] as? String ?? ""
+            let dict = [
+                "accountType": accountType,
+                "emailAddress": email,
+                "homeAddress": address,
+                "password": password,
+                "title": title,
+                "username": username,
+                "Name": name
+            ]
+            self.ref.child(userID).setValue(dict)
+        })
+    }
+    
+    func getCurrentUserName(from: UIViewController) {
+        if (from is EditUserTableViewController) {
+            ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let name = value?["Name"] as? String ?? ""
+                (from as! EditUserTableViewController).nameField.text = name
+                (from as! EditUserTableViewController).name = name
+            })
+        } else if (from is PurityReportTableViewController || from is SourceReportTableViewController) {
+            ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let name = value?["Name"] as? String ?? ""
+                (from as! PurityReportTableViewController).numberLabel.text = "Reported by " + name
+            })
+        }
+    }
+    
+    func getCurrentUserEmail(from: UIViewController) {
+        if (from is EditUserTableViewController) {
+            ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let email = value?["emailAddress"] as? String ?? ""
+                (from as! EditUserTableViewController).emailField.text = email
+                (from as! EditUserTableViewController).email = email
+            })
+            
+        }
+    }
+    
+    func getCurrentUserAddress(from: UIViewController) {
+        if (from is EditUserTableViewController) {
+            ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let address = value?["homeAddress"] as? String ?? ""
+                (from as! EditUserTableViewController).homeField.text = address
+                (from as! EditUserTableViewController).address = address
+            })
+            
+        }
+    }
+    
     
     
     
@@ -144,20 +206,16 @@ class Model {
     
 
     
-    func editUser(name: String, email: String, address: String) {
-        currentUser!.setName(name: name)
-        currentUser!.setEmailAddress(email: email)
-        currentUser!.setHomeAddress(address: address)
-    }
+    
     
     func addNewSourceReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {
-        let newSourceReport = SourceReport(date: date, number: (sourceReports.count + 1), name: currentUser!.getName(), location: location, waterType: waterType, waterCondition: waterCondition)
+        let newSourceReport = SourceReport(date: date, number: (sourceReports.count + 1), name: "NAME", location: location, waterType: waterType, waterCondition: waterCondition)
         sourceReports.append(newSourceReport)
         return true
     }
     
     func addNewPurityReport(date: Date, location: String, waterCondition: String, virusPPM: String, contaminantPPM: String) -> Bool {
-        let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: currentUser!.getName(), location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
+        let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: "NAME", location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
         purityReports.append(newPurityReport)
         return true
     }
@@ -173,9 +231,7 @@ class Model {
     
     
     
-    func getCurrentUserName() -> String {
-        return currentUser!.getName()
-    }
+    
     
     func getNewSourceReportNumber() -> Int {
         return sourceReports.count + 1
@@ -184,16 +240,5 @@ class Model {
     func getNewPurityReportNumber() -> Int {
         return purityReports.count + 1
     }
-    
-    func getCurrentUserEmail() -> String {
-        return currentUser!.getEmailAddress()
-    }
-    
-    func getCurrentUserAddress() -> String {
-        return currentUser!.getHomeAddress()
-    }
-    
-    func getCurrentUserAccountType() -> AccountType {
-        return currentUser!.getAccountType()
-    }
+
 }
