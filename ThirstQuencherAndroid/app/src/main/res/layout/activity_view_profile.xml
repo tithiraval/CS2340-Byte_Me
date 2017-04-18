@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cast_intro_overlay_button_background_color"
+    android:backgroundTint="@color/wallet_highlighted_text_holo_light"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,16 +15,17 @@
         android:id="@+id/viewProfileEmailAddressTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="Email Address:"/>
+        android:text="Email Address:"
+        android:textSize="16dp" />
+
     <TextView
         android:id="@+id/viewProfileEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/viewProfileEmailAddressTextField"
         android:layout_alignBottom="@+id/viewProfileEmailAddressTextField"
         android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_toEndOf="@+id/viewProfileEmailAddressTextField"
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/viewProfileUsernameTextField"
@@ -30,16 +33,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileEmailAddressTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Username:"/>
+        android:text="Username:"
+        android:textSize="16dp" />
+
     <TextView
         android:id="@+id/viewProfileUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/viewProfileUsernameTextField"
         android:layout_alignBottom="@+id/viewProfileUsernameTextField"
         android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_toEndOf="@+id/viewProfileUsernameTextField"
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/viewProfileHomeAddressTextField"
@@ -47,16 +51,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileUsernameTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Home Address:"/>
+        android:text="Home Address:"
+        android:textSize="16dp" />
+
     <TextView
         android:id="@+id/viewProfileHomeAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/viewProfileHomeAddressTextField"
         android:layout_alignBottom="@+id/viewProfileHomeAddressTextField"
         android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_toEndOf="@+id/viewProfileHomeAddressTextField"
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/viewProfileTitleTextField"
@@ -64,16 +69,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileHomeAddressTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Title:"/>
+        android:text="Title:"
+        android:textSize="16dp" />
+
     <TextView
         android:id="@+id/viewProfileTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/viewProfileTitleTextField"
         android:layout_alignBottom="@+id/viewProfileTitleTextField"
         android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_toEndOf="@+id/viewProfileTitleTextField"
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/viewProfileAccountTypeTextField"
@@ -81,42 +87,47 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewProfileTitleTextField"
         android:layout_marginTop="16dp"
-        android:textSize="16dp"
-        android:text="Account Type:"/>
+        android:text="Account Type:"
+        android:textSize="16dp" />
+
     <TextView
         android:id="@+id/viewProfileAccountType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/viewProfileAccountTypeTextField"
         android:layout_alignBottom="@+id/viewProfileAccountTypeTextField"
         android:layout_marginLeft="16dp"
-        android:textSize="16dp"/>
+        android:layout_toEndOf="@+id/viewProfileAccountTypeTextField"
+        android:textSize="16dp" />
 
     <Button
         android:id="@+id/viewProfileEditButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_below="@+id/viewProfileAccountTypeTextField"
-        android:text="EDIT PROFILE"
-        android:onClick="editProfileRequest"/>
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="editProfileRequest"
+        android:text="EDIT PROFILE" />
 
     <Button
         android:id="@+id/viewProfileChangePasswordButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_below="@+id/viewProfileEditButton"
-        android:text="CHANGE PASSWORD"
-        android:onClick="changePasswordRequest"/>
+        android:layout_marginTop="24dp"
+        android:onClick="changePasswordRequest"
+        android:text="CHANGE PASSWORD" />
 
     <Button
         android:id="@+id/viewProfileBackButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_below="@+id/viewProfileChangePasswordButton"
-        android:text="BACK"
-        android:onClick="back"/>
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="back"
+        android:text="BACK" />
 
 </RelativeLayout>
