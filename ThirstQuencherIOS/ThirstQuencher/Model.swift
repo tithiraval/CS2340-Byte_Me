@@ -178,6 +178,14 @@ class Model {
         }
     }
     
+    func populateReports() {
+        var ref = FIRDatabase.database().reference(withPath: "SOURCE_REPORTS")
+        ref.observe(.value, with: {snapshot in
+            var newSourceReports = [SourceReport]()
+            
+        })
+    }
+    
     
     
     
@@ -228,9 +236,6 @@ class Model {
     func getAllPurityReports() -> [PurityReport] {
         return purityReports
     }
-    
-    
-    
     
     
     func getNewSourceReportNumber() -> Int {
