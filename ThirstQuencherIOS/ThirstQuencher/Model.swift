@@ -149,7 +149,12 @@ class Model {
             ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
                 let value = snapshot.value as? NSDictionary
                 let name = value?["Name"] as? String ?? ""
-                (from as! PurityReportTableViewController).numberLabel.text = "Reported by " + name
+                if (from is PurityReportTableViewController) {
+                    (from as! PurityReportTableViewController).numberLabel.text = "Reported by " + name
+                } else {
+                    (from as! SourceReportTableViewController).numberLabel.text = "Reported by " + name
+                }
+                
             })
         }
     }
@@ -182,7 +187,10 @@ class Model {
         var ref = FIRDatabase.database().reference(withPath: "SOURCE_REPORTS")
         ref.observe(.value, with: {snapshot in
             var newSourceReports = [SourceReport]()
-            
+            for item in snapshot.children {
+                let sourceReport = snapshot.value as! [String: AnyObject]
+                
+            }
         })
     }
     

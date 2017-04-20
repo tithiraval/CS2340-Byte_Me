@@ -45,5 +45,16 @@ class SourceReport: NSObject {
     func getWaterCondition() -> String {
         return waterCondition
     }
+    
+    func toDict() -> Any {
+        return [
+            "condition": waterCondition,
+            "dateTime": date,
+            //"emailAddress": getHomeAddress(),
+            "location": location,
+            "reportNumber": number,
+            "type": waterType,
+        ]
+    }
 
 }

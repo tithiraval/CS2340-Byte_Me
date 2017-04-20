@@ -195,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-cR-Pm3">
-                                <rect key="frame" x="63" y="279" width="250" height="50"/>
+                                <rect key="frame" x="62" y="320" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="AeV-bh-3F8"/>
@@ -225,13 +225,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWw-I1-jvg">
-                                <rect key="frame" x="62" y="220" width="250" height="50"/>
+                                <rect key="frame" x="62" y="260" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="5NV-Wf-L3u"/>
-                                    <constraint firstAttribute="height" constant="50" id="7Se-Ar-quH"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Dg6-Xt-an7"/>
-                                    <constraint firstAttribute="width" constant="250" id="TFJ-Sz-cVJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="WVp-tj-ldl"/>
+                                    <constraint firstAttribute="width" constant="250" id="ld8-SW-mJS"/>
                                 </constraints>
                                 <state key="normal" title="Submit New Water Purity Report">
                                     <color key="titleColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -244,13 +242,11 @@
                         <color key="backgroundColor" red="0.4739349893" green="0.79895771760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wkf-uV-zr5" firstAttribute="centerX" secondItem="y3k-6O-ZsV" secondAttribute="centerX" id="1lH-FA-3Ea"/>
-                            <constraint firstItem="TRO-cR-Pm3" firstAttribute="top" secondItem="ZWw-I1-jvg" secondAttribute="bottom" constant="8.5" id="2UB-MZ-X3K"/>
-                            <constraint firstItem="ZWw-I1-jvg" firstAttribute="leading" secondItem="y3k-6O-ZsV" secondAttribute="leadingMargin" constant="46" id="69b-fU-sIv"/>
-                            <constraint firstItem="TRO-cR-Pm3" firstAttribute="centerY" secondItem="y3k-6O-ZsV" secondAttribute="centerY" constant="-30" id="7rX-LJ-BWp"/>
-                            <constraint firstItem="ZWw-I1-jvg" firstAttribute="top" secondItem="As1-b7-FTU" secondAttribute="bottom" constant="156" id="NBx-nE-kds"/>
-                            <constraint firstItem="TRO-cR-Pm3" firstAttribute="centerX" secondItem="y3k-6O-ZsV" secondAttribute="centerX" id="SLf-Qr-OgX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZWw-I1-jvg" secondAttribute="trailing" constant="47" id="YVI-q4-zWD"/>
+                            <constraint firstItem="ZWw-I1-jvg" firstAttribute="centerX" secondItem="y3k-6O-ZsV" secondAttribute="centerX" id="HZH-UB-b4s"/>
+                            <constraint firstItem="TRO-cR-Pm3" firstAttribute="centerX" secondItem="y3k-6O-ZsV" secondAttribute="centerX" id="eOr-Gw-B5D"/>
                             <constraint firstItem="wkf-uV-zr5" firstAttribute="centerY" secondItem="y3k-6O-ZsV" secondAttribute="centerY" constant="30" id="gKk-6e-0oZ"/>
+                            <constraint firstItem="TRO-cR-Pm3" firstAttribute="top" secondItem="ZWw-I1-jvg" secondAttribute="bottom" constant="10" id="hhG-81-Dnc"/>
+                            <constraint firstItem="wkf-uV-zr5" firstAttribute="top" secondItem="TRO-cR-Pm3" secondAttribute="bottom" constant="10" id="spG-L6-OcC"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
