@@ -29,6 +29,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     
     
     var waterConditionData: [String] = [String]()
+    var currentUserName = ""
     
     
     override func viewDidLoad() {
@@ -47,7 +48,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: locationTextField.text!, waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!)) {
+        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: locationTextField.text!, waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!, name: currentUserName)) {
             self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
         }
     }

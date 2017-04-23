@@ -52,4 +52,24 @@ class PurityReport: NSObject {
         return contaminantPPM
     }
     
+    func toDict() -> Any {
+        return [
+            "condition": waterCondition,
+            "interval": date.timeIntervalSince1970,
+            "name": name,
+            "location": location,
+            "reportNumber": number,
+            "virusPPM": virusPPM,
+            "contaminantPPM": contaminantPPM
+        ]
+    }
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        if let object = object as? PurityReport {
+            return getNum() == object.getNum()
+        } else {
+            return false
+        }
+    }
+    
 }

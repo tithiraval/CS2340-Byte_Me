@@ -95,6 +95,7 @@ class Model {
                 fromViewController.present(alert, animated: true, completion: nil)
             } else {
                 self.setCurrentUser()
+                self.populateReports()
                 fromViewController.performSegue(withIdentifier: "toSuccessfulLogin", sender: nil)
             }
         }
@@ -151,8 +152,10 @@ class Model {
                 let name = value?["Name"] as? String ?? ""
                 if (from is PurityReportTableViewController) {
                     (from as! PurityReportTableViewController).numberLabel.text = "Reported by " + name
+                    (from as! PurityReportTableViewController).currentUserName = name
                 } else {
                     (from as! SourceReportTableViewController).numberLabel.text = "Reported by " + name
+                    (from as! SourceReportTableViewController).currentUserName = name
                 }
                 
             })
@@ -184,14 +187,57 @@ class Model {
     }
     
     func populateReports() {
-        var ref = FIRDatabase.database().reference(withPath: "SOURCE_REPORTS")
-        ref.observe(.value, with: {snapshot in
-            var newSourceReports = [SourceReport]()
+        let sourceReportRef = FIRDatabase.database().reference(withPath: "IOS_SOURCE_REPORTS")
+        sourceReportRef.observe(.value, with: {snapshot in
             for item in snapshot.children {
-                let sourceReport = snapshot.value as! [String: AnyObject]
+                let sourceReport = (item as! FIRDataSnapshot).value as! [String: AnyObject]
+                let condition = sourceReport["condition"] as! String
+                let name = sourceReport["name"] as! String
+                let location = sourceReport["location"] as! String
+                let reportNum = sourceReport["reportNumber"] as! Int
+                let type = sourceReport["type"] as! String
+                let date = Date(timeIntervalSince1970: sourceReport["interval"] as! Double)
+                let newSourceReport = SourceReport(date: date, number: reportNum, name: name, location: location, waterType: type, waterCondition: condition)
+                if (!self.sourceReports.contains(newSourceReport)) {
+                    self.sourceReports.append(newSourceReport)
+                }
                 
             }
         })
+        let purityReportRef = FIRDatabase.database().reference(withPath: "IOS_PURITY_REPORTS")
+        purityReportRef.observe(.value, with: {snapshot in
+            for item in snapshot.children {
+                let purityReport = (item as! FIRDataSnapshot).value as! [String: AnyObject]
+                let condition = purityReport["condition"] as! String
+                let name = purityReport["name"] as! String
+                let location = purityReport["location"] as! String
+                let reportNum = purityReport["reportNumber"] as! Int
+                let virusPPM = purityReport["virusPPM"] as! String
+                let contPPM = purityReport["contaminantPPM"] as! String
+                let date = Date(timeIntervalSince1970: purityReport["interval"] as! Double)
+                let newPurityReport = PurityReport(date: date, number: reportNum, name: name, location: location, waterCondition: condition, virusPPM: virusPPM, contaminantPPM: contPPM)
+                if (!self.purityReports.contains(newPurityReport)) {
+                    self.purityReports.append(newPurityReport)
+                }
+                
+            }
+        })
+    }
+    
+    func addNewSourceReport(date: Date, location: String, waterType: String, waterCondition: String, name: String) -> Bool {
+        let otherref = FIRDatabase.database().reference(withPath: "IOS_SOURCE_REPORTS")
+        let newSourceReport = SourceReport(date: date, number: (sourceReports.count + 1), name: name, location: location, waterType: waterType, waterCondition: waterCondition)
+        let reportDict = newSourceReport.toDict()
+        otherref.child(String(newSourceReport.getNum())).setValue(reportDict)
+        return true
+    }
+    
+    func addNewPurityReport(date: Date, location: String, waterCondition: String, virusPPM: String, contaminantPPM: String, name: String) -> Bool {
+        let otherref = FIRDatabase.database().reference(withPath: "IOS_PURITY_REPORTS")
+        let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: name, location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
+        let reportDict = newPurityReport.toDict()
+        otherref.child(String(newPurityReport.getNum())).setValue(reportDict)
+        return true
     }
     
     
@@ -224,17 +270,9 @@ class Model {
     
     
     
-    func addNewSourceReport(date: Date, location: String, waterType: String, waterCondition: String) -> Bool {
-        let newSourceReport = SourceReport(date: date, number: (sourceReports.count + 1), name: "NAME", location: location, waterType: waterType, waterCondition: waterCondition)
-        sourceReports.append(newSourceReport)
-        return true
-    }
     
-    func addNewPurityReport(date: Date, location: String, waterCondition: String, virusPPM: String, contaminantPPM: String) -> Bool {
-        let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: "NAME", location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
-        purityReports.append(newPurityReport)
-        return true
-    }
+    
+    
     
     
     func getAllSourceReports() -> [SourceReport] {

@@ -24,6 +24,8 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     var waterTypeData: [String] = [String]()
     var waterConditionData: [String] = [String]()
     
+    var currentUserName = ""
+    
 
     override func viewDidLoad() {
         
@@ -45,7 +47,7 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewSourceReport(date: datePicker.date, location: locationTextField.text!, waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!)) {
+        if (Model.sharedInstance.addNewSourceReport(date: datePicker.date, location: "", waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!, name: currentUserName)) {
             self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
         }
     }

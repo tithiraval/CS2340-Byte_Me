@@ -49,12 +49,20 @@ class SourceReport: NSObject {
     func toDict() -> Any {
         return [
             "condition": waterCondition,
-            "dateTime": date,
-            //"emailAddress": getHomeAddress(),
+            "interval": date.timeIntervalSince1970,
+            "name": name,
             "location": location,
             "reportNumber": number,
             "type": waterType,
         ]
+    }
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        if let object = object as? SourceReport {
+            return getNum() == object.getNum()
+        } else {
+            return false
+        }
     }
 
 }
