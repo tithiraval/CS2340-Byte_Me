@@ -42,13 +42,13 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
         waterConditionPicker.dataSource = self
         waterConditionData = ["Safe", "Treatable", "Unsafe"]
         
-        nameLabel.text = "Purity Report #" + String(Model.sharedInstance.getNewSourceReportNumber())
+        nameLabel.text = "Purity Report #" + String(Model.sharedInstance.getNewPurityReportNumber())
         Model.sharedInstance.getCurrentUserName(from: self)
         
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: locationTextField.text!, waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!, name: currentUserName)) {
+        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: "", waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!, name: currentUserName)) {
             self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
         }
     }
