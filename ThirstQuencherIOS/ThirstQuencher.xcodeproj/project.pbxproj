@@ -18,6 +18,7 @@
 		E8A89C6F1E6888FE00C77BF6 /* WaterAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */; };
 		E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF6981E668DBB00C29D17 /* SourceReport.swift */; };
 		E8ACF69B1E669E5E00C29D17 /* SourceReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */; };
+		E8BA3E181EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3E171EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift */; };
 		E8D78F531E5F45CC00BF945B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F521E5F45CC00BF945B /* User.swift */; };
 		E8D78F551E5F47D200BF945B /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F541E5F47D200BF945B /* AccountType.swift */; };
 		E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F561E5F4A0F00BF945B /* Model.swift */; };
@@ -47,6 +48,7 @@
 		E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterAvailability.swift; sourceTree = "<group>"; };
 		E8ACF6981E668DBB00C29D17 /* SourceReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReport.swift; sourceTree = "<group>"; };
 		E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReportTableViewController.swift; sourceTree = "<group>"; };
+		E8BA3E171EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalGraphViewControllerViewController.swift; sourceTree = "<group>"; };
 		E8D78F521E5F45CC00BF945B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8D78F541E5F47D200BF945B /* AccountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 		E8D78F561E5F4A0F00BF945B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				E8ACF6981E668DBB00C29D17 /* SourceReport.swift */,
 				AAC9F9021E8AF84C0017B446 /* PurityReport.swift */,
 				E8E869541E526E490049C764 /* Main.storyboard */,
+				E8BA3E171EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift */,
 				E8E869571E526E490049C764 /* Assets.xcassets */,
 				E8E869591E526E490049C764 /* LaunchScreen.storyboard */,
 				E8DFB7301E6924710035FDD4 /* ThirstQuencher-Bridging-Header.h */,
@@ -284,6 +287,7 @@
 				AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */,
 				AAEFE8C01E788EE300D48259 /* WaterReports.swift in Sources */,
 				E8D78F531E5F45CC00BF945B /* User.swift in Sources */,
+				E8BA3E181EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift in Sources */,
 				E8E869671E54DC5C0049C764 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

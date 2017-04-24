@@ -17,6 +17,9 @@ class Model {
     private var sourceReports = [SourceReport]()
     private var purityReports = [PurityReport]()
     
+    private var historicalYear = 0
+    private var historicalLocation = ""
+    
     private var currentUser: FIRUser?
     
     private var ref: FIRDatabaseReference!
@@ -122,6 +125,9 @@ class Model {
             } else {
                 if (fromViewController is WaterReports) {
                     (fromViewController as! WaterReports).navigationController?.setToolbarHidden(false, animated: true)
+                    if (accountType != "WORKER") {
+                        (fromViewController as! WaterReports).isManager = true
+                    }
                 }
             }
         })
@@ -248,6 +254,11 @@ class Model {
         let reportDict = newPurityReport.toDict()
         otherref.child(String(newPurityReport.getNum())).setValue(reportDict)
         return true
+    }
+    
+    func setHistoricalValues(year: Int, location: String) {
+        historicalYear = year
+        historicalLocation = location
     }
     
     

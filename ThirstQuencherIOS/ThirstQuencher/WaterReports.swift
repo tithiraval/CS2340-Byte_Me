@@ -13,17 +13,44 @@ class WaterReports: UITableViewController {
     @IBOutlet weak var toggle: UIBarButtonItem!
     
     private var toggled = false
+    var isManager = false
     
     @IBAction func toggleCredit(_ sender: UIBarButtonItem) {
-        toggled = !toggled
-        if (toggled) {
-            toggle.title = "Show Source Reports"
-            self.navigationItem.title = "Water Purity Reports"
+        if (!isManager) {
+            toggled = !toggled
+            if (toggled) {
+                toggle.title = "Show Source Reports"
+                self.navigationItem.title = "Water Purity Reports"
+            } else {
+                toggle.title = "Show Purity Reports"
+                self.navigationItem.title = "Water Source Reports"
+            }
+            tableView.reloadData()
         } else {
-            toggle.title = "Show Purity Reports"
-            self.navigationItem.title = "Water Source Reports"
+            let alert = UIAlertController(title: "Water Quality History Graph", message: "Enter Year and Location.", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                (action) -> Void in
+                let yearTextField = alert.textFields![0] as UITextField
+                let locationTextField = alert.textFields![1] as UITextField
+                
+                if (yearTextField.text != "" && locationTextField.text != "") {
+                    Model.sharedInstance.setHistoricalValues(year: Int(yearTextField.text!)!, location: locationTextField.text!)
+                    self.performSegue(withIdentifier: "toHistoricalGraph", sender: nil)
+                }
+            })
+            
+            alert.addTextField(configurationHandler: {(textField) -> Void in
+                textField.placeholder = "Year"
+                textField.keyboardType = UIKeyboardType.numberPad
+            })
+            alert.addTextField(configurationHandler: {(textField) -> Void in
+                textField.placeholder = "Location"
+            })
+            alert.addAction(okAction)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+
         }
-        tableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -96,6 +123,8 @@ class WaterReports: UITableViewController {
         self.present(reportAlert, animated: true, completion: nil)
 
     }
+    
+    @IBAction func unwindToWaterReports(segue: UIStoryboardSegue) {}
     
 
     /*

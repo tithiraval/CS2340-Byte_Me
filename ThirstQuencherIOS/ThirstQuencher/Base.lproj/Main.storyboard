@@ -309,11 +309,58 @@
                     </toolbarItems>
                     <connections>
                         <outlet property="toggle" destination="uex-Ds-fzc" id="ARL-4f-CdZ"/>
+                        <segue destination="UAH-XB-itN" kind="show" identifier="toHistoricalGraph" action="showDetailViewController:sender:" id="cD1-78-AWQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WD0-mF-u5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3151" y="1074"/>
+            <point key="canvasLocation" x="3191" y="1058"/>
+        </scene>
+        <!--Historical Graph-->
+        <scene sceneID="R74-xw-mNO">
+            <objects>
+                <viewController title="Historical Graph" id="UAH-XB-itN" customClass="HistoricalGraphViewControllerViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Ee-yi-Lsu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kv3-5B-s7k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ymQ-Vl-N8D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-Br-73W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Gcr-5R-lXc"/>
+                                    <constraint firstAttribute="width" constant="375" id="QYN-oq-6ef"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="54m-ug-Tky">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="MFj-pp-7Rh">
+                                            <connections>
+                                                <action selector="onBackWithSender:" destination="UAH-XB-itN" id="IWc-dI-hqm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PSp-Br-73W" firstAttribute="top" secondItem="ymQ-Vl-N8D" secondAttribute="top" id="Baj-3A-EVx"/>
+                            <constraint firstItem="PSp-Br-73W" firstAttribute="leading" secondItem="ymQ-Vl-N8D" secondAttribute="leading" id="Dlv-XN-yYb"/>
+                            <constraint firstAttribute="trailing" secondItem="PSp-Br-73W" secondAttribute="trailing" id="v8g-OT-XJj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="MFj-pp-7Rh" id="uB0-dw-tlk"/>
+                        <segue destination="f02-HU-wOv" kind="unwind" identifier="unwindToWaterReports" unwindAction="unwindToWaterReportsWithSegue:" id="mFQ-qo-K0G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xrh-gJ-OBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f02-HU-wOv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4523" y="1059"/>
         </scene>
         <!--New Source Report-->
         <scene sceneID="IlY-PX-igd">
@@ -574,7 +621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFT-8Z-h53" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4583" y="689"/>
+            <point key="canvasLocation" x="4567" y="-210"/>
         </scene>
         <!--Edit User Table View Controller-->
         <scene sceneID="zeq-b7-ONG">
