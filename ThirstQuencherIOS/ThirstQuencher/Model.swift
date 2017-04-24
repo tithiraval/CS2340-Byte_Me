@@ -86,6 +86,8 @@ class Model {
                         message = "The password is invalid"
                     case .errorCodeOperationNotAllowed:
                         message = "Email and password accounts are not enabled"
+                    case .errorCodeUserNotFound:
+                        message = "User not found"
                     default:
                         print("Create User Error: \(error)")
                     }
@@ -107,12 +109,20 @@ class Model {
         currentUser = nil
     }
     
-    func checkIfUSER(fromViewController: LoggedInViewController) {
+    func checkIfUSER(fromViewController: UIViewController) {
         ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
             let accountType = value?["accountType"] as? String ?? ""
             if (accountType == "USER") {
-                fromViewController.purityReportButton.isHidden = true
+                if (fromViewController is LoggedInViewController) {
+                    (fromViewController as! LoggedInViewController).purityReportButton.isHidden = true
+                } else if (fromViewController is WaterReports) {
+                    (fromViewController as! WaterReports).navigationController?.setToolbarHidden(true, animated: true)
+                }
+            } else {
+                if (fromViewController is WaterReports) {
+                    (fromViewController as! WaterReports).navigationController?.setToolbarHidden(false, animated: true)
+                }
             }
         })
     }

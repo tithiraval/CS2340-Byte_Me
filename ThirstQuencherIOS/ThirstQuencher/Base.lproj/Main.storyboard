@@ -561,7 +561,7 @@
         <!--Map-->
         <scene sceneID="8uA-fl-GDi">
             <objects>
-                <viewController title="Map" id="jSv-ca-Ms4" sceneMemberID="viewController">
+                <viewController title="Map" id="jSv-ca-Ms4" customClass="WaterAvailabilityViewController" customModule="ThirstQuencher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qXO-fl-QVs"/>
                         <viewControllerLayoutGuide type="bottom" id="gnT-zS-YqG"/>

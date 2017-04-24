@@ -34,8 +34,7 @@ class WaterReports: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        self.navigationController?.setToolbarHidden(false, animated: true)
+        Model.sharedInstance.checkIfUSER(fromViewController: self)
         toggle.title = "Show Purity Reports"
         self.navigationItem.title = "Water Source Reports"
     }
