@@ -9,6 +9,22 @@
 import UIKit
 
 class WaterReports: UITableViewController {
+    
+    @IBOutlet weak var toggle: UIBarButtonItem!
+    
+    private var toggled = false
+    
+    @IBAction func toggleCredit(_ sender: UIBarButtonItem) {
+        toggled = !toggled
+        if (toggled) {
+            toggle.title = "Show Source Reports"
+            self.navigationItem.title = "Water Purity Reports"
+        } else {
+            toggle.title = "Show Purity Reports"
+            self.navigationItem.title = "Water Source Reports"
+        }
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +34,10 @@ class WaterReports: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        toggle.title = "Show Purity Reports"
+        self.navigationItem.title = "Water Source Reports"
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,26 +57,43 @@ class WaterReports: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Model.sharedInstance.getAllSourceReports().count
+        return toggled ? Model.sharedInstance.getAllSourceReports().count : Model.sharedInstance.getAllSourceReports().count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepNum", for: indexPath)
 
-        cell.textLabel?.text = String(Model.sharedInstance.getAllSourceReports()[indexPath.row].getNum())
-
-        let source = Model.sharedInstance.getAllSourceReports()[indexPath.row]
-        let date = source.getDate()
-        cell.detailTextLabel?.text = (DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short));
+        if (toggled) {
+            cell.textLabel?.text = String(Model.sharedInstance.getAllPurityReports()[indexPath.row].getNum())
+            
+            let source = Model.sharedInstance.getAllPurityReports()[indexPath.row]
+            let date = source.getDate()
+            cell.detailTextLabel?.text = (DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short));
+        } else {
+            cell.textLabel?.text = String(Model.sharedInstance.getAllSourceReports()[indexPath.row].getNum())
+            
+            let source = Model.sharedInstance.getAllSourceReports()[indexPath.row]
+            let date = source.getDate()
+            cell.detailTextLabel?.text = (DateFormatter.localizedString(from: date, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.short));
+        }
+        
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reportSelected = Model.sharedInstance.getAllSourceReports()[indexPath.row]
-        let reportAlert = UIAlertController(title: "Report " + String(reportSelected.getNum()), message: reportSelected.getName() + "\n" + reportSelected.getLocation() + "\n" + reportSelected.getWaterType() + "\n" + reportSelected.getWaterCondition(), preferredStyle: UIAlertControllerStyle.alert)
-        reportAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        var reportAlert: UIAlertController
+        if (toggled) {
+            let reportSelected = Model.sharedInstance.getAllPurityReports()[indexPath.row]
+            reportAlert = UIAlertController(title: "Purity Report " + String(reportSelected.getNum()), message: "Reported by " + reportSelected.getName() + "\n" + "Located at: " + reportSelected.getLocation() + "\n" + "Water Condition: " + reportSelected.getWaterCondition() + "\n" + "Virus PPM: " + reportSelected.getVirusPPM() + "\n" + "Contaminant PPM: " + reportSelected.getContaminantPPM(), preferredStyle: UIAlertControllerStyle.alert)
+            reportAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        } else {
+            let reportSelected = Model.sharedInstance.getAllSourceReports()[indexPath.row]
+            reportAlert = UIAlertController(title: "Source Report " + String(reportSelected.getNum()), message: "Reported by " + reportSelected.getName() + "\n" + "Located at: " + reportSelected.getLocation() + "\n" + "Water Type: " + reportSelected.getWaterType() + "\n" + "Water Condition: " + reportSelected.getWaterCondition(), preferredStyle: UIAlertControllerStyle.alert)
+            reportAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        }
+        
         self.present(reportAlert, animated: true, completion: nil)
 
     }

@@ -300,6 +300,16 @@
                             <outlet property="delegate" destination="Uer-9E-1PO" id="mXn-Vu-Mw6"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Toggle" id="uex-Ds-fzc">
+                            <connections>
+                                <action selector="toggleCredit:" destination="Uer-9E-1PO" id="8hG-9G-Oeo"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <connections>
+                        <outlet property="toggle" destination="uex-Ds-fzc" id="ARL-4f-CdZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WD0-mF-u5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1174,7 +1184,7 @@
         <image name="water" width="216" height="216"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fE7-h5-jhU"/>
+        <segue reference="TVp-rn-jFY"/>
         <segue reference="WMn-4A-Owb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
