@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		981C9C707271F6D9CCCB3F0B /* Pods_ThirstQuencher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E3A21BAAF858AB530B5313 /* Pods_ThirstQuencher.framework */; };
 		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
 		AAC9F9011E8AF5AA0017B446 /* PurityReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */; };
 		AAC9F9031E8AF84C0017B446 /* PurityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9021E8AF84C0017B446 /* PurityReport.swift */; };
@@ -30,17 +31,16 @@
 		E8E869581E526E490049C764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E869571E526E490049C764 /* Assets.xcassets */; };
 		E8E8695B1E526E490049C764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E869591E526E490049C764 /* LaunchScreen.storyboard */; };
 		E8E869671E54DC5C0049C764 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E869661E54DC5C0049C764 /* SignInViewController.swift */; };
-		EE8BE7BF5A35DB4058790676 /* libPods-ThirstQuencher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63FE61E4A25F2F63CBA32C10 /* Pods-ThirstQuencher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.debug.xcconfig"; sourceTree = "<group>"; };
 		8BBA780012D8F5F28792EDCA /* Pods-ThirstQuencher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.release.xcconfig"; sourceTree = "<group>"; };
+		A8E3A21BAAF858AB530B5313 /* Pods_ThirstQuencher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThirstQuencher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReportTableViewController.swift; sourceTree = "<group>"; };
 		AAC9F9021E8AF84C0017B446 /* PurityReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReport.swift; sourceTree = "<group>"; };
 		AAEFE8BF1E788EE300D48259 /* WaterReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReports.swift; sourceTree = "<group>"; };
-		AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThirstQuencher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E85E8DA01E96AD9400ACF4A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			files = (
 				E8DFB7351E692C7F0035FDD4 /* libsqlite3.0.tbd in Frameworks */,
 				E8DFB72B1E68CD7D0035FDD4 /* libsqlite3.tbd in Frameworks */,
-				EE8BE7BF5A35DB4058790676 /* libPods-ThirstQuencher.a in Frameworks */,
+				981C9C707271F6D9CCCB3F0B /* Pods_ThirstQuencher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,7 @@
 			children = (
 				E8DFB7341E692C7F0035FDD4 /* libsqlite3.0.tbd */,
 				E8DFB7291E68CCD60035FDD4 /* libsqlite3.tbd */,
-				AEEDE8056DC071FF81CEFF93 /* libPods-ThirstQuencher.a */,
+				A8E3A21BAAF858AB530B5313 /* Pods_ThirstQuencher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
