@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		981C9C707271F6D9CCCB3F0B /* Pods_ThirstQuencher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E3A21BAAF858AB530B5313 /* Pods_ThirstQuencher.framework */; };
 		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
+		AA7A2E571EAFB65C003375A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA7A2E561EAFB65C003375A2 /* GoogleService-Info.plist */; };
 		AAC9F9011E8AF5AA0017B446 /* PurityReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */; };
 		AAC9F9031E8AF84C0017B446 /* PurityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9021E8AF84C0017B446 /* PurityReport.swift */; };
 		AAEFE8C01E788EE300D48259 /* WaterReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFE8BF1E788EE300D48259 /* WaterReports.swift */; };
@@ -19,7 +20,6 @@
 		E8ACF6991E668DBB00C29D17 /* SourceReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF6981E668DBB00C29D17 /* SourceReport.swift */; };
 		E8ACF69B1E669E5E00C29D17 /* SourceReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */; };
 		E8BA3E181EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA3E171EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift */; };
-		E8BA3E1A1EAFAD040042749E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8BA3E191EAFAD040042749E /* GoogleService-Info.plist */; };
 		E8D78F531E5F45CC00BF945B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F521E5F45CC00BF945B /* User.swift */; };
 		E8D78F551E5F47D200BF945B /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F541E5F47D200BF945B /* AccountType.swift */; };
 		E8D78F571E5F4A0F00BF945B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D78F561E5F4A0F00BF945B /* Model.swift */; };
@@ -38,6 +38,7 @@
 		8BBA780012D8F5F28792EDCA /* Pods-ThirstQuencher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.release.xcconfig"; sourceTree = "<group>"; };
 		A8E3A21BAAF858AB530B5313 /* Pods_ThirstQuencher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThirstQuencher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		AA7A2E561EAFB65C003375A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReportTableViewController.swift; sourceTree = "<group>"; };
 		AAC9F9021E8AF84C0017B446 /* PurityReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReport.swift; sourceTree = "<group>"; };
 		AAEFE8BF1E788EE300D48259 /* WaterReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReports.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		E8ACF6981E668DBB00C29D17 /* SourceReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReport.swift; sourceTree = "<group>"; };
 		E8ACF69A1E669E5E00C29D17 /* SourceReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceReportTableViewController.swift; sourceTree = "<group>"; };
 		E8BA3E171EAE7F6E0042749E /* HistoricalGraphViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalGraphViewControllerViewController.swift; sourceTree = "<group>"; };
-		E8BA3E191EAFAD040042749E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8D78F521E5F45CC00BF945B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8D78F541E5F47D200BF945B /* AccountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 		E8D78F561E5F4A0F00BF945B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		E8E8694F1E526E490049C764 /* ThirstQuencher */ = {
 			isa = PBXGroup;
 			children = (
-				E8BA3E191EAFAD040042749E /* GoogleService-Info.plist */,
+				AA7A2E561EAFB65C003375A2 /* GoogleService-Info.plist */,
 				E8E869501E526E490049C764 /* AppDelegate.swift */,
 				E8E869521E526E490049C764 /* ViewController.swift */,
 				E8D78F561E5F4A0F00BF945B /* Model.swift */,
@@ -181,7 +181,7 @@
 				TargetAttributes = {
 					E8E8694C1E526E480049C764 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Q7KCFQXHAK;
+						DevelopmentTeam = FMK9XYHY3L;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -212,7 +212,7 @@
 			files = (
 				E8E8695B1E526E490049C764 /* LaunchScreen.storyboard in Resources */,
 				E8E869581E526E490049C764 /* Assets.xcassets in Resources */,
-				E8BA3E1A1EAFAD040042749E /* GoogleService-Info.plist in Resources */,
+				AA7A2E571EAFB65C003375A2 /* GoogleService-Info.plist in Resources */,
 				D8AB43B81E6885340095469F /* Podfile in Resources */,
 				E8E869561E526E490049C764 /* Main.storyboard in Resources */,
 			);
@@ -412,10 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Q7KCFQXHAK;
+				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirstQuencher/ThirstQuencher-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -430,10 +430,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Q7KCFQXHAK;
+				DEVELOPMENT_TEAM = FMK9XYHY3L;
 				INFOPLIST_FILE = ThirstQuencher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Hunter.ThirstQuencher.Wiqas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirstQuencher/ThirstQuencher-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

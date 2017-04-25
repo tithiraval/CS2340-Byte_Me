@@ -140,7 +140,7 @@ class Model {
         })
     }
     
-    func editUser(name: String, email: String, address: String) {
+    func editUser(name: String, address: String) {
         let userID = currentUser!.uid
         ref.child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -148,6 +148,7 @@ class Model {
             let password = value?["password"] as? String ?? ""
             let title = value?["title"] as? String ?? ""
             let username = value?["username"] as? String ?? ""
+            let email = value?["emailAddress"] as? String ?? ""
             let dict = [
                 "accountType": accountType,
                 "emailAddress": email,
@@ -185,7 +186,7 @@ class Model {
         }
     }
     
-    func getCurrentUserEmail(from: UIViewController) {
+    /*func getCurrentUserEmail(from: UIViewController) {
         if (from is EditUserTableViewController) {
             ref.child(currentUser!.uid).observeSingleEvent(of: .value, with: {(snapshot) in
                 let value = snapshot.value as? NSDictionary
@@ -195,7 +196,7 @@ class Model {
             })
             
         }
-    }
+    }*/
     
     func getCurrentUserAddress(from: UIViewController) {
         if (from is EditUserTableViewController) {
