@@ -4,84 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.anmol.thirstquencher.Controller.ViewQualityReportActivity">
+    android:background="@color/cast_intro_overlay_button_background_color"
+    android:backgroundTint="@color/wallet_highlighted_text_holo_light"
+    tools:context="com.example.anmol.thirstquencher.Controller.ViewQualityReportActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/viewQualityReportIDTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
+        android:layout_marginEnd="9dp"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="36dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/viewQualityReportID" />
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/viewQualityReportDateSubmitted"
+        android:layout_marginTop="46dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/viewQualityReportDateTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="30dp"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="21dp"
         app:layout_constraintTop_toBottomOf="@+id/viewQualityReportIDTextField"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toRightOf="@+id/viewQualityReportDateSubmitted" />
 
     <TextView
-        android:id="@+id/viewQualityReportUserTextField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="26dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportDateSubmitted"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/viewQualityReportSubmittedBy" />
-
-    <TextView
         android:id="@+id/viewQualityReportLocationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginEnd="18dp"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportSubmittedBy"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/viewQualityReportLocation" />
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/viewQualityReportOverallCondition"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportUserTextField" />
 
     <TextView
         android:id="@+id/viewQualityReportOverallConditionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
+        android:layout_marginStart="31dp"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/viewQualityReportVirusPPMTextView"
+        app:layout_constraintBottom_toTopOf="@+id/viewQualityReportContaminantPPM"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintLeft_toRightOf="@+id/viewQualityReportOverallCondition" />
 
     <TextView
         android:id="@+id/viewQualityReportVirusPPMTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="73dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportLocationTextView"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/viewQualityReportVirusPPM" />
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="29dp"
+        app:layout_constraintRight_toRightOf="@+id/viewQualityReportVirusPPM"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportVirusPPM" />
 
     <TextView
         android:id="@+id/viewQualityReportContaminantPPMTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportVirusPPMTextView"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportContaminantPPM"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/viewQualityReportContaminantPPM" />
+        app:layout_constraintLeft_toLeftOf="@+id/viewQualityReportContaminantPPM" />
 
     <TextView
         android:id="@+id/viewQualityReportID"
@@ -98,8 +91,8 @@
         android:id="@+id/viewQualityReportDateSubmitted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Date Submitted:"
         android:layout_marginStart="16dp"
+        android:text="Date Submitted:"
         app:layout_constraintBaseline_toBaselineOf="@+id/viewQualityReportDateTextField"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
@@ -110,18 +103,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submitted By:"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/viewQualityReportUserTextField"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintRight_toLeftOf="@+id/viewQualityReportUserTextField"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportDateSubmitted" />
 
     <TextView
         android:id="@+id/viewQualityReportLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location:"
         android:layout_marginStart="16dp"
+        android:text="Location:"
         app:layout_constraintBaseline_toBaselineOf="@+id/viewQualityReportLocationTextView"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
@@ -131,8 +125,8 @@
         android:id="@+id/viewQualityReportOverallCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Overall Condition:"
         android:layout_marginStart="16dp"
+        android:text="Overall Condition:"
         app:layout_constraintBaseline_toBaselineOf="@+id/viewQualityReportOverallConditionTextView"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
@@ -142,10 +136,11 @@
         android:id="@+id/viewQualityReportVirusPPM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Virus PPM:"
         android:layout_marginStart="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/viewQualityReportVirusPPMTextView"
-        tools:layout_constraintBaseline_creator="1"
+        android:text="Virus PPM:"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportOverallCondition"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -154,9 +149,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contaminant PPM:"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/viewQualityReportContaminantPPMTextView"
-        tools:layout_constraintBaseline_creator="1"
+        android:layout_marginEnd="57dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="174dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportDateTextField"
+        android:layout_marginBottom="174dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quality Report"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="4dp"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/viewQualityReportUserTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/viewQualityReportLocationTextView"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewQualityReportSubmittedBy"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/viewQualityReportLocationTextView" />
 </android.support.constraint.ConstraintLayout>
