@@ -74,7 +74,7 @@
 
     <Button
         android:id="@+id/graphSearchButton"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginEnd="11dp"
@@ -92,11 +92,13 @@
 
     <Button
         android:id="@+id/graphSearchCancel"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="131dp"
         android:layout_height="65dp"
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginTop="38dp"
+        android:background="@color/place_autocomplete_prediction_primary_text_highlight"
         android:onClick="back"
         android:text="Cancel"
         app:layout_constraintRight_toRightOf="parent"

@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view for registering
      */
     public void startRegistration(View view) {
+        Button registerButton = (Button) findViewById(R.id.register);
+        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        registerButton.startAnimation(animAlpha);
         Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
         startActivity(intent);
     }

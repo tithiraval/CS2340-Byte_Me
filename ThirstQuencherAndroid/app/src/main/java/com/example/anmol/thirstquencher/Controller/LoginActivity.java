@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText;
     private EditText passwordEditText;
-
+    private Animation animAlpha;
     private FirebaseAuth mAuth;
 
     @Override
@@ -43,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         emailEditText = (EditText) findViewById(R.id.enterEmail);
         passwordEditText = (EditText) findViewById(R.id.enterPassword);
     }
@@ -53,6 +56,8 @@ public class LoginActivity extends AppCompatActivity {
      * @param view The view for loggin in
      */
     public void loginApp(View view) {
+        Button login = (Button) findViewById(R.id.loginButton);
+        login.startAnimation(animAlpha);
         final String email = emailEditText.getText().toString();
         final String password = passwordEditText.getText().toString();
 
@@ -127,6 +132,8 @@ public class LoginActivity extends AppCompatActivity {
      * @param view The view for this method
      */
     public void cancel(View view) {
+        Button cancel = (Button) findViewById(R.id.cancelButton);
+        cancel.startAnimation(animAlpha);
         LoginActivity.this.finish();
         mAuth.signOut();
         References.setCurrentUser((User) null);

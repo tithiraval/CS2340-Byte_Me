@@ -5,7 +5,10 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,6 +39,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
     private Location location;
     private Spinner waterTypeSpinner;
     private Spinner waterConditionSpinner;
+    private Animation animAlpha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
         user = References.getCurrentUser();
         waterTypeSpinner = (Spinner) findViewById(R.id.createReportWaterTypeSpinner);
@@ -78,6 +83,8 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
      * @param view The view for this screen
      */
     public void submitReport(View view) {
+        Button submit = (Button) findViewById(R.id.submitReportButton);
+        submit.startAnimation(animAlpha);
         if (this.isNull(location)) {
             CharSequence text = "Enter Location!";
             Toast emptyLocation = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
@@ -124,6 +131,8 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
      * @param view the current view
      */
     public void cancelSubmitReport(View view) {
+        Button cancel = (Button) findViewById(R.id.cancelSubmitReportButton);
+        cancel.startAnimation(animAlpha);
         SubmitReportActivity.this.finish();
     }
 }

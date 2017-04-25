@@ -4,6 +4,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,7 +32,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     private User user;
-
+    private Animation animAlpha;
     private EditText currentPasswordText;
     private EditText newPasswordText;
 
@@ -40,6 +43,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         user = References.getCurrentUser();
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
         currentPasswordText = (EditText) findViewById(R.id.changePasswordEnterCurrent);
         newPasswordText = (EditText) findViewById(R.id.changePasswordEnterNew);
@@ -50,7 +54,8 @@ public class ChangePasswordActivity extends AppCompatActivity {
      * @param view The view for this screen
      */
     public void confirmChangePassword(View view) {
-
+        Button confirm = (Button) findViewById(R.id.changePasswordConfirmButton);
+        confirm.startAnimation(animAlpha);
         final String currentPassword = currentPasswordText.getText().toString();
         final String newPassword = newPasswordText.getText().toString();
 
@@ -107,6 +112,8 @@ public class ChangePasswordActivity extends AppCompatActivity {
      * @param view The view for change password screen
      */
     public void cancelChangePassword(View view) {
+        Button cancel = (Button) findViewById(R.id.cancelChangePasswordButton);
+        cancel.startAnimation(animAlpha);
         ChangePasswordActivity.this.finish();
     }
 }

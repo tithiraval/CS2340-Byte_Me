@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +31,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private User user;
-
+    private Animation animAlpha;
     private TextView emailAddressText;
     private EditText usernameText;
     private EditText homeAddressText;
@@ -42,6 +45,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         user = References.getCurrentUser();
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
 
         emailAddressText = (TextView) findViewById(R.id.editProfileEmailAddress);
@@ -62,6 +66,8 @@ public class EditProfileActivity extends AppCompatActivity {
      * @param view The view for editing profile
      */
     public void editProfileSaveRequest(View view) {
+        Button save = (Button) findViewById(R.id.editProfileSaveButton);
+        save.startAnimation(animAlpha);
         final String username = usernameText.getText().toString();
         final String homeAddress = homeAddressText.getText().toString();
         final String title = titleText.getText().toString();
@@ -94,6 +100,8 @@ public class EditProfileActivity extends AppCompatActivity {
      * @param view The view for edit profile
      */
     public void cancelEditProfile(View view) {
+        Button cancel = (Button) findViewById(R.id.editProfileCancelButton);
+        cancel.startAnimation(animAlpha);
         EditProfileActivity.this.finish();
     }
 }

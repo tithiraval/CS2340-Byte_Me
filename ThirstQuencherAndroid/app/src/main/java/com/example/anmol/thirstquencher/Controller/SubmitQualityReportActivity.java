@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,6 +34,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
     private Spinner overallConditionSpinner;
     private EditText virusPPM;
     private EditText contaminantPPM;
+    private Animation animAlpha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
         location = (EditText) findViewById(R.id.submitQualityReportLocation);
         virusPPM = (EditText) findViewById(R.id.submitQualityReportVirusPPM);
         contaminantPPM = (EditText) findViewById(R.id.submitQualityReportContaminantPPM);
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
     }
 
@@ -53,6 +58,8 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
      * @param view the current view
      */
     public void submitQualityReport(View view) {
+        Button submit = (Button) findViewById(R.id.submitQualityReportButton);
+        submit.startAnimation(animAlpha);
         if (location.getText().toString().equals("")) {
             CharSequence text = "Enter Location!";
             Toast emptyLocation = Toast.makeText(SubmitQualityReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
@@ -97,6 +104,8 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
      * @param view the current view
      */
     public void cancelSubmitQualityReport(View view) {
+        Button cancel = (Button) findViewById(R.id.submitQualityReportCancel);
+        cancel.startAnimation(animAlpha);
         SubmitQualityReportActivity.this.finish();
     }
 }

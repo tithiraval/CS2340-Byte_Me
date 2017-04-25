@@ -2,6 +2,9 @@ package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
 
@@ -53,6 +56,9 @@ public class ViewWaterReportActivity extends AppCompatActivity {
      * @param view The view for this screen
      */
     public void back(View view) {
+        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        Button back = (Button) findViewById(R.id.viewWaterReportBackButton);
+        back.startAnimation(animAlpha);
         ViewWaterReportActivity.this.finish();
     }
 }

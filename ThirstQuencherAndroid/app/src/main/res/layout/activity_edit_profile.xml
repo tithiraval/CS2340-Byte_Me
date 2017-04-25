@@ -131,7 +131,7 @@
 
     <Button
         android:id="@+id/editProfileSaveButton"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editProfileRow5"
@@ -142,10 +142,12 @@
 
     <Button
         android:id="@+id/editProfileCancelButton"
+        style="@android:style/Widget.Holo.Button"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_below="@+id/editProfileSaveButton"
         android:layout_marginTop="24dp"
+        android:background="@color/place_autocomplete_prediction_primary_text_highlight"
         android:onClick="cancelEditProfile"
         android:text="CANCEL" />
 

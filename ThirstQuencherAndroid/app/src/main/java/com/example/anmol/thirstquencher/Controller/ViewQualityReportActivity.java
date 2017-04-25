@@ -2,6 +2,8 @@ package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.example.anmol.thirstquencher.Model.QualityReport;
@@ -35,6 +37,7 @@ public class ViewQualityReportActivity extends AppCompatActivity {
         overallConditionText = (TextView) findViewById(R.id.viewQualityReportOverallConditionTextView);
         contaminantPPMText = (TextView) findViewById(R.id.viewQualityReportContaminantPPMTextView);
         virusPPMText = (TextView) findViewById(R.id.viewQualityReportVirusPPMTextView);
+
     }
 
     @Override

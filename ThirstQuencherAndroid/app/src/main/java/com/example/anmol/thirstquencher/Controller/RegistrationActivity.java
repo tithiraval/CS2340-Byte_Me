@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -32,7 +36,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-
+    private Animation animAlpha;
     private EditText emailEditText;
     private EditText passwordEditText;
     private Spinner userTypeSpinner;
@@ -51,6 +55,7 @@ public class RegistrationActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, User.legalUserTypes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         userTypeSpinner.setAdapter(adapter);
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
     }
 
     /**
@@ -59,6 +64,8 @@ public class RegistrationActivity extends AppCompatActivity {
      * @param view View of the registration screen
      */
     public void register(View view) {
+        Button registerButton = (Button) findViewById(R.id.registerButton);
+        registerButton.startAnimation(animAlpha);
         final String email = emailEditText.getText().toString();
         final String password = passwordEditText.getText().toString();
 
@@ -105,6 +112,8 @@ public class RegistrationActivity extends AppCompatActivity {
      * @param view The view of the registration screen
      */
     public void cancelRegistration(View view) {
+        Button cancel = (Button) findViewById(R.id.cancelRegisterButton);
+        cancel.startAnimation(animAlpha);
         RegistrationActivity.this.finish();
     }
 }

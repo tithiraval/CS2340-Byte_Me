@@ -3,7 +3,10 @@ package com.example.anmol.thirstquencher.Controller;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -33,6 +36,7 @@ public class GraphSearchActivity extends AppCompatActivity {
     private EditText location;
     private EditText year;
     private Spinner virusOrPPM;
+    private Animation animAlpha;
 
 
     @Override
@@ -46,6 +50,7 @@ public class GraphSearchActivity extends AppCompatActivity {
                 Arrays.asList("Virus PPM", "Contaminant PPM"));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         virusOrPPM.setAdapter(adapter);
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
     }
 
 
@@ -54,6 +59,8 @@ public class GraphSearchActivity extends AppCompatActivity {
      * @param view The view for this screen
      */
     public void createGraph(View view) {
+        Button create = (Button) findViewById(R.id.graphSearchButton);
+        create.startAnimation(animAlpha);
         if (location.getText().toString().equals("")) {
             Toast.makeText(GraphSearchActivity.this, "Enter Location!", Toast.LENGTH_SHORT).show();
         } else if (year.getText().toString().equals("")) {
@@ -142,6 +149,8 @@ public class GraphSearchActivity extends AppCompatActivity {
      * @param view
      */
     public void back(View view) {
+        Button back = (Button) findViewById(R.id.graphSearchCancel);
+        back.startAnimation(animAlpha);
         GraphSearchActivity.this.finish();
     }
 }

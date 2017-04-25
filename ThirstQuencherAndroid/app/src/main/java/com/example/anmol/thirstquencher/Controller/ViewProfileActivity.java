@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.anmol.thirstquencher.Model.References;
@@ -18,7 +21,7 @@ import com.example.anmol.thirstquencher.R;
 public class ViewProfileActivity extends AppCompatActivity {
 
     private User user;
-
+    private Animation animAlpha;
     private TextView emailAddressText;
     private TextView usernameText;
     private TextView homeAddressText;
@@ -29,6 +32,7 @@ public class ViewProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_profile);
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
         user = References.getCurrentUser();
         emailAddressText = (TextView) findViewById(R.id.viewProfileEmailAddress);
@@ -53,6 +57,8 @@ public class ViewProfileActivity extends AppCompatActivity {
      * @param view The view for this screen
      */
     public void editProfileRequest(View view) {
+        Button edit = (Button) findViewById(R.id.viewProfileEditButton);
+        edit.startAnimation(animAlpha);
         Intent intent = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
         startActivity(intent);
     }
@@ -62,6 +68,8 @@ public class ViewProfileActivity extends AppCompatActivity {
      * @param view The view for this screen
      */
     public void changePasswordRequest(View view) {
+        Button change = (Button) findViewById(R.id.viewProfileChangePasswordButton);
+        change.startAnimation(animAlpha);
         Intent intent = new Intent(ViewProfileActivity.this, ChangePasswordActivity.class);
         startActivity(intent);
     }
@@ -71,6 +79,8 @@ public class ViewProfileActivity extends AppCompatActivity {
      * @param view The view for the view profile screen
      */
     public void back(View view) {
+        Button back = (Button) findViewById(R.id.viewProfileBackButton);
+        back.startAnimation(animAlpha);
         ViewProfileActivity.this.finish();
     }
 }
