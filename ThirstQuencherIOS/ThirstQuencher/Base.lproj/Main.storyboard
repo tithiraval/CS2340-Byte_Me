@@ -592,6 +592,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="1FP-hq-oiL" id="foO-Sg-N5z"/>
                         <outlet property="datePicker" destination="5bP-so-ZCw" id="b3Y-s9-dqV"/>
+                        <outlet property="locationLabel" destination="mo3-0G-Gix" id="4I9-D6-i2k"/>
                         <outlet property="nameLabel" destination="1zF-jG-m5M" id="EqX-bO-iAv"/>
                         <outlet property="numberLabel" destination="3rf-TN-mx4" id="TuP-yk-DVU"/>
                         <outlet property="waterConditionLabel" destination="yOF-sk-U9q" id="0EB-Pp-x4d"/>
@@ -1259,6 +1260,7 @@
                         <outlet property="contamDetail" destination="W6L-yV-f5n" id="Kk6-D6-7ri"/>
                         <outlet property="dateLabel" destination="x3z-kx-Dwr" id="ybV-vm-f6f"/>
                         <outlet property="datePicker" destination="5dI-Z6-XiZ" id="4mn-VP-xjj"/>
+                        <outlet property="locationLabel" destination="r9i-c8-yaD" id="3Nb-Ha-TOQ"/>
                         <outlet property="nameLabel" destination="Ud0-Wb-PaF" id="siA-nu-e9Q"/>
                         <outlet property="numberLabel" destination="OA0-eu-Sw6" id="DTl-6T-42b"/>
                         <outlet property="virusDetail" destination="ooU-6U-WPK" id="o4X-Ic-vGP"/>
@@ -1279,8 +1281,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TVp-rn-jFY"/>
+        <segue reference="RNI-9u-Lxx"/>
         <segue reference="WMn-4A-Owb"/>
-        <segue reference="BBl-8E-nyd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.52781652460424067" green="0.60429667202366033" blue="0.62963487694300513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

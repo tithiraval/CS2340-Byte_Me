@@ -12,7 +12,7 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var locationLabel: UILabel!
     
     @IBOutlet weak var waterTypeLabel: UILabel!
     @IBOutlet weak var waterConditionPicker: UIPickerView!
@@ -25,6 +25,10 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     var waterConditionData: [String] = [String]()
     
     var currentUserName = ""
+    var didSelectLocation = false
+    
+    private var lat = 32.10
+    private var long = -83.23
     
 
     override func viewDidLoad() {
@@ -47,8 +51,14 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewSourceReport(date: datePicker.date, location: "", waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!, name: currentUserName)) {
-            self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
+        if (didSelectLocation) {
+            if (Model.sharedInstance.addNewSourceReport(date: datePicker.date, latitude: lat, longitude: long, waterType: waterTypeLabel.text!, waterCondition: waterConditionLabel.text!, name: currentUserName)) {
+                self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
+            }
+        } else {
+            let locationAlert = UIAlertController(title: "Error", message: "Did not select location.", preferredStyle: UIAlertControllerStyle.alert)
+            locationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(locationAlert, animated: true, completion:nil)
         }
     }
     
@@ -153,6 +163,11 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
         }
     }
     
-    @IBAction func unwindToSourceReport(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToSourceReport(segue: UIStoryboardSegue) {
+        lat = Model.sharedInstance.getLat()
+        long = Model.sharedInstance.getLong()
+        self.locationLabel.text = "Latitude: " + String(format:"%.2f", lat) + ", Longitude: " + String(format:"%.2f", long)
+        didSelectLocation = true
+    }
 
 }

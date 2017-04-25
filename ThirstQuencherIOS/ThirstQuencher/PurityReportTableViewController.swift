@@ -12,7 +12,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var locationLabel: UILabel!
     
     @IBOutlet weak var waterConditionPicker: UIPickerView!
     @IBOutlet weak var waterConditionLabel: UILabel!
@@ -31,6 +31,11 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     var waterConditionData: [String] = [String]()
     var currentUserName = ""
     
+    var didSelectLocation = false
+    
+    private var lat = 32.10
+    private var long = -83.23
+    
     
     override func viewDidLoad() {
         
@@ -48,9 +53,16 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     }
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
-        if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, location: "", waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!, name: currentUserName)) {
-            self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
+        if (didSelectLocation) {
+            if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, latitude: lat, longitude: long, waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!, name: currentUserName)) {
+                self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
+            }
+        } else {
+            let locationAlert = UIAlertController(title: "Error", message: "Did not select location.", preferredStyle: UIAlertControllerStyle.alert)
+            locationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(locationAlert, animated: true, completion:nil)
         }
+        
     }
     
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
@@ -180,6 +192,11 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
         }
     }
     
-    @IBAction func unwindToPurityReport(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToPurityReport(segue: UIStoryboardSegue) {
+        lat = Model.sharedInstance.getLat()
+        long = Model.sharedInstance.getLong()
+        self.locationLabel.text = "Latitude: " + String(format:"%.2f", lat) + ", Longitude: " + String(format:"%.2f", long)
+        didSelectLocation = true
+    }
     
 }

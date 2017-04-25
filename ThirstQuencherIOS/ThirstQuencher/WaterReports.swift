@@ -112,11 +112,11 @@ class WaterReports: UITableViewController {
         var reportAlert: UIAlertController
         if (toggled) {
             let reportSelected = Model.sharedInstance.getAllPurityReports()[indexPath.row]
-            reportAlert = UIAlertController(title: "Purity Report " + String(reportSelected.getNum()), message: "Reported by " + reportSelected.getName() + "\n" + "Located at: " + reportSelected.getLocation() + "\n" + "Water Condition: " + reportSelected.getWaterCondition() + "\n" + "Virus PPM: " + reportSelected.getVirusPPM() + "\n" + "Contaminant PPM: " + reportSelected.getContaminantPPM(), preferredStyle: UIAlertControllerStyle.alert)
+            reportAlert = UIAlertController(title: "Purity Report " + String(reportSelected.getNum()), message: "Reported by " + reportSelected.getName() + "\n" + "Located at: " + String(format:"%.2f", reportSelected.getLatitude()) + ", " + String(format:"%.2f", reportSelected.getLongitude()) + "\n" + "Water Condition: " + reportSelected.getWaterCondition() + "\n" + "Virus PPM: " + reportSelected.getVirusPPM() + "\n" + "Contaminant PPM: " + reportSelected.getContaminantPPM(), preferredStyle: UIAlertControllerStyle.alert)
             reportAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         } else {
             let reportSelected = Model.sharedInstance.getAllSourceReports()[indexPath.row]
-            reportAlert = UIAlertController(title: "Source Report " + String(reportSelected.getNum()), message: "Reported by " + reportSelected.getName() + "\n" + "Located at: " + reportSelected.getLocation() + "\n" + "Water Type: " + reportSelected.getWaterType() + "\n" + "Water Condition: " + reportSelected.getWaterCondition(), preferredStyle: UIAlertControllerStyle.alert)
+            reportAlert = UIAlertController(title: "Source Report " + String(reportSelected.getNum()), message: "Reported by " + reportSelected.getName() + "\n" + "Located at: " + String(format:"%.2f", reportSelected.getLatitude()) + ", " + String(format:"%.2f", reportSelected.getLongitude()) + "\n" + "Water Type: " + reportSelected.getWaterType() + "\n" + "Water Condition: " + reportSelected.getWaterCondition(), preferredStyle: UIAlertControllerStyle.alert)
             reportAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         }
         

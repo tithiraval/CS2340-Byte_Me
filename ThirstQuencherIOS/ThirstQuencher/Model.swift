@@ -22,7 +22,7 @@ class Model {
     private var lat = 32.10
     private var long = -83.23
     
-    private var modifying = 0
+    private var modifying = 2
     
     private var currentUser: FIRUser?
     
@@ -214,11 +214,12 @@ class Model {
                 let sourceReport = (item as! FIRDataSnapshot).value as! [String: AnyObject]
                 let condition = sourceReport["condition"] as! String
                 let name = sourceReport["name"] as! String
-                let location = sourceReport["location"] as! String
+                let latitude = sourceReport["latitude"] as! Double
+                let longitude = sourceReport["longitude"] as! Double
                 let reportNum = sourceReport["reportNumber"] as! Int
                 let type = sourceReport["type"] as! String
                 let date = Date(timeIntervalSince1970: sourceReport["interval"] as! Double)
-                let newSourceReport = SourceReport(date: date, number: reportNum, name: name, location: location, waterType: type, waterCondition: condition)
+                let newSourceReport = SourceReport(date: date, number: reportNum, name: name, latitude: latitude, longitude: longitude, waterType: type, waterCondition: condition)
                 if (!self.sourceReports.contains(newSourceReport)) {
                     self.sourceReports.append(newSourceReport)
                 }
@@ -231,12 +232,13 @@ class Model {
                 let purityReport = (item as! FIRDataSnapshot).value as! [String: AnyObject]
                 let condition = purityReport["condition"] as! String
                 let name = purityReport["name"] as! String
-                let location = purityReport["location"] as! String
+                let latitude = purityReport["latitude"] as! Double
+                let longitude = purityReport["longitude"] as! Double
                 let reportNum = purityReport["reportNumber"] as! Int
                 let virusPPM = purityReport["virusPPM"] as! String
                 let contPPM = purityReport["contaminantPPM"] as! String
                 let date = Date(timeIntervalSince1970: purityReport["interval"] as! Double)
-                let newPurityReport = PurityReport(date: date, number: reportNum, name: name, location: location, waterCondition: condition, virusPPM: virusPPM, contaminantPPM: contPPM)
+                let newPurityReport = PurityReport(date: date, number: reportNum, name: name, latitude: latitude, longitude: longitude, waterCondition: condition, virusPPM: virusPPM, contaminantPPM: contPPM)
                 if (!self.purityReports.contains(newPurityReport)) {
                     self.purityReports.append(newPurityReport)
                 }
@@ -245,17 +247,17 @@ class Model {
         })
     }
     
-    func addNewSourceReport(date: Date, location: String, waterType: String, waterCondition: String, name: String) -> Bool {
+    func addNewSourceReport(date: Date, latitude: Double, longitude: Double, waterType: String, waterCondition: String, name: String) -> Bool {
         let otherref = FIRDatabase.database().reference(withPath: "IOS_SOURCE_REPORTS")
-        let newSourceReport = SourceReport(date: date, number: (sourceReports.count + 1), name: name, location: location, waterType: waterType, waterCondition: waterCondition)
+        let newSourceReport = SourceReport(date: date, number: (sourceReports.count + 1), name: name, latitude: latitude, longitude: longitude, waterType: waterType, waterCondition: waterCondition)
         let reportDict = newSourceReport.toDict()
         otherref.child(String(newSourceReport.getNum())).setValue(reportDict)
         return true
     }
     
-    func addNewPurityReport(date: Date, location: String, waterCondition: String, virusPPM: String, contaminantPPM: String, name: String) -> Bool {
+    func addNewPurityReport(date: Date, latitude: Double, longitude: Double, waterCondition: String, virusPPM: String, contaminantPPM: String, name: String) -> Bool {
         let otherref = FIRDatabase.database().reference(withPath: "IOS_PURITY_REPORTS")
-        let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: name, location: location, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
+        let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: name, latitude: latitude, longitude: longitude, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
         let reportDict = newPurityReport.toDict()
         otherref.child(String(newPurityReport.getNum())).setValue(reportDict)
         return true
@@ -278,6 +280,15 @@ class Model {
     func getModifying() -> Int {
         return modifying
     }
+    
+    func getLat() -> Double {
+        return lat
+    }
+    
+    func getLong() -> Double {
+        return long
+    }
+
     
     
     

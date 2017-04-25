@@ -9,17 +9,19 @@
 import UIKit
 
 class SourceReport: NSObject {
-    private let name, location, waterType, waterCondition: String
+    private let name, waterType, waterCondition: String
     private let date: Date
     private let number: Int
+    private let latitude, longitude: Double
     
-    init(date: Date, number: Int, name: String, location: String, waterType: String, waterCondition: String) {
+    init(date: Date, number: Int, name: String, latitude: Double, longitude:Double, waterType: String, waterCondition: String) {
         self.date = date
         self.number = number
         self.name = name
-        self.location = location
         self.waterType = waterType
         self.waterCondition = waterCondition
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     func getDate() -> Date {
@@ -34,8 +36,12 @@ class SourceReport: NSObject {
         return name
     }
     
-    func getLocation() -> String {
-        return location
+    func getLatitude() -> Double {
+        return latitude
+    }
+    
+    func getLongitude() -> Double {
+        return longitude
     }
     
     func getWaterType() -> String {
@@ -51,7 +57,8 @@ class SourceReport: NSObject {
             "condition": waterCondition,
             "interval": date.timeIntervalSince1970,
             "name": name,
-            "location": location,
+            "latitude": latitude,
+            "longitude": longitude,
             "reportNumber": number,
             "type": waterType,
         ]
