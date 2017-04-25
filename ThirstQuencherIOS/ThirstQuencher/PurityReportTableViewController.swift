@@ -36,6 +36,9 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     private var lat = 32.10
     private var long = -83.23
     
+    private var virusPPM = 0
+    private var contaminantPPM = 0
+    
     
     override func viewDidLoad() {
         
@@ -54,7 +57,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
     
     @IBAction func onAdd(_ sender: UIBarButtonItem) {
         if (didSelectLocation) {
-            if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, latitude: lat, longitude: long, waterCondition: waterConditionLabel.text!, virusPPM: virusDetail.text!, contaminantPPM: contamDetail.text!, name: currentUserName)) {
+            if (Model.sharedInstance.addNewPurityReport(date: datePicker.date, latitude: lat, longitude: long, waterCondition: waterConditionLabel.text!, virusPPM: virusPPM, contaminantPPM: contaminantPPM, name: currentUserName)) {
                 self.performSegue(withIdentifier: "unwindToMainFromSource", sender: nil)
             }
         } else {
@@ -96,6 +99,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
                 let virusPPMTextField = virusAlert.textFields![0] as UITextField
                 if (virusPPMTextField.text != "") {
                     self.virusDetail.text = virusPPMTextField.text! + " PPM"
+                    self.virusPPM = Int(virusPPMTextField.text!)!
                 }
             })
             
@@ -114,6 +118,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
                 let contamPPMTextField = contamAlert.textFields![0] as UITextField
                 if (contamPPMTextField.text != "") {
                     self.contamDetail.text = contamPPMTextField.text! + " PPM"
+                    self.contaminantPPM = Int(contamPPMTextField.text!)!
                 }
             })
             contamAlert.addTextField(configurationHandler: {(textField) -> Void in

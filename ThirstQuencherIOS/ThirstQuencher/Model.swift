@@ -235,8 +235,8 @@ class Model {
                 let latitude = purityReport["latitude"] as! Double
                 let longitude = purityReport["longitude"] as! Double
                 let reportNum = purityReport["reportNumber"] as! Int
-                let virusPPM = purityReport["virusPPM"] as! String
-                let contPPM = purityReport["contaminantPPM"] as! String
+                let virusPPM = purityReport["virusPPM"] as! Int
+                let contPPM = purityReport["contaminantPPM"] as! Int
                 let date = Date(timeIntervalSince1970: purityReport["interval"] as! Double)
                 let newPurityReport = PurityReport(date: date, number: reportNum, name: name, latitude: latitude, longitude: longitude, waterCondition: condition, virusPPM: virusPPM, contaminantPPM: contPPM)
                 if (!self.purityReports.contains(newPurityReport)) {
@@ -255,7 +255,7 @@ class Model {
         return true
     }
     
-    func addNewPurityReport(date: Date, latitude: Double, longitude: Double, waterCondition: String, virusPPM: String, contaminantPPM: String, name: String) -> Bool {
+    func addNewPurityReport(date: Date, latitude: Double, longitude: Double, waterCondition: String, virusPPM: Int, contaminantPPM: Int, name: String) -> Bool {
         let otherref = FIRDatabase.database().reference(withPath: "IOS_PURITY_REPORTS")
         let newPurityReport = PurityReport(date: date, number: (purityReports.count + 1), name: name, latitude: latitude, longitude: longitude, waterCondition: waterCondition, virusPPM: virusPPM, contaminantPPM: contaminantPPM)
         let reportDict = newPurityReport.toDict()

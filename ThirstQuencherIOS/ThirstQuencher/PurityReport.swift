@@ -9,13 +9,12 @@
 import UIKit
 
 class PurityReport: NSObject {
-    private let name, waterCondition, virusPPM, contaminantPPM: String
+    private let name, waterCondition: String
     private let date: Date
-    private let number: Int
+    private let number, virusPPM, contaminantPPM: Int
     private let latitude, longitude: Double
     
-    init(date: Date, number: Int, name: String, latitude: Double, longitude:Double, waterCondition: String, virusPPM: String,
-         contaminantPPM: String) {
+    init(date: Date, number: Int, name: String, latitude: Double, longitude:Double, waterCondition: String, virusPPM: Int, contaminantPPM: Int) {
         self.date = date
         self.number = number
         self.name = name
@@ -50,11 +49,11 @@ class PurityReport: NSObject {
         return waterCondition
     }
     
-    func getVirusPPM() -> String {
+    func getVirusPPM() -> Int {
         return virusPPM
     }
     
-    func getContaminantPPM() -> String {
+    func getContaminantPPM() -> Int {
         return contaminantPPM
     }
     
