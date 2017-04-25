@@ -19,8 +19,8 @@ class Model {
     private var historicalYear = 0
     private var historicalLocation = ""
     
-    private var lat = 32.10
-    private var long = -83.23
+    private var lat = 33.77
+    private var long = -84.39
     
     private var modifying = 2
     

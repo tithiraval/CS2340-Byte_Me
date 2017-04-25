@@ -18,9 +18,13 @@ class WaterAvailabilityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapViewOG.camera = GMSCameraPosition.camera(withLatitude: 32.10, longitude: -83.23, zoom: 6.0)
         
-        marker.position = CLLocationCoordinate2D(latitude: 32.10, longitude: -83.23)
+        let lat = Model.sharedInstance.getLat()
+        let long = Model.sharedInstance.getLong()
+        
+        mapViewOG.camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 12.0)
+        
+        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
         marker.title = "Atlanta"
         marker.snippet = "GA"
         marker.map = mapViewOG
