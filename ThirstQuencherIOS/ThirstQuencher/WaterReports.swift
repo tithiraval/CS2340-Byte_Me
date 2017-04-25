@@ -40,7 +40,7 @@ class WaterReports: UITableViewController {
                 let lat = latTextField.text?.components(separatedBy: char.inverted).joined(separator: "")
                 let long = longTextField.text?.components(separatedBy: char.inverted).joined(separator: "")
                 
-                if (year != "" && lat != "" && long != "") {
+                if (year != "" && lat != "" && long != "" && lat != "-" && long != "-") {
                     Model.sharedInstance.setHistoricalValues(year: Int(year!)!, lat: Int(lat!)!, long: Int(long!)!)
                     self.performSegue(withIdentifier: "toHistoricalGraph", sender: nil)
                 } else {
