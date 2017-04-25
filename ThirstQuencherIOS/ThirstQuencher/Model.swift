@@ -13,12 +13,16 @@ import Firebase
 class Model {
     static let sharedInstance = Model()
     
-    private var users = [String: User]()
     private var sourceReports = [SourceReport]()
     private var purityReports = [PurityReport]()
     
     private var historicalYear = 0
     private var historicalLocation = ""
+    
+    private var lat = 32.10
+    private var long = -83.23
+    
+    private var modifying = 0
     
     private var currentUser: FIRUser?
     
@@ -31,6 +35,7 @@ class Model {
     
     func setCurrentUser() {
         currentUser = FIRAuth.auth()?.currentUser
+
     }
     
     func addUser(fromViewController: UIViewController, name: String, id: String, password: String, accountType: AccountType, emailAddress: String) {
@@ -259,6 +264,19 @@ class Model {
     func setHistoricalValues(year: Int, location: String) {
         historicalYear = year
         historicalLocation = location
+    }
+    
+    func setLatLong(latitude: Double, longitude: Double) {
+        self.lat = latitude
+        self.long = longitude
+    }
+    
+    func modifyingReport(which: Int) {
+        modifying = which // 0 is source, 1 is purity
+    }
+    
+    func getModifying() -> Int {
+        return modifying
     }
     
     

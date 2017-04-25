@@ -79,6 +79,10 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
         } else if indexPath.section == 2 && indexPath.row == 2 {
             togglePickers(whichPicker: 3)
         }
+        if indexPath.section == 1 && indexPath.row == 2 {
+            Model.sharedInstance.modifyingReport(which: 0)
+            self.performSegue(withIdentifier: "showMapFromSource", sender: nil)
+        }
     }
     
     var datePickerHidden = false
@@ -148,5 +152,7 @@ class SourceReportTableViewController: UITableViewController, UIPickerViewDelega
             waterTypeLabel.text = waterTypeData[row]
         }
     }
+    
+    @IBAction func unwindToSourceReport(segue: UIStoryboardSegue) {}
 
 }

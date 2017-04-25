@@ -12,22 +12,20 @@ import GoogleMaps
 class WaterAvailabilityViewController: UIViewController {
     
     @IBOutlet weak var mapViewOG: GMSMapView!
+    @IBOutlet weak var back: UIBarButtonItem!
+    private let marker = GMSMarker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapViewOG.camera = GMSCameraPosition.camera(withLatitude: 32.10, longitude: -83.23, zoom: 6.0)
-        let marker = GMSMarker()
+        
         marker.position = CLLocationCoordinate2D(latitude: 32.10, longitude: -83.23)
         marker.title = "Atlanta"
         marker.snippet = "GA"
         marker.map = mapViewOG
         marker.isDraggable = true
         
-        let camera = GMSCameraPosition.camera(withLatitude: 32.10, longitude: -83.23, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        //mapViewOG = mapView
         
     
 
@@ -37,6 +35,18 @@ class WaterAvailabilityViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func onBack(sender: UIBarButtonItem) {
+        let lat = marker.position.latitude
+        let long = marker.position.longitude
+        Model.sharedInstance.setLatLong(latitude: lat, longitude: long)
+        if (Model.sharedInstance.getModifying() == 0) {
+            self.performSegue(withIdentifier: "unwindToSource", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "unwindToPurity", sender: nil)
+        }
+        
     }
     
     

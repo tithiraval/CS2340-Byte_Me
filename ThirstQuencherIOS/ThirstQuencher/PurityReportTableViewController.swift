@@ -112,6 +112,10 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
             contamAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(contamAlert, animated: true, completion: nil)
         }
+        if indexPath.section == 1 && indexPath.row == 2 {
+            Model.sharedInstance.modifyingReport(which: 1)
+            self.performSegue(withIdentifier: "showMapFromPurity", sender: nil)
+        }
     }
     
     var datePickerHidden = false
@@ -175,5 +179,7 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
             
         }
     }
+    
+    @IBAction func unwindToPurityReport(segue: UIStoryboardSegue) {}
     
 }
