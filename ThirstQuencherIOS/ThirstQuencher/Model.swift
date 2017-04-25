@@ -132,6 +132,7 @@ class Model {
                     (fromViewController as! WaterReports).navigationController?.setToolbarHidden(false, animated: true)
                     if (accountType != "WORKER") {
                         (fromViewController as! WaterReports).isManager = true
+                        (fromViewController as! WaterReports).toggle.title = "View Purity Graph"
                     }
                 }
             }
