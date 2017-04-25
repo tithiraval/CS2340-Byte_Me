@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		981C9C707271F6D9CCCB3F0B /* Pods_ThirstQuencher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E3A21BAAF858AB530B5313 /* Pods_ThirstQuencher.framework */; };
 		AA195CD71E5BB29300B78195 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */; };
+		AA7A2E491EAFA7B1003375A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA7A2E481EAFA7B1003375A2 /* GoogleService-Info.plist */; };
 		AAC9F9011E8AF5AA0017B446 /* PurityReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */; };
 		AAC9F9031E8AF84C0017B446 /* PurityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9F9021E8AF84C0017B446 /* PurityReport.swift */; };
 		AAEFE8C01E788EE300D48259 /* WaterReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFE8BF1E788EE300D48259 /* WaterReports.swift */; };
 		D8AB43B81E6885340095469F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D8AB43B71E6885340095469F /* Podfile */; };
-		E85E8DA11E96AD9400ACF4A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E85E8DA01E96AD9400ACF4A2 /* GoogleService-Info.plist */; };
 		E89C8B1E1E6513EF00DB3112 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */; };
 		E89F46B31E70BE49000E4932 /* EditUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */; };
 		E8A89C6F1E6888FE00C77BF6 /* WaterAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */; };
@@ -38,11 +38,11 @@
 		8BBA780012D8F5F28792EDCA /* Pods-ThirstQuencher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirstQuencher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirstQuencher/Pods-ThirstQuencher.release.xcconfig"; sourceTree = "<group>"; };
 		A8E3A21BAAF858AB530B5313 /* Pods_ThirstQuencher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThirstQuencher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA195CD61E5BB29300B78195 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		AA7A2E481EAFA7B1003375A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAC9F9001E8AF5AA0017B446 /* PurityReportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReportTableViewController.swift; sourceTree = "<group>"; };
 		AAC9F9021E8AF84C0017B446 /* PurityReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurityReport.swift; sourceTree = "<group>"; };
 		AAEFE8BF1E788EE300D48259 /* WaterReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterReports.swift; sourceTree = "<group>"; };
 		D8AB43B71E6885340095469F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E85E8DA01E96AD9400ACF4A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E89C8B1D1E6513EF00DB3112 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		E89F46B21E70BE49000E4932 /* EditUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserTableViewController.swift; sourceTree = "<group>"; };
 		E8A89C6E1E6888FE00C77BF6 /* WaterAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterAvailability.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		E8E8694F1E526E490049C764 /* ThirstQuencher */ = {
 			isa = PBXGroup;
 			children = (
-				E85E8DA01E96AD9400ACF4A2 /* GoogleService-Info.plist */,
+				AA7A2E481EAFA7B1003375A2 /* GoogleService-Info.plist */,
 				E8E869501E526E490049C764 /* AppDelegate.swift */,
 				E8E869521E526E490049C764 /* ViewController.swift */,
 				E8D78F561E5F4A0F00BF945B /* Model.swift */,
@@ -211,9 +211,9 @@
 			files = (
 				E8E8695B1E526E490049C764 /* LaunchScreen.storyboard in Resources */,
 				E8E869581E526E490049C764 /* Assets.xcassets in Resources */,
+				AA7A2E491EAFA7B1003375A2 /* GoogleService-Info.plist in Resources */,
 				D8AB43B81E6885340095469F /* Podfile in Resources */,
 				E8E869561E526E490049C764 /* Main.storyboard in Resources */,
-				E85E8DA11E96AD9400ACF4A2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
