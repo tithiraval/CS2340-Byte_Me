@@ -31,11 +31,21 @@ class WaterReports: UITableViewController {
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
                 (action) -> Void in
                 let yearTextField = alert.textFields![0] as UITextField
-                let locationTextField = alert.textFields![1] as UITextField
+                let latTextField = alert.textFields![1] as UITextField
+                let longTextField = alert.textFields![2] as UITextField
                 
-                if (yearTextField.text != "" && locationTextField.text != "") {
-                    Model.sharedInstance.setHistoricalValues(year: Int(yearTextField.text!)!, location: locationTextField.text!)
+                var char = CharacterSet.init(charactersIn: "-1234567890")
+                //char.formUnion(CharacterSet.decimalDigits.inverted)
+                let year = yearTextField.text?.components(separatedBy: char.inverted).joined(separator: "")
+                let lat = latTextField.text?.components(separatedBy: char.inverted).joined(separator: "")
+                let long = longTextField.text?.components(separatedBy: char.inverted).joined(separator: "")
+                
+                if (year != "" && lat != "" && long != "") {
+                    Model.sharedInstance.setHistoricalValues(year: Int(year!)!, lat: Int(lat!)!, long: Int(long!)!)
                     self.performSegue(withIdentifier: "toHistoricalGraph", sender: nil)
+                } else {
+                    alert.message = "One of the fields was invalid"
+                    self.present(alert, animated: true, completion: nil)
                 }
             })
             
@@ -44,7 +54,12 @@ class WaterReports: UITableViewController {
                 textField.keyboardType = UIKeyboardType.numberPad
             })
             alert.addTextField(configurationHandler: {(textField) -> Void in
-                textField.placeholder = "Location"
+                textField.placeholder = "Latitude"
+                textField.keyboardType = UIKeyboardType.numbersAndPunctuation
+            })
+            alert.addTextField(configurationHandler: {(textField) -> Void in
+                textField.placeholder = "Longitude"
+                textField.keyboardType = UIKeyboardType.numbersAndPunctuation
             })
             alert.addAction(okAction)
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))

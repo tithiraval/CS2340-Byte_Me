@@ -25,7 +25,7 @@ class HistoricalGraphViewControllerViewController: UIViewController {
         
         let purityReports = Model.sharedInstance.getAllPurityReports()
         let year = Model.sharedInstance.getHistoricalYear()
-        self.graphTitle.title = "Graph of " + String(year)
+        self.graphTitle.title = "Graph of " + String(year) + " At Specified Location"
         let lat = Double(Model.sharedInstance.getHistoricalLat())
         let long = Double(Model.sharedInstance.getHistoricalLong())
         

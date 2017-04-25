@@ -17,7 +17,8 @@ class Model {
     private var purityReports = [PurityReport]()
     
     private var historicalYear = 0
-    private var historicalLocation = ""
+    private var historicalLat = 33
+    private var historicalLong = -84
     
     private var lat = 33.77
     private var long = -84.39
@@ -264,9 +265,10 @@ class Model {
         return true
     }
     
-    func setHistoricalValues(year: Int, location: String) {
+    func setHistoricalValues(year: Int, lat: Int, long: Int) {
         historicalYear = year
-        historicalLocation = location
+        historicalLat = lat
+        historicalLong = long
     }
     
     func setLatLong(latitude: Double, longitude: Double) {
@@ -295,11 +297,11 @@ class Model {
     }
     
     func getHistoricalLat() -> Int {
-        return 33
+        return historicalLat
     }
     
     func getHistoricalLong() -> Int {
-        return -84
+        return historicalLong
     }
 
     
