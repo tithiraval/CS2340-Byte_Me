@@ -50,6 +50,8 @@ class PurityReportTableViewController: UITableViewController, UIPickerViewDelega
         waterConditionPicker.dataSource = self
         waterConditionData = ["Safe", "Treatable", "Unsafe"]
         
+        virusDetail.text = "0 PPM By Default"
+        contamDetail.text = "0 PPM By Default"
         nameLabel.text = "Purity Report #" + String(Model.sharedInstance.getNewPurityReportNumber())
         Model.sharedInstance.getCurrentUserName(from: self)
         

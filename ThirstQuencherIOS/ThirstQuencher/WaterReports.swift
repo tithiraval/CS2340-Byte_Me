@@ -83,7 +83,7 @@ class WaterReports: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return toggled ? Model.sharedInstance.getAllSourceReports().count : Model.sharedInstance.getAllSourceReports().count
+        return !toggled ? Model.sharedInstance.getAllSourceReports().count : Model.sharedInstance.getAllPurityReports().count
     }
 
     
