@@ -18,7 +18,9 @@ class HistoricalGraphViewControllerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lineChart.chartDescription?.text = ""
         
+        lineChart.transform = CGAffineTransform(rotationAngle: CGFloat.init(3.14/2))
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         let PPM = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
@@ -31,19 +33,19 @@ class HistoricalGraphViewControllerViewController: UIViewController {
     func setChart(dataPoints: [String], values: [Double]) {
         lineChart.noDataText = "You need to provide data for the chart."
         
-        var dataEntries: [BarChartDataEntry] = []
+        var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
         
-        
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Units Sold")
-        let chartXValues = BarChartDataSet(values: months, label: "Months")
-        let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        let chartDataSet = LineChartDataSet(values: dataEntries, label: "PPM")
+        let chartData = LineChartData(dataSet: chartDataSet)
         lineChart.data = chartData
-
+        let xAxis = XAxis()
+        lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
+        lineChart.xAxis.granularity = 1.0
     }
     
     override func didReceiveMemoryWarning() {

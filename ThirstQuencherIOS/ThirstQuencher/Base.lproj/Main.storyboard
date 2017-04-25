@@ -344,23 +344,34 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqH-s0-aLl" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="-112.5" y="191" width="600" height="345"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="njn-Pe-jKJ"/>
+                                    <constraint firstAttribute="height" constant="345" id="zTo-30-QzM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PSp-Br-73W" firstAttribute="top" secondItem="ymQ-Vl-N8D" secondAttribute="top" id="Baj-3A-EVx"/>
                             <constraint firstItem="PSp-Br-73W" firstAttribute="leading" secondItem="ymQ-Vl-N8D" secondAttribute="leading" id="Dlv-XN-yYb"/>
+                            <constraint firstItem="MqH-s0-aLl" firstAttribute="centerY" secondItem="ymQ-Vl-N8D" secondAttribute="centerY" constant="30" id="KfL-bR-u8h"/>
                             <constraint firstAttribute="trailing" secondItem="PSp-Br-73W" secondAttribute="trailing" id="v8g-OT-XJj"/>
+                            <constraint firstItem="MqH-s0-aLl" firstAttribute="centerX" secondItem="ymQ-Vl-N8D" secondAttribute="centerX" id="wJq-Al-h6D"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="MFj-pp-7Rh" id="uB0-dw-tlk"/>
+                        <outlet property="lineChart" destination="MqH-s0-aLl" id="DZl-PW-a9U"/>
                         <segue destination="f02-HU-wOv" kind="unwind" identifier="unwindToWaterReports" unwindAction="unwindToWaterReportsWithSegue:" id="mFQ-qo-K0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrh-gJ-OBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="f02-HU-wOv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4523" y="1059"/>
+            <point key="canvasLocation" x="4522.3999999999996" y="1058.3208395802101"/>
         </scene>
         <!--New Source Report-->
         <scene sceneID="IlY-PX-igd">
