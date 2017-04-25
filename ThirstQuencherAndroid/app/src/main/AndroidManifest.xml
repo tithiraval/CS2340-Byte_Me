@@ -20,13 +20,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity android:name=".Controller.MainActivity">
+
+        <!--
+        <activity android:name=".Controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
         <activity android:name=".Controller.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,6 +70,9 @@
         <activity android:name=".Controller.LoadSourceReportActivity" />
         <activity android:name=".Controller.LoadQualityReportActivity" />
         <activity android:name=".Controller.GraphSearchActivity" />
+        <activity
+            android:name=".Controller.ViewSourceReportActivity"
+            android:label="@string/title_activity_view_source_report"></activity>
     </application>
 
 </manifest>

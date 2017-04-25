@@ -18,4 +18,5 @@
 
     <string name="title_activity_submit_report">Map</string>
     <string name="title_activity_map_reports">Map</string>
+    <string name="title_activity_view_source_report">Map</string>
 </resources>
