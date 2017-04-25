@@ -364,6 +364,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="MFj-pp-7Rh" id="uB0-dw-tlk"/>
+                        <outlet property="graphTitle" destination="54m-ug-Tky" id="fO2-jC-NRD"/>
                         <outlet property="lineChart" destination="MqH-s0-aLl" id="DZl-PW-a9U"/>
                         <segue destination="f02-HU-wOv" kind="unwind" identifier="unwindToWaterReports" unwindAction="unwindToWaterReportsWithSegue:" id="mFQ-qo-K0G"/>
                     </connections>
