@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<QualityReport> qualityReports = new ArrayList<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     /**
@@ -37,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view for logging in
      */
     public void login(View view) {
+        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        Button loginButton = (Button) findViewById(R.id.login);
+//        loginButton.setOnClickListener(new Button.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                view.startAnimation(animAlpha);
+//            }
+//        });
+        loginButton.startAnimation(animAlpha);
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
     }
