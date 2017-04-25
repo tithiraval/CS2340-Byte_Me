@@ -289,6 +289,18 @@ class Model {
     func getLong() -> Double {
         return long
     }
+    
+    func getHistoricalYear() -> Int {
+        return historicalYear
+    }
+    
+    func getHistoricalLat() -> Int {
+        return 33
+    }
+    
+    func getHistoricalLong() -> Int {
+        return -84
+    }
 
     
     
