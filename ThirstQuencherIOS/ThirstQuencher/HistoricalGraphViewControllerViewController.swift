@@ -13,6 +13,7 @@ class HistoricalGraphViewControllerViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var lineChart: LineChartView!
+    @IBOutlet weak var graphTitle: UINavigationItem!
     var months: [String]!
     @IBOutlet weak var graphTitle: UINavigationItem!
     
@@ -72,7 +73,6 @@ class HistoricalGraphViewControllerViewController: UIViewController {
         
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let PPM = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         
         setChart(dataPoints: months, virusPPM: virusPPM, contPPM: contaminantPPM)
         
@@ -93,10 +93,11 @@ class HistoricalGraphViewControllerViewController: UIViewController {
         }
         
         let virusChartDataSet = LineChartDataSet(values: virusDataEntries, label: "Virus PPM")
+        virusChartDataSet.setColor(UIColor.red)
+        virusChartDataSet.setCircleColor(UIColor.red)
         let contChartDataSet = LineChartDataSet(values: contDataEntries, label: "Contaminant PPM")
         let chartData = LineChartData(dataSets: [virusChartDataSet, contChartDataSet])
         lineChart.data = chartData
-        let xAxis = XAxis()
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
         lineChart.xAxis.granularity = 1.0
     }
