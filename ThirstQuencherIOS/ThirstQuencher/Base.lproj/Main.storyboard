@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="R2I-Cz-hN7" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FKK-bE-za2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKK-bE-za2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -749,44 +749,8 @@
                             </tableViewSection>
                             <tableViewSection id="dma-7G-c7x">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RT6-QX-Dfd">
-                                        <rect key="frame" x="0.0" y="124" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RT6-QX-Dfd" id="uqA-On-7ni">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNZ-UD-BcL">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="O76-I4-fVb"/>
-                                                        <constraint firstAttribute="width" constant="42" id="frf-9Q-y8V"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fF3-Lt-vdY">
-                                                    <rect key="frame" x="134" y="7" width="233" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="4JQ-Ef-8EW"/>
-                                                        <constraint firstAttribute="width" constant="233" id="7du-tf-rp9"/>
-                                                    </constraints>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="fF3-Lt-vdY" firstAttribute="centerY" secondItem="uqA-On-7ni" secondAttribute="centerY" id="9dt-7e-oLL"/>
-                                                <constraint firstItem="sNZ-UD-BcL" firstAttribute="centerY" secondItem="uqA-On-7ni" secondAttribute="centerY" id="eU8-zL-tx9"/>
-                                                <constraint firstItem="sNZ-UD-BcL" firstAttribute="leading" secondItem="uqA-On-7ni" secondAttribute="leadingMargin" constant="12" id="fkt-Dw-rcz"/>
-                                                <constraint firstAttribute="trailing" secondItem="fF3-Lt-vdY" secondAttribute="trailing" constant="8" id="vAE-HI-BZI"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nxs-AL-1wL">
-                                        <rect key="frame" x="0.0" y="168" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="124" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nxs-AL-1wL" id="tSw-v4-rI0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -830,7 +794,6 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="emailField" destination="fF3-Lt-vdY" id="qkI-J4-LI0"/>
                         <outlet property="homeField" destination="9m3-6b-Afm" id="rop-vB-df3"/>
                         <outlet property="nameField" destination="oZx-bt-d6R" id="76J-zL-5Ar"/>
                         <segue destination="hMs-we-XUz" kind="unwind" identifier="unwindToMainFromEdit" unwindAction="unwindToMainWithSegue:" id="uU6-ge-dCK"/>
@@ -845,7 +808,7 @@
         <scene sceneID="4dF-ot-AYa">
             <objects>
                 <navigationController title="Logged in Navigation Controller" id="0iD-Rd-zcw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ubJ-Wg-POa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubJ-Wg-POa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

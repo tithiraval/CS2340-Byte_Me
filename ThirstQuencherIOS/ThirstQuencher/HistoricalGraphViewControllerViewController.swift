@@ -15,7 +15,6 @@ class HistoricalGraphViewControllerViewController: UIViewController {
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var graphTitle: UINavigationItem!
     var months: [String]!
-    @IBOutlet weak var graphTitle: UINavigationItem!
     
     
     override func viewDidLoad() {
