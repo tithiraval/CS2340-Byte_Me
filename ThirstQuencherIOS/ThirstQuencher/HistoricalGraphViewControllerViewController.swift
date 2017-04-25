@@ -14,6 +14,7 @@ class HistoricalGraphViewControllerViewController: UIViewController {
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var lineChart: LineChartView!
     var months: [String]!
+    @IBOutlet weak var graphTitle: UINavigationItem!
     
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class HistoricalGraphViewControllerViewController: UIViewController {
         
         let purityReports = Model.sharedInstance.getAllPurityReports()
         let year = Model.sharedInstance.getHistoricalYear()
+        self.graphTitle.title = "Graph of " + String(year)
         let lat = Double(Model.sharedInstance.getHistoricalLat())
         let long = Double(Model.sharedInstance.getHistoricalLong())
         
