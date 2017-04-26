@@ -14,12 +14,22 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="318dp"
+        android:layout_width="0dp"
         android:layout_height="133dp"
         tools:context="com.example.anmol.thirstquencher.Controller.ViewSourceReportActivity"
-        tools:layout_editor_absoluteX="33dp"
-        android:layout_marginTop="18dp"
-        app:layout_constraintTop_toBottomOf="@+id/conditionOfWaterTextView" />
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/conditionOfWater"
+        android:layout_marginTop="61dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportTypeTextField"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="63dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/viewWaterReportNumberTextField"
@@ -52,8 +62,9 @@
         android:layout_marginStart="16dp"
         android:text="Date Submitted:"
         android:textSize="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/viewWaterReportDate"
-        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportNumberTextField"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -61,11 +72,13 @@
         android:id="@+id/viewWaterReportDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:textSize="16dp"
+        android:gravity="center"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportNumber"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/viewWaterReportDateTextField"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportDateTextField"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toRightOf="@+id/viewWaterReportDateTextField" />
 
@@ -76,8 +89,9 @@
         android:layout_marginStart="16dp"
         android:text="Reported By: "
         android:textSize="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/viewWaterReportUsername"
-        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportDate"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -86,13 +100,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16dp"
+        android:gravity="center"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/viewWaterReportDateTextField"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportDateTextField"
+        app:layout_constraintRight_toRightOf="@+id/viewWaterReportTypeTextField"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportUsernameTextField"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/viewWaterReportDateTextField" />
+        app:layout_constraintLeft_toRightOf="@+id/viewWaterReportTypeTextField" />
 
     <TextView
         android:id="@+id/viewWaterReportTypeTextField"
@@ -101,8 +116,9 @@
         android:layout_marginStart="16dp"
         android:text="Water Type: "
         android:textSize="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/viewWaterReportType"
-        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportUsername"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -111,11 +127,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16dp"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="63dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportUsername"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/conditionOfWater"
+        android:layout_marginStart="16dp"
         tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="24dp"
         app:layout_constraintLeft_toRightOf="@+id/conditionOfWaterTextView" />
 
     <TextView
@@ -133,31 +149,38 @@
         android:id="@+id/conditionOfWater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
         android:textSize="16dp"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="22dp"
-        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportType"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintRight_toRightOf="@+id/viewWaterReportType"
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewWaterReportDateTextField"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/conditionOfWaterTextView" />
+        android:layout_marginBottom="151dp"
+        app:layout_constraintLeft_toRightOf="@+id/viewWaterReportType" />
 
     <Button
         android:id="@+id/viewWaterReportBackButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginStart="28dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="back"
         android:text="BACK"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintRight_toRightOf="@+id/viewWaterReportDate"
         android:layout_marginTop="9dp"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintLeft_toLeftOf="@+id/conditionOfWaterTextView" />
 
     <TextView
         android:id="@+id/textView7"
@@ -166,8 +189,8 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="Water Report"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:layout_constraintTop_creator="1"
         android:layout_marginStart="1dp"
+        tools:layout_constraintTop_creator="1"
         android:layout_marginTop="7dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toTopOf="parent"
