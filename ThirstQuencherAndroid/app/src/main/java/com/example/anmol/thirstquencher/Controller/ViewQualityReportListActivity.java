@@ -29,6 +29,7 @@ import java.util.List;
 /**
  * Shows a list of all the quality reports
  * @author Anmol
+ * @version 2/20/17
  */
 public class ViewQualityReportListActivity extends AppCompatActivity {
 

@@ -9,7 +9,7 @@ public enum UserType {
     USER("User"), WORKER("Worker"), MANAGER("Manager"), ADMIN("Admin");
     private final String display;
 
-    private UserType(String display) {
+    UserType(String display) {
         this.display = display;
     }
 

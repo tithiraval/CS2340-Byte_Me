@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * holds reference methods to link between objects and their functionality
  * @author Anmol
- * @version 3/28/17
+ * @version 4/25/17
  */
 
 public class References {
@@ -15,20 +15,15 @@ public class References {
     public static final String SOURCE_REPORT_TABLE = "SOURCE_REPORTS";
     public static final String QUALITY_REPORT_TABLE = "QUALITY_REPORTS";
 
-
+    // List View String
     public final static String REPORT_ID = "Report ID";
     public final static String DATE_SUBMITTED = "Date Submitted";
 
 
-    // Other References User
+    // User and Report References
     private static User currentUser = null;
     private static SourceReport currentSourceReport = null;
     private static QualityReport currentQualityReport = null;
-//    private static List<SourceReport> waterReports;
-//    private static List<QualityReport> qualityReports;
-//
-//    public static int numSourceReports;
-//    public static int numQualityReports;
 
     /**
      * returns the current user
@@ -46,90 +41,37 @@ public class References {
         currentUser = user;
     }
 
+    /**
+     * updates the current source report
+     * @param report the new source report
+     */
     public static void setCurrentSourceReport(SourceReport report) {
         References.currentSourceReport = report;
     }
 
+    /**
+     * updates the current quality report
+     * @param report the new quality report
+     */
     public static void setCurrentQualityReport(QualityReport report) {
         References.currentQualityReport = report;
     }
 
+    /**
+     * Returns the current source report
+     * @return the current source report
+     */
     public static SourceReport getCurrentSourceReport() {
         return currentSourceReport;
     }
 
+    /**
+     * Returns the current quality report
+     * @return the current quality report
+     */
     public static QualityReport getCurrentQualityReport() {
         return currentQualityReport;
     }
-
-
-//    /**
-//     * returns the list of all the water reports
-//     * @return water reports list
-//     */
-//    public static List<SourceReport> getWaterReports() {
-//        return waterReports;
-//    }
-//
-//    /**
-//     * updates the water report list
-//     * @param waterReports the water reports list
-//     */
-//    public static void setWaterReports(List<SourceReport> waterReports) {
-//        References.waterReports = waterReports;
-//    }
-//
-//    /**
-//     * adds a new wate report to the water reports list
-//     * @param waterReport the water report we want to add
-//     */
-//    public static void addWaterReport(SourceReport waterReport) {
-//        waterReports.add(numSourceReports++, waterReport);
-//    }
-//
-//    /**
-//     * returns a given source report based on its index in the list
-//     * @param index the index of the desired source report
-//     * @return source report
-//     */
-//    public static SourceReport getWaterReport(int index) {
-//        return waterReports.get(index);
-//    }
-//
-//    /**
-//     * returns the list of all quality reports
-//     * @return quality reports list
-//     */
-//    public static List<QualityReport> getQualityReports() {
-//        return qualityReports;
-//    }
-//
-//    /**
-//     * Updates the quality reports list
-//     * @param qualityReports the new list of quality reports
-//     */
-//    public static void setQualityReports(List<QualityReport> qualityReports) {
-//        References.qualityReports = qualityReports;
-//    }
-//
-//    /**
-//     * add a new quality report to the quality report list
-//     * @param qualityReport the quality report to be added
-//     */
-//    public static void addQualityReport(QualityReport qualityReport) {
-//        qualityReports.add(numQualityReports++, qualityReport);
-//    }
-//
-//    /**
-//     * returns a given quality report based on its index
-//     * @param index the index of the desired quality report
-//     * @return the quality report at the index
-//     */
-//    public static QualityReport getQualityReport(int index) {
-//        return qualityReports.get(index);
-//    }
-
-
 
     /**
      * creates the user based on its type of user
@@ -173,7 +115,7 @@ public class References {
     }
 
     /**
-     * returns apropriate water condition enum for the string
+     * returns appropriate water condition enum for the string
      * @param waterCondition some water condition
      * @return water condition enum
      */

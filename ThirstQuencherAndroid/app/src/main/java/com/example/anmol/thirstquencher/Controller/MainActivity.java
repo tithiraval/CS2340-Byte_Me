@@ -20,13 +20,11 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Main controller for the app
- * @author Anmol
- * @version 2/20/17
+ * Controller for the first functional screen of the app
+ * @author Anmol, Tithi
+ * @version 4/25/17
  */
 public class MainActivity extends AppCompatActivity {
-
-    public static List<QualityReport> qualityReports = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Method for logging into the app
-     * @param view The view for logging in
+     * @param view The button to login
      */
     public void login(View view) {
         final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         Button loginButton = (Button) findViewById(R.id.login);
-//        loginButton.setOnClickListener(new Button.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                view.startAnimation(animAlpha);
-//            }
-//        });
         loginButton.startAnimation(animAlpha);
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
@@ -55,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Initiates registration when called
-     * @param view The view for registering
+     * @param view The button to register
      */
     public void startRegistration(View view) {
         Button registerButton = (Button) findViewById(R.id.register);

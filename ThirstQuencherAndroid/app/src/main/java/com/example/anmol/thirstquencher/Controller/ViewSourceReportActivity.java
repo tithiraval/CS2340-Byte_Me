@@ -15,6 +15,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+/**
+ * The controller for the view source report screen
+ * @author Anmol
+ * @version 2/20/17
+ */
 public class ViewSourceReportActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -73,7 +78,7 @@ public class ViewSourceReportActivity extends FragmentActivity implements OnMapR
 
     /**
      * Returns to the previous screen when user presses "Back"
-     * @param view The view for this screen
+     * @param view The back button
      */
     public void back(View view) {
         ViewSourceReportActivity.this.finish();

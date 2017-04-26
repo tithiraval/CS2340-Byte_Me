@@ -63,7 +63,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     /**
      * Sets the home address, email address, and the title of the user
-     * @param view The view for editing profile
+     * @param view The button for saving the edited profile
      */
     public void editProfileSaveRequest(View view) {
         Button save = (Button) findViewById(R.id.editProfileSaveButton);
@@ -97,7 +97,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     /**
      * Returns to the user screen if the user presses cancel
-     * @param view The view for edit profile
+     * @param view The button for cancelling edit profile
      */
     public void cancelEditProfile(View view) {
         Button cancel = (Button) findViewById(R.id.editProfileCancelButton);

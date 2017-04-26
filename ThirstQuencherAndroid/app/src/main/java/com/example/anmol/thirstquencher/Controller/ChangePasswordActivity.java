@@ -51,7 +51,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     /**
      * Changes the user's password if matches restrictions
-     * @param view The view for this screen
+     * @param view The view for this button
      */
     public void confirmChangePassword(View view) {
         Button confirm = (Button) findViewById(R.id.changePasswordConfirmButton);
@@ -109,7 +109,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     /**
      * Returns back to the previous screen if the user presses cancel.
-     * @param view The view for change password screen
+     * @param view The view for cancel button
      */
     public void cancelChangePassword(View view) {
         Button cancel = (Button) findViewById(R.id.cancelChangePasswordButton);

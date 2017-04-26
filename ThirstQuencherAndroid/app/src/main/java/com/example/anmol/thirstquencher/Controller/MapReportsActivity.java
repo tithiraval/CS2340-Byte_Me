@@ -24,6 +24,7 @@ import java.util.List;
 /**
  * Handles the map screen
  * @author Anmol
+ * @version 4/25/17
  */
 public class MapReportsActivity extends FragmentActivity implements OnMapReadyCallback {
 

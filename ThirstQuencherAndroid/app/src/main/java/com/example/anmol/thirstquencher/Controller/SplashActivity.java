@@ -6,9 +6,12 @@ import android.content.Intent;
 import com.example.anmol.thirstquencher.R;
 import android.os.Handler;
 
+/**
+ * Controller for the splash screen
+ * @author Tithi
+ * @version 4/25/17
+ */
 public class SplashActivity extends AppCompatActivity {
-
-    //private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

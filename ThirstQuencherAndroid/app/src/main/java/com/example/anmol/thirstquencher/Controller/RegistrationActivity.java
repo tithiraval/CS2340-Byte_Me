@@ -30,8 +30,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Controller for Registration
- * @author Anmol
- * @version 2/20/17
+ * @author Anmol, Tithi
+ * @version 4/25/17
  */
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -61,7 +61,7 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Checks the entered email address and password for restrictions
      * It then creates and account for the user and send an email for verification
-     * @param view View of the registration screen
+     * @param view the button to register
      */
     public void register(View view) {
         Button registerButton = (Button) findViewById(R.id.registerButton);
@@ -109,7 +109,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     /**
      * Cancels the registration activity if the user presses cancel
-     * @param view The view of the registration screen
+     * @param view The button to cancel registration
      */
     public void cancelRegistration(View view) {
         Button cancel = (Button) findViewById(R.id.cancelRegisterButton);

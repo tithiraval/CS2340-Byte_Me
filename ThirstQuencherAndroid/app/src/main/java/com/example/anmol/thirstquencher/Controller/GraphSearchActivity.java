@@ -36,8 +36,8 @@ import java.util.List;
 
 /**
  * Generates the graphs for the graph screen
- * @author Tithi
- * @version 3/28/17
+ * @author Tithi, Anmol
+ * @version 4/25/17
  */
 public class GraphSearchActivity extends AppCompatActivity {
 
@@ -88,7 +88,7 @@ public class GraphSearchActivity extends AppCompatActivity {
 
     /**
      * Creates the graph based on input data from the Search Screen
-     * @param view The view for this screen
+     * @param view The button clicked to create graph
      */
     public void createGraph(View view) {
         Button create = (Button) findViewById(R.id.graphSearchButton);
@@ -178,7 +178,7 @@ public class GraphSearchActivity extends AppCompatActivity {
 
     /**
      * Returns to the previous screen if the user presses back
-     * @param view
+     * @param view the back button
      */
     public void back(View view) {
         Button back = (Button) findViewById(R.id.graphSearchCancel);

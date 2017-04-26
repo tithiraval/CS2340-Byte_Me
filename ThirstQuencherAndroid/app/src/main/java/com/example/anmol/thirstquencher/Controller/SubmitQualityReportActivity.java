@@ -32,7 +32,8 @@ import java.util.List;
 
 /**
  * The submit quality report screen
- * @author Anmol
+ * @author Anmol, Tithi
+ * @version 4/25/17
  */
 public class SubmitQualityReportActivity extends AppCompatActivity {
 
@@ -63,7 +64,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
 
     /**
      * Allows the worker / manager to submit a quality report
-     * @param view the current view
+     * @param view the button to submit a quality report
      */
     public void submitQualityReport(View view) {
         Button submit = (Button) findViewById(R.id.submitQualityReportButton);
@@ -131,7 +132,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
 
     /**
      * Cancels the submissions of a new report and goes back to the previous screen
-     * @param view the current view
+     * @param view the button to cancel submission
      */
     public void cancelSubmitQualityReport(View view) {
         Button cancel = (Button) findViewById(R.id.submitQualityReportCancel);

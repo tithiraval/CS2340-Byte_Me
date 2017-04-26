@@ -12,7 +12,8 @@ import com.example.anmol.thirstquencher.R;
 
 /**
  * Shows a detailed highlight of a quality report
- * @author Anmol
+ * @author Anmol, Tithi
+ * @version 4/25/17
  */
 public class ViewQualityReportActivity extends AppCompatActivity {
 

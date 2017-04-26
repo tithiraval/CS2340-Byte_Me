@@ -40,7 +40,8 @@ import java.security.KeyStore;
 
 /**
  * The submit report screen
- * @author Anmol
+ * @author Anmol, Tithi
+ * @version 4/26/17
  */
 public class SubmitReportActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -114,7 +115,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
 
     /**
      * Allows the user to submit a report if restrictions are met
-     * @param view The view for this screen
+     * @param view The button to submit a source report
      */
     public void submitReport(View view) {
         Button submit = (Button) findViewById(R.id.submitReportButton);
@@ -171,7 +172,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
 
     /**
      * cancels the report submission and goes back to the previous screen
-     * @param view the current view
+     * @param view the button to cancel submission
      */
     public void cancelSubmitReport(View view) {
         Button cancel = (Button) findViewById(R.id.cancelSubmitReportButton);

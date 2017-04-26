@@ -17,6 +17,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
+/**
+ * The controller for the forgot password screen
+ * @author Anmol, Tithi
+ * @version 4/26/17
+ */
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     private Animation animAlpha;
@@ -30,6 +35,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         emailInput = (EditText) findViewById(R.id.sendEmailEditText);
     }
 
+    /**
+     * Sends email to reset password
+     * @param view the send email button that was clicked
+     */
     public void sendEmail(View view) {
         Button sendEmail = (Button) view;
         sendEmail.startAnimation(animAlpha);
@@ -70,7 +79,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     /**
      * Returns back to the previous screen if the user presses cancel.
-     * @param view The view for change password screen
+     * @param view The view for change password button
      */
     public void cancelChangePassword(View view) {
         Button cancel = (Button) findViewById(R.id.forgotPasswordCancelButton);

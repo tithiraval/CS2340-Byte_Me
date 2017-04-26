@@ -17,7 +17,7 @@ public enum OverallCondition {
     OverallCondition(String cond) {this.cond = cond;}
 
     /**
-     * retuns a string of the water condition
+     * returns a string of the water condition
      * @return water condition
      */
     @Override

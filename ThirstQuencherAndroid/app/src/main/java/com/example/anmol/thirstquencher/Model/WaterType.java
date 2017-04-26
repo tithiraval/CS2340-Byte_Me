@@ -5,8 +5,6 @@ package com.example.anmol.thirstquencher.Model;
  * @author Shaurye
  * @version 2/23/17
  */
-
-
 public enum WaterType {
     BOTTLED("Bottled"), WELL("Well"), STREAM("Stream"), LAKE("Lake"), SPRING("Spring")
         , OTHER("Other");

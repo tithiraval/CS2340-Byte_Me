@@ -26,8 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 
 /**
  * The controller for the Home Screen
- * @author Anmol
- * @version 2/20/17
+ * @author Anmol, Tithi, Dor
+ * @version 4/25/17
  */
 public class HomeScreenActivity extends AppCompatActivity {
 
@@ -64,7 +64,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Allows the user to create a report
-     * @param view The view for this screen
+     * @param view The button to create report
      */
     public void createReport(View view) {
         Button createReportButton = (Button) findViewById(R.id.createReportButton);
@@ -76,7 +76,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Allows either a worker or a manager to create a quality report
-     * @param view The view for this screen
+     * @param view The button to create quality report
      */
     public void createQualityReport(View view) {
         Button qReportButton = (Button) findViewById(R.id.createQualityReportButton);
@@ -88,7 +88,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Allows the user to view list of reports
-     * @param view The view for this screen
+     * @param view The button to view source reports
      */
     public void viewReports(View view) {
         Button viewReportsButton = (Button) findViewById(R.id.viewReportsButton);
@@ -98,8 +98,8 @@ public class HomeScreenActivity extends AppCompatActivity {
     }
 
     /**
-     * Alows user to view list of quality reports
-     * @param view The view for this screen
+     * Allows user to view list of quality reports
+     * @param view The button to view quality reports
      */
     public void viewQualityReports(View view) {
         Button viewQReportsButton = (Button) findViewById(R.id.viewQualityReportButton);
@@ -109,8 +109,8 @@ public class HomeScreenActivity extends AppCompatActivity {
     }
 
     /**
-     * Alows user to view list of quality reports
-     * @param view The view for this screen
+     * Allows user to view list of quality reports
+     * @param view The button to create a graph
      */
     public void graphSearch(View view) {
         Button graphSearchButton = (Button) findViewById(R.id.viewQualityReportGraph);
@@ -121,7 +121,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Allows the user to view reports on a map
-     * @param view The view for this screen
+     * @param view The button to view a map of source reports
      */
     public void viewMap(View view) {
         Button viewMapButton = (Button) findViewById(R.id.viewReportsMapButton);
@@ -132,7 +132,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Method for viewing a user's profile information
-     * @param view The view for the view profile screen
+     * @param view The button to view profile
      */
     public void viewProfile(View view) {
         Button viewProfileButton = (Button) findViewById(R.id.viewProfileButton);
@@ -144,7 +144,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Method for logging out of the app
-     * @param view The screen view
+     * @param view The button to log out
      */
     public void logOut(View view) {
         Button logout = (Button) findViewById(R.id.logoutButton);

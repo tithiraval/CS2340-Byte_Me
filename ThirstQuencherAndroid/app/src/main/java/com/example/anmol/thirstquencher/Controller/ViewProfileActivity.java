@@ -15,8 +15,8 @@ import com.example.anmol.thirstquencher.R;
 
 /**
  * Controller for viewing profile
- * @author Anmol
- * @version 2/20/17
+ * @author Anmol, Tithi
+ * @version 4/25/17
  */
 public class ViewProfileActivity extends AppCompatActivity {
 
@@ -54,7 +54,7 @@ public class ViewProfileActivity extends AppCompatActivity {
 
     /**
      * Prompts to edit the user's profile
-     * @param view The view for this screen
+     * @param view The button to edit profile
      */
     public void editProfileRequest(View view) {
         Button edit = (Button) findViewById(R.id.viewProfileEditButton);
@@ -65,7 +65,7 @@ public class ViewProfileActivity extends AppCompatActivity {
 
     /**
      * Method for changing the user's password
-     * @param view The view for this screen
+     * @param view the button to change password
      */
     public void changePasswordRequest(View view) {
         Button change = (Button) findViewById(R.id.viewProfileChangePasswordButton);
@@ -76,7 +76,7 @@ public class ViewProfileActivity extends AppCompatActivity {
 
     /**
      * Returns to the previous screen if the user presses "back"
-     * @param view The view for the view profile screen
+     * @param view The back button
      */
     public void back(View view) {
         Button back = (Button) findViewById(R.id.viewProfileBackButton);

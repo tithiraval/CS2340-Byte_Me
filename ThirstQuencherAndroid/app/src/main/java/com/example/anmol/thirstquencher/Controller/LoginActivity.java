@@ -31,7 +31,8 @@ import com.google.firebase.database.ValueEventListener;
 
 /**
  * The controller for logging in
- * @author Anmol
+ * @author Anmol, Tithi
+ * @version 4/26/17
  */
 public class LoginActivity extends AppCompatActivity {
 
@@ -137,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Returns to the previous screen if user presses cancel
-     * @param view The view for this method
+     * @param view The button to cancel login
      */
     public void cancel(View view) {
         Button cancel = (Button) findViewById(R.id.cancelButton);
@@ -149,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Goes to the forgot password screen
-     * @param view The view for this screen
+     * @param view The button if to go to the forgot password screen
      */
     public void forgotPassword(View view) {
         Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
