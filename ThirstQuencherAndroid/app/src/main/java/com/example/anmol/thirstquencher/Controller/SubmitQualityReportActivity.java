@@ -1,5 +1,6 @@
 package com.example.anmol.thirstquencher.Controller;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,13 @@ import com.example.anmol.thirstquencher.R;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The submit quality report screen
@@ -35,6 +42,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
     private EditText virusPPM;
     private EditText contaminantPPM;
     private Animation animAlpha;
+    private int numReports;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,27 +81,49 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
             Toast emptyContaminantPPM = Toast.makeText(SubmitQualityReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyContaminantPPM.show();
         } else {
-            final QualityReport qualityReport = new QualityReport(user.getEmailAddress(),
-                    location.getText().toString(), References.numQualityReports + 1,
-                    References.getCondition((String) overallConditionSpinner.getSelectedItem()),
-                    Double.valueOf(virusPPM.getText().toString()),
-                    Double.valueOf(contaminantPPM.getText().toString()));
-            FirebaseDatabase.getInstance()
-                    .getReference(References.QUALITY_REPORT_TABLE)
-                    .child(Integer.toString(References.numQualityReports + 1)).setValue(qualityReport)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+            FirebaseDatabase.getInstance().getReference(References.QUALITY_REPORT_TABLE)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                References.addQualityReport(qualityReport);
-                                Toast.makeText(SubmitQualityReportActivity.this, "Report Submitted",
-                                        Toast.LENGTH_SHORT).show();
-                                SubmitQualityReportActivity.this.finish();
-                            } else {
-                                Log.e("AddingSourceReport", task.getException().getMessage());
-                                Toast.makeText(SubmitQualityReportActivity.this,
-                                        "An error occured. Please try again!", Toast.LENGTH_SHORT).show();
-                            }
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            SubmitQualityReportActivity.this.numReports =
+                                    (int) dataSnapshot.getChildrenCount();
+                            final QualityReport qualityReport =
+                                    new QualityReport(user.getEmailAddress(),
+                                    location.getText().toString(),
+                                    SubmitQualityReportActivity.this.numReports + 1,
+                                    References.getCondition((String) overallConditionSpinner
+                                            .getSelectedItem()),
+                                    Double.valueOf(virusPPM.getText().toString()),
+                                    Double.valueOf(contaminantPPM.getText().toString()));
+                            FirebaseDatabase.getInstance()
+                                    .getReference(References.QUALITY_REPORT_TABLE)
+                                    .child(Integer.toString(SubmitQualityReportActivity.this
+                                            .numReports + 1)).setValue(qualityReport)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Toast.makeText(SubmitQualityReportActivity.this,
+                                                        "Report Submitted",
+                                                        Toast.LENGTH_SHORT).show();
+                                                SubmitQualityReportActivity.this.finish();
+                                            } else {
+                                                Log.e("AddingSourceReport", task.getException()
+                                                        .getMessage());
+                                                Toast.makeText(SubmitQualityReportActivity.this,
+                                                        "An error occured. Please try again!",
+                                                        Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Log.d("LoadingQualityReports", databaseError.getMessage());
+                            Toast.makeText(SubmitQualityReportActivity.this,
+                                    "An error occured. Please try again!",
+                                    Toast.LENGTH_SHORT).show();
                         }
                     });
         }

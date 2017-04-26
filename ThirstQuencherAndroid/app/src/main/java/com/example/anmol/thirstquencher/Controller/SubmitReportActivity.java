@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.anmol.thirstquencher.Model.Location;
+import com.example.anmol.thirstquencher.Model.QualityReport;
 import com.example.anmol.thirstquencher.Model.References;
 import com.example.anmol.thirstquencher.Model.SourceReport;
 import com.example.anmol.thirstquencher.Model.User;
@@ -24,7 +25,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.security.KeyStore;
 
@@ -40,6 +44,7 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
     private Spinner waterTypeSpinner;
     private Spinner waterConditionSpinner;
     private Animation animAlpha;
+    private int numReports;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,45 +90,54 @@ public class SubmitReportActivity extends FragmentActivity implements OnMapReady
     public void submitReport(View view) {
         Button submit = (Button) findViewById(R.id.submitReportButton);
         submit.startAnimation(animAlpha);
-        if (this.isNull(location)) {
+        if (location == null) {
             CharSequence text = "Enter Location!";
             Toast emptyLocation = Toast.makeText(SubmitReportActivity.this.getApplicationContext(), text, Toast.LENGTH_LONG);
             emptyLocation.show();
         } else {
-            final SourceReport report = new SourceReport(user.getEmailAddress(), this.location,
-                    References.numSourceReports + 1,
-                    References.getWaterType((String) waterTypeSpinner.getSelectedItem()),
-                    References.getWaterCondition((String) waterConditionSpinner.getSelectedItem()));
-            FirebaseDatabase.getInstance()
-                    .getReference(References.SOURCE_REPORT_TABLE)
-                    .child(Integer.toString(References.numSourceReports + 1)).setValue(report)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        References.addWaterReport(report);
-                        Toast.makeText(SubmitReportActivity.this, "Report Submitted",
-                                Toast.LENGTH_SHORT).show();
-                        SubmitReportActivity.this.finish();
-                    } else {
-                        Log.e("AddingSourceReport", task.getException().getMessage());
-                        Toast.makeText(SubmitReportActivity.this,
-                                "An error occurred. Please try again!", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-    }
+            FirebaseDatabase.getInstance().getReference(References.SOURCE_REPORT_TABLE)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            SubmitReportActivity.this.numReports =
+                                    (int) dataSnapshot.getChildrenCount();
+                            final SourceReport report = new SourceReport(user.getEmailAddress(),
+                                    SubmitReportActivity.this.location,
+                                    SubmitReportActivity.this.numReports + 1,
+                                    References.getWaterType((String) waterTypeSpinner.getSelectedItem()),
+                                    References.getWaterCondition((String) waterConditionSpinner.getSelectedItem()));
+                            FirebaseDatabase.getInstance()
+                                    .getReference(References.SOURCE_REPORT_TABLE)
+                                    .child(Integer.toString(SubmitReportActivity.this
+                                            .numReports + 1)).setValue(report)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Toast.makeText(SubmitReportActivity.this,
+                                                        "Report Submitted",
+                                                        Toast.LENGTH_SHORT).show();
+                                                SubmitReportActivity.this.finish();
+                                            } else {
+                                                Log.e("AddingSourceReport", task.getException()
+                                                        .getMessage());
+                                                Toast.makeText(SubmitReportActivity.this,
+                                                        "An error occured. Please try again!",
+                                                        Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+                        }
 
-    /**
-     * checks if the object is null
-     * @param someObject the object in question
-     */
-    private static boolean isNull (Object someObject) {
-        if (someObject == null) {
-            return true;
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Log.d("LoadingQualityReports", databaseError.getMessage());
+                            Toast.makeText(SubmitReportActivity.this,
+                                    "An error occured. Please try again!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
-        return false;
     }
 
     /**

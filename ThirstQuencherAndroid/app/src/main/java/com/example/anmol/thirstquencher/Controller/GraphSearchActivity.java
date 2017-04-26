@@ -2,6 +2,7 @@ package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -13,6 +14,12 @@ import android.widget.Toast;
 
 import com.example.anmol.thirstquencher.Model.QualityReport;
 import com.example.anmol.thirstquencher.Model.References;
+import com.example.anmol.thirstquencher.Model.SourceReport;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.GraphView;
 
 import com.example.anmol.thirstquencher.R;
@@ -20,6 +27,7 @@ import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -37,20 +45,44 @@ public class GraphSearchActivity extends AppCompatActivity {
     private EditText year;
     private Spinner virusOrPPM;
     private Animation animAlpha;
+    private List<QualityReport> qualityReports;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graph_search);
-        location = (EditText) findViewById(R.id.graphSearchLocation);
-        year = (EditText) findViewById(R.id.graphSearchYear);
-        virusOrPPM = (Spinner) findViewById(R.id.graphSearchVirusOrPPMSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,
-                Arrays.asList("Virus PPM", "Contaminant PPM"));
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        virusOrPPM.setAdapter(adapter);
-        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        setContentView(R.layout.activity_load_quality_report);
+
+        FirebaseDatabase.getInstance().getReference(References.QUALITY_REPORT_TABLE)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        qualityReports = new ArrayList<QualityReport>();
+                        for (int i = 0; i < dataSnapshot.getChildrenCount(); i++) {
+                            qualityReports.add(i, dataSnapshot.child(Integer.toString(i + 1))
+                                    .getValue(QualityReport.class));
+                        }
+                        setContentView(R.layout.activity_graph_search);
+                        location = (EditText) findViewById(R.id.graphSearchLocation);
+                        year = (EditText) findViewById(R.id.graphSearchYear);
+                        virusOrPPM = (Spinner) findViewById(R.id.graphSearchVirusOrPPMSpinner);
+                        ArrayAdapter<String> adapter = new ArrayAdapter(GraphSearchActivity.this,
+                                android.R.layout.simple_spinner_item,
+                                Arrays.asList("Virus PPM", "Contaminant PPM"));
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        virusOrPPM.setAdapter(adapter);
+                        animAlpha = AnimationUtils.loadAnimation(GraphSearchActivity.this, R.anim.alpha);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.d("LoadingQualityReports", databaseError.getMessage());
+                        Toast.makeText(GraphSearchActivity.this,
+                                "An error occured. Please try again!",
+                                Toast.LENGTH_SHORT).show();
+                        GraphSearchActivity.this.finish();
+                    }
+                });
     }
 
 
@@ -74,7 +106,7 @@ public class GraphSearchActivity extends AppCompatActivity {
             Calendar calendar1 = Calendar.getInstance();
             Calendar calendar2 = Calendar.getInstance();
             String chosenVal = (String) virusOrPPM.getSelectedItem();
-            for (QualityReport report : References.getQualityReports()) {
+            for (QualityReport report : qualityReports) {
                 calendar1.setTime(report.getDateTime());
                 calendar2.set(Calendar.YEAR, Integer.parseInt(year.getText().toString()));
                 int c1Year = calendar1.get(Calendar.YEAR);

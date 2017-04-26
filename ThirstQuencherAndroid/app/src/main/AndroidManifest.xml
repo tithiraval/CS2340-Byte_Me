@@ -45,7 +45,6 @@
         <activity android:name=".Controller.ChangePasswordActivity" />
         <activity android:name=".Controller.EditProfileActivity" />
         <activity android:name=".Controller.WaterReportListActivity" />
-        <activity android:name=".Controller.ViewWaterReportActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -67,8 +66,6 @@
         <activity android:name=".Controller.ViewQualityReportActivity" />
         <activity android:name=".Controller.SubmitQualityReportActivity" />
         <activity android:name=".Controller.ViewQualityReportListActivity" />
-        <activity android:name=".Controller.LoadSourceReportActivity" />
-        <activity android:name=".Controller.LoadQualityReportActivity" />
         <activity android:name=".Controller.GraphSearchActivity" />
         <activity
             android:name=".Controller.ViewSourceReportActivity"

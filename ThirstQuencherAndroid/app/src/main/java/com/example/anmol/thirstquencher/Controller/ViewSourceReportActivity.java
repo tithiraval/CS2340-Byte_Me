@@ -33,7 +33,7 @@ public class ViewSourceReportActivity extends FragmentActivity implements OnMapR
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        report = References.getWaterReport(getIntent().getIntExtra("WATER_REPORT_INDEX", 0));
+        report = References.getCurrentSourceReport();
         reportNumberText = (TextView) findViewById(R.id.viewWaterReportNumber);
         dateTimeText = (TextView) findViewById(R.id.viewWaterReportDate);
         reporterText = (TextView) findViewById(R.id.viewWaterReportUsername);

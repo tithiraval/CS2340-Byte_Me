@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                                                 Log.i("Current User", References.getCurrentUser()
                                                         .getAccountType());
                                                 Intent intent = new Intent(LoginActivity.this,
-                                                        LoadSourceReportActivity.class);
+                                                        HomeScreenActivity.class);
                                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                                                         | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                 startActivity(intent);

@@ -22,11 +22,13 @@ public class References {
 
     // Other References User
     private static User currentUser = null;
-    private static List<SourceReport> waterReports;
-    private static List<QualityReport> qualityReports;
-
-    public static int numSourceReports;
-    public static int numQualityReports;
+    private static SourceReport currentSourceReport = null;
+    private static QualityReport currentQualityReport = null;
+//    private static List<SourceReport> waterReports;
+//    private static List<QualityReport> qualityReports;
+//
+//    public static int numSourceReports;
+//    public static int numQualityReports;
 
     /**
      * returns the current user
@@ -44,72 +46,88 @@ public class References {
         currentUser = user;
     }
 
-
-    /**
-     * returns the list of all the water reports
-     * @return water reports list
-     */
-    public static List<SourceReport> getWaterReports() {
-        return waterReports;
+    public static void setCurrentSourceReport(SourceReport report) {
+        References.currentSourceReport = report;
     }
 
-    /**
-     * updates the water report list
-     * @param waterReports the water reports list
-     */
-    public static void setWaterReports(List<SourceReport> waterReports) {
-        References.waterReports = waterReports;
+    public static void setCurrentQualityReport(QualityReport report) {
+        References.currentQualityReport = report;
     }
 
-    /**
-     * adds a new wate report to the water reports list
-     * @param waterReport the water report we want to add
-     */
-    public static void addWaterReport(SourceReport waterReport) {
-        waterReports.add(numSourceReports++, waterReport);
+    public static SourceReport getCurrentSourceReport() {
+        return currentSourceReport;
     }
 
-    /**
-     * returns a given source report based on its index in the list
-     * @param index the index of the desired source report
-     * @return source report
-     */
-    public static SourceReport getWaterReport(int index) {
-        return waterReports.get(index);
+    public static QualityReport getCurrentQualityReport() {
+        return currentQualityReport;
     }
 
-    /**
-     * returns the list of all quality reports
-     * @return quality reports list
-     */
-    public static List<QualityReport> getQualityReports() {
-        return qualityReports;
-    }
 
-    /**
-     * Updates the quality reports list
-     * @param qualityReports the new list of quality reports
-     */
-    public static void setQualityReports(List<QualityReport> qualityReports) {
-        References.qualityReports = qualityReports;
-    }
-
-    /**
-     * add a new quality report to the quality report list
-     * @param qualityReport the quality report to be added
-     */
-    public static void addQualityReport(QualityReport qualityReport) {
-        qualityReports.add(numQualityReports++, qualityReport);
-    }
-
-    /**
-     * returns a given quality report based on its index
-     * @param index the index of the desired quality report
-     * @return the quality report at the index
-     */
-    public static QualityReport getQualityReport(int index) {
-        return qualityReports.get(index);
-    }
+//    /**
+//     * returns the list of all the water reports
+//     * @return water reports list
+//     */
+//    public static List<SourceReport> getWaterReports() {
+//        return waterReports;
+//    }
+//
+//    /**
+//     * updates the water report list
+//     * @param waterReports the water reports list
+//     */
+//    public static void setWaterReports(List<SourceReport> waterReports) {
+//        References.waterReports = waterReports;
+//    }
+//
+//    /**
+//     * adds a new wate report to the water reports list
+//     * @param waterReport the water report we want to add
+//     */
+//    public static void addWaterReport(SourceReport waterReport) {
+//        waterReports.add(numSourceReports++, waterReport);
+//    }
+//
+//    /**
+//     * returns a given source report based on its index in the list
+//     * @param index the index of the desired source report
+//     * @return source report
+//     */
+//    public static SourceReport getWaterReport(int index) {
+//        return waterReports.get(index);
+//    }
+//
+//    /**
+//     * returns the list of all quality reports
+//     * @return quality reports list
+//     */
+//    public static List<QualityReport> getQualityReports() {
+//        return qualityReports;
+//    }
+//
+//    /**
+//     * Updates the quality reports list
+//     * @param qualityReports the new list of quality reports
+//     */
+//    public static void setQualityReports(List<QualityReport> qualityReports) {
+//        References.qualityReports = qualityReports;
+//    }
+//
+//    /**
+//     * add a new quality report to the quality report list
+//     * @param qualityReport the quality report to be added
+//     */
+//    public static void addQualityReport(QualityReport qualityReport) {
+//        qualityReports.add(numQualityReports++, qualityReport);
+//    }
+//
+//    /**
+//     * returns a given quality report based on its index
+//     * @param index the index of the desired quality report
+//     * @return the quality report at the index
+//     */
+//    public static QualityReport getQualityReport(int index) {
+//        return qualityReports.get(index);
+//    }
 
 
 

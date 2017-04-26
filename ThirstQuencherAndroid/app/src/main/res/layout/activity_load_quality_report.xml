@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/cast_intro_overlay_button_background_color"
     android:backgroundTint="@color/wallet_highlighted_text_holo_light"
-    tools:context="com.example.anmol.thirstquencher.Controller.LoadQualityReportActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 
