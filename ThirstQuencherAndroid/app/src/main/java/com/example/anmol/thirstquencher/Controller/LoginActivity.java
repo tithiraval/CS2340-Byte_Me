@@ -65,8 +65,8 @@ public class LoginActivity extends AppCompatActivity {
         if (email.equals("")) {
             Toast.makeText(LoginActivity.this, "Enter Email Address!",
                     Toast.LENGTH_SHORT).show();
-        } else if (password.equals("")) {
-            Toast.makeText(LoginActivity.this, "Enter Password!",
+        } else if (password.length() < 6) {
+            Toast.makeText(LoginActivity.this, "Password should be at least 6 characters!",
                     Toast.LENGTH_SHORT).show();
         } else {
             mAuth.signInWithEmailAndPassword(email, password)
@@ -101,6 +101,14 @@ public class LoginActivity extends AppCompatActivity {
                                                 } else {
                                                     References.setCurrentUser(dataSnapshot
                                                             .getValue(GeneralUser.class));
+                                                }
+                                                if (!dataSnapshot.child("password").getValue(
+                                                        String.class).equals(password)) {
+                                                    FirebaseDatabase.getInstance()
+                                                            .getReference(References.USER_TABLE)
+                                                            .child(mAuth.getCurrentUser().getUid())
+                                                            .child("password").setValue(password);
+                                                    References.getCurrentUser().setPassword(password);
                                                 }
                                                 Log.i("Current User", References.getCurrentUser()
                                                         .getAccountType());
