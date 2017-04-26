@@ -69,7 +69,8 @@
         <activity android:name=".Controller.GraphSearchActivity" />
         <activity
             android:name=".Controller.ViewSourceReportActivity"
-            android:label="@string/title_activity_view_source_report"></activity>
+            android:label="@string/title_activity_view_source_report" />
+        <activity android:name=".Controller.ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

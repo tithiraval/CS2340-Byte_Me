@@ -138,4 +138,13 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signOut();
         References.setCurrentUser((User) null);
     }
+
+    /**
+     * Goes to the forgot password screen
+     * @param view The view for this screen
+     */
+    public void forgotPassword(View view) {
+        Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+        startActivity(intent);
+    }
 }
