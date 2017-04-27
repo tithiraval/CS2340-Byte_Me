@@ -185,4 +185,22 @@
         app:layout_constraintTop_toBottomOf="@+id/viewQualityReportSubmittedBy"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toRightOf="@+id/viewQualityReportSubmittedBy" />
+
+    <Button
+        android:id="@+id/qualityReportBack"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="156dp"
+        android:layout_height="55dp"
+        android:background="@color/place_autocomplete_prediction_primary_text_highlight"
+        android:onClick="goBack"
+        android:text="Back"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="21dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

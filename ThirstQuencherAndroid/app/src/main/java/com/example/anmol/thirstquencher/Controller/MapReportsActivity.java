@@ -3,6 +3,7 @@ package com.example.anmol.thirstquencher.Controller;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -26,7 +27,7 @@ import java.util.List;
  * @author Anmol
  * @version 4/25/17
  */
-public class MapReportsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapReportsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private List<SourceReport> sourceReports;

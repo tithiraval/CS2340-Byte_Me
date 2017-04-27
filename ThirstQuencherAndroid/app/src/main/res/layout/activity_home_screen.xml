@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimaryDark"
         android:onClick="createReport"
-        android:text="Create Report" />
+        android:text="Create Source Report" />
 
     <Button
         android:id="@+id/viewReportsButton"
@@ -30,7 +30,7 @@
         android:layout_marginTop="11dp"
         android:background="@color/place_autocomplete_prediction_primary_text_highlight"
         android:onClick="viewReports"
-        android:text="View Reports"
+        android:text="View Source Reports"
         android:layout_below="@+id/createReportButton"
         android:layout_alignParentStart="true" />
 

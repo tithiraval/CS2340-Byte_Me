@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -43,7 +44,7 @@ import java.security.KeyStore;
  * @author Anmol, Tithi
  * @version 4/26/17
  */
-public class SubmitReportActivity extends FragmentActivity implements OnMapReadyCallback {
+public class SubmitReportActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private User user;

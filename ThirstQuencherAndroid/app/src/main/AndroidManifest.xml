@@ -30,21 +30,30 @@
             </intent-filter>
         </activity>
         -->
-        <activity android:name=".Controller.SplashActivity">
+        <activity android:name=".Controller.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controller.MainActivity" />
-        <activity android:name=".Controller.LoginActivity" />
-        <activity android:name=".Controller.HomeScreenActivity" />
-        <activity android:name=".Controller.RegistrationActivity" />
-        <activity android:name=".Controller.ViewProfileActivity" />
-        <activity android:name=".Controller.ChangePasswordActivity" />
-        <activity android:name=".Controller.EditProfileActivity" />
-        <activity android:name=".Controller.WaterReportListActivity" />
+        <activity android:name=".Controller.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.HomeScreenActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.RegistrationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.ViewProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.ChangePasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.EditProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.WaterReportListActivity"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -59,18 +68,25 @@
 
         <activity
             android:name=".Controller.SubmitReportActivity"
-            android:label="@string/title_activity_submit_report" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Controller.MapReportsActivity"
-            android:label="@string/title_activity_map_reports" />
-        <activity android:name=".Controller.ViewQualityReportActivity" />
-        <activity android:name=".Controller.SubmitQualityReportActivity" />
-        <activity android:name=".Controller.ViewQualityReportListActivity" />
-        <activity android:name=".Controller.GraphSearchActivity" />
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.ViewQualityReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.SubmitQualityReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.ViewQualityReportListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.GraphSearchActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".Controller.ViewSourceReportLocationActivity"/>
-        <activity android:name=".Controller.ForgotPasswordActivity" />
-        <activity android:name=".Controller.ViewSourceReportActivity"></activity>
+            android:name=".Controller.ViewSourceReportLocationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.ForgotPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Controller.ViewSourceReportActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

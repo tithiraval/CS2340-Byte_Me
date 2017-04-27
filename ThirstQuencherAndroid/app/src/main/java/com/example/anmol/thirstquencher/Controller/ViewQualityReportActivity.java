@@ -2,6 +2,7 @@ package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -51,5 +52,13 @@ public class ViewQualityReportActivity extends AppCompatActivity {
         overallConditionText.setText(report.getConditionVal().toString());
         virusPPMText.setText(Double.toString(report.getVirusPPM()));
         contaminantPPMText.setText(Double.toString(report.getContaminantPPM()));
+    }
+
+    /**
+     * Returns to the previous screen when user presses "Back"
+     * @param view The back button
+     */
+    public void goBack(View view) {
+        ViewQualityReportActivity.this.finish();
     }
 }
