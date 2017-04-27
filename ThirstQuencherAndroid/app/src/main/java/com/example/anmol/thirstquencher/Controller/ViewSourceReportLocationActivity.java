@@ -2,6 +2,7 @@ package com.example.anmol.thirstquencher.Controller;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,15 +21,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * @author Anmol
  * @version 2/20/17
  */
-public class ViewSourceReportLocationActivity extends FragmentActivity implements OnMapReadyCallback {
+public class ViewSourceReportLocationActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private SourceReport report;
-    private TextView dateTimeText;
-    private TextView reportNumberText;
-    private TextView reporterText;
-    private TextView waterTypeText;
-    private TextView waterConditionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,21 +35,6 @@ public class ViewSourceReportLocationActivity extends FragmentActivity implement
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         report = References.getCurrentSourceReport();
-        reportNumberText = (TextView) findViewById(R.id.viewWaterReportNumber);
-        dateTimeText = (TextView) findViewById(R.id.viewWaterReportDate);
-        reporterText = (TextView) findViewById(R.id.viewWaterReportUsername);
-        waterTypeText = (TextView) findViewById(R.id.viewWaterReportType);
-        waterConditionText = (TextView) findViewById(R.id.conditionOfWater);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        reportNumberText.setText(Integer.toString(report.getReportNumber()));
-        dateTimeText.setText(report.getDateTime().toString());
-        reporterText.setText(report.getEmailAddress());
-        waterTypeText.setText(report.getType().toString());
-        waterConditionText.setText(report.getCondition().toString());
     }
 
 
