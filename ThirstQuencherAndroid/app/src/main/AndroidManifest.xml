@@ -68,9 +68,10 @@
         <activity android:name=".Controller.ViewQualityReportListActivity" />
         <activity android:name=".Controller.GraphSearchActivity" />
         <activity
-            android:name=".Controller.ViewSourceReportActivity"
+            android:name=".Controller.ViewSourceReportLocationActivity"
             android:label="@string/title_activity_view_source_report" />
-        <activity android:name=".Controller.ForgotPasswordActivity"></activity>
+        <activity android:name=".Controller.ForgotPasswordActivity" />
+        <activity android:name=".Controller.ViewSourceReportActivity"></activity>
     </application>
 
 </manifest>
