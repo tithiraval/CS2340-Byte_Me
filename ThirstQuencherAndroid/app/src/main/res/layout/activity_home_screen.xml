@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimaryDark"
         android:onClick="createReport"
-        android:text="CREATE REPORT" />
+        android:text="Create Report" />
 
     <Button
         android:id="@+id/viewReportsButton"
@@ -30,7 +30,7 @@
         android:layout_marginTop="11dp"
         android:background="@color/place_autocomplete_prediction_primary_text_highlight"
         android:onClick="viewReports"
-        android:text="VIEW REPORTS"
+        android:text="View Reports"
         android:layout_below="@+id/createReportButton"
         android:layout_alignParentStart="true" />
 
@@ -42,7 +42,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="viewMap"
-        android:text="VIEW MAP"
+        android:text="View Map"
         android:layout_below="@+id/viewReportsButton"
         android:layout_alignParentStart="true" />
 
@@ -54,7 +54,7 @@
         android:layout_marginTop="11dp"
         android:background="@color/place_autocomplete_prediction_primary_text_highlight"
         android:onClick="viewProfile"
-        android:text="VIEW PROFILE"
+        android:text="View Profile"
         android:layout_below="@+id/viewReportsMapButton"
         android:layout_alignParentStart="true" />
 
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_dark"
         android:onClick="logOut"
-        android:text="LOG OUT"
+        android:text="Log Out"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 

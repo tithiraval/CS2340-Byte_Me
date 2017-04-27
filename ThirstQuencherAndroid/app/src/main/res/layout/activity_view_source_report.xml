@@ -169,7 +169,7 @@
         android:layout_marginStart="12dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="back"
-        android:text="BACK"
+        android:text="Back"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"

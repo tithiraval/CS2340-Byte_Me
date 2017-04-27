@@ -78,7 +78,7 @@
             android:layout_weight="1"
             android:background="@color/colorPrimaryDark"
             android:onClick="submitReport"
-            android:text="SUBMIT REPORT" />
+            android:text="Submit Report" />
 
         <Button
             android:id="@+id/cancelSubmitReportButton"
@@ -88,7 +88,7 @@
             android:layout_weight="0.80"
             android:background="@color/place_autocomplete_prediction_primary_text_highlight"
             android:onClick="cancelSubmitReport"
-            android:text="CANCEL" />
+            android:text="Cancel" />
     </LinearLayout>
 
 </LinearLayout>
